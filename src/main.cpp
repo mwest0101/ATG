@@ -37,7 +37,7 @@ int main()
     string caracterStr = "";
     string strChar = "";
     int vectorInd = 0;
-    myFile_Handler.open("D:\\pCpp\\ascciTextArtAttack\\fonts\\Speed.flf");
+    myFile_Handler.open("fonts\\Speed.flf");
 
     if (myFile_Handler.is_open())
     {

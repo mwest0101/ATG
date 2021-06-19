@@ -14,6 +14,7 @@ string rightTrim(string str, string chars) {
 	return str;
 }
 
+
 string trimString(string str, string chars) {
 	return leftTrim(rightTrim(str, chars), chars);
 }
