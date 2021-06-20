@@ -23,7 +23,6 @@ struct TextConfig tc;
 int main()
 {
     
-
     ifstream myFile_Handler;
     string myLine;
     int countline = 0;
@@ -33,10 +32,10 @@ int main()
     vector<string> params;
     vector<vector <string>> caracters;
     vector<string> caracter;
-    // File Open in the Read Mode
+    
     string caracterStr = "";
     string strChar = "";
-    int vectorInd = 0;
+    
     myFile_Handler.open("fonts\\Speed.flf");
 
     if (myFile_Handler.is_open())
@@ -44,21 +43,12 @@ int main()
         // Keep reading the file
         characterFound = 0;
 
-        while (getline(myFile_Handler, myLine))
-        {
+        while (getline(myFile_Handler, myLine)) {
             countline++;
-           
-
-            //cout << "|" << confFound << "|" << endl;
-            // print the line on the standard output
-            characterFound = findEndOfStr(myLine, HEAD_FILE);
-            //cout << " [ " << characterFound << " ] " << endl;
+            characterFound = findEndOfStr(myLine, HEAD_FILE);            
             if (characterFound!=(-1) && confFound==0) {
                 confFound ++;
-                //cout << "pase " << confFound << endl;
-                //cout << myLine.substr(characterFound) << endl;
                 strParam = myLine.substr(characterFound);
-
                 params = splitStr(strParam,' ');
                 tc.p1 =           params[0][0];
                 tc.p2 =           params[0][1];
@@ -68,94 +58,68 @@ int main()
                 tc.p6_defSmuMod = stoi(params[4]);
                 tc.p7_numComm =   stoi(params[5]);
 
-                //cout << " --> " << tc.p1 << endl;
-                //cout << " --> " << tc.p7_numComm << endl;
-
-                //printStrVector(params);
-            }else if (confFound > 0) {
-                    
-                if (countline > tc.p7_numComm) {
-                    
+            }else if (confFound > 0) {                    
+                if (countline > tc.p7_numComm) {                    
                     if ((characterFound = findStr(myLine, "@@"))!=(-1)) {
                         strChar = myLine.substr(0, characterFound);
-                        //cout << caracterStr << endl;
                         caracter = splitStr(caracterStr, '@');
-
-                        caracters.push_back(caracter);
-                        vectorInd++;
-                        //printStrVector(caracter);
+                        caracters.push_back(caracter);                        
+                        caracterStr = "";                      
                     } else {
-                        caracterStr = caracterStr+ myLine;
-                        
-                    }
-
-                    //caracters = splitStr(myLine, ' ');
-                }
-                    /*
-                    if ((characterFound = findStr(myLine, "-")) != (-1)) {
-                        confFound++;
-                        myLine = trimString(myLine.substr(0, characterFound)," ");
-                        
-                        
-                        
-                        switch (confFound) {
-                            case 2:
-                                tc.p1 = myLine;
-                                break;
-                            case 3:
-                                tc.p2 = myLine;
-                                break;
-                            case 4:
-                                tc.p3_Height = stoi(myLine);
-                                break;
-                            case 5:
-                                tc.p4_Height_nd = stoi(myLine);
-                                break;
-                            case 6:
-                                tc.p5_maxLinLen = stoi(myLine);
-                                break;
-                            case 7:
-                                tc.p6_defSmuMod = stoi(myLine);
-                                break;
-                            case 8:
-                                tc.p6_numComm = stoi(myLine);
-                                break;
-                            default:
-                              //  cout << tc.p1;
-                              //  cout << tc.p6_numComm;
-                                break;
-
-
-                        }
-                    }
-                    */
-                
-                   
-            }
-
-           //cout << myLine << endl;
+                        caracterStr = caracterStr+ myLine;                        
+                    }                
+                }                 
+            }         
         }
-        //printStrVector(caracters);
-        // File Close
+
+
+
         myFile_Handler.close();
-    }
-    else
-    {
+
+
+
+    }else{
         cout << "Unable to open the file!";
     }
+    //cout << getPosOfCharInFile("!") << endl;
+    //cout << getPosOfCharInFile("\"") << endl;
+    //cout << getPosOfCharInFile("A") << endl;
+    //cout << getPosOfCharInFile("a") << endl;
+
+    vector<string> vecOfAllChars;
+    vector<string> vecOfAChar;
+
+    vecOfAChar =getCharFromFile(caracters, "M");
+     //printStrVector(vecOfAChar);
     
-    printStrVector(caracters[0]);
-    printStrVector(caracters[1]);
+    vecOfAllChars=concStrVector(vecOfAllChars,vecOfAChar);
+    printStrVector(vecOfAllChars);
+
+    vecOfAChar = getCharFromFile(caracters, "a");
+ //   printStrVector(vecOfAChar);
+    vecOfAllChars = concStrVector(vecOfAllChars, vecOfAChar);
+    printStrVector(vecOfAllChars);
+
+    vecOfAChar = getCharFromFile(caracters, "u");
+  //  printStrVector(vecOfAChar);
+    vecOfAllChars = concStrVector(vecOfAllChars, vecOfAChar);
+    printStrVector(vecOfAllChars);
+
+    //printStrVector(vecOfAllChars);
+    //printStrVector(caracters[0]);
     /*
+    printStrVector(caracters[0]);   
     printStrVector(caracters[1]);
     printStrVector(caracters[2]);
     printStrVector(caracters[3]);
+    printStrVector(caracters[4]);
     printStrVector(caracters[5]);
     printStrVector(caracters[6]);
     printStrVector(caracters[7]);
     printStrVector(caracters[8]);
-    
     */
+    //getNumOfListOfCharsInFiles('a');
+    
     return 0;
 }
 
