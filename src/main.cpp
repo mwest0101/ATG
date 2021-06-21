@@ -20,16 +20,19 @@ int main()
     vector<string> vecOfAChar;
 
     FontManager_class fontsLoder("fonts\\Speed.flf");
-    
-    vecOfAChar = fontsLoder.getCharFromFile(fontsLoder.getCaractersArray(), "M");
+    /*
+    vecOfAChar = fontsLoder.getCharFromFile("M");
     //printStrVector(vecOfAChar);
-    vecOfAllChars = fontsLoder.concStrVector(vecOfAllChars, vecOfAChar);
+    fontsLoder.concStrVector(vecOfAChar);
     
-    vecOfAChar = fontsLoder.getCharFromFile(fontsLoder.getCaractersArray(), "a");
+    vecOfAChar = fontsLoder.getCharFromFile("a");
     //printStrVector(vecOfAChar);
-    vecOfAllChars = fontsLoder.concStrVector(vecOfAllChars, vecOfAChar);
+    fontsLoder.concStrVector(vecOfAChar);
+    */
+    fontsLoder.convStrToStrOfAscciChar("Mauricio");
+    printStrVector(fontsLoder.getFullStringOfChars());
+    
 
-    printStrVector(vecOfAllChars);
 /*
     struct TextConfig tc;
     ifstream myFile_Handler;

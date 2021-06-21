@@ -117,24 +117,47 @@ const string HEAD_FILE = "flf2";
     }
 
 
-    vector<string> FontManager_class::getCharFromFile(vector<vector <string>> sourceVecOfChar, string charToSearch) {
-        return sourceVecOfChar[FontManager_class::getPosOfCharInFile(charToSearch)];
+    vector<string> FontManager_class::getCharFromFile(string charToSearch) {
+        return c_caractersArray[FontManager_class::getPosOfCharInFile(charToSearch)];
     }
 
-    vector<string> FontManager_class::concStrVector(vector<string> vecOfAllChars, vector<string> vecOfAChar) {
+    void FontManager_class::concStrVector(vector<string> vecOfAChar) {
         //cout << vecOfAChar.size() << endl;
 
-        if (vecOfAllChars.size() == 0) {
+        if (c_vecOfAllChars.size() == 0) {
             for (string data : vecOfAChar) {
-                vecOfAllChars.push_back(data);
+                c_vecOfAllChars.push_back(data);
             }
         }
         else {
-            cout << "pase 2" << endl;
+            //cout << "pase 2" << endl;
             for (unsigned int i = 0; i < vecOfAChar.size(); i++) {
                 //cout << vecOfAChar[i] << endl;
-                vecOfAllChars[i] = vecOfAllChars[i] + vecOfAChar[i];
+                c_vecOfAllChars[i] = c_vecOfAllChars[i] + vecOfAChar[i];
             }
         }
-        return vecOfAllChars;
+     
+    }
+    
+    vector<string> FontManager_class::getFullStringOfChars() {
+        return c_vecOfAllChars;
+    }
+
+    void FontManager_class::convStrToStrOfAscciChar(string strToconvert)
+    {
+        string charTemp = "";
+        for (unsigned i = 0; i < strToconvert.length();i++) {
+            charTemp=strToconvert.at(i);
+           
+           vector<string> charArray = getCharFromFile(charTemp);
+
+           concStrVector(charArray);
+        }
+       
+    }
+    
+    
+    void convStrToStrOfAscciChar(string strToconvert) {
+
+        
     }

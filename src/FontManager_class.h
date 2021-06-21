@@ -18,6 +18,7 @@ public:
     string c_pathToFile;
     ifstream c_myFile_Handler;
     vector<vector<string>> c_caractersArray;
+    vector<string> c_vecOfAllChars;
 
     FontManager_class(string vPathToFile);
 
@@ -28,7 +29,11 @@ public:
     void loadFileLinesInMemory();
     vector<vector<string>> getCaractersArray();
     int getPosOfCharInFile(string chartoSearch);
-    vector<string> getCharFromFile(vector<vector <string>> sourceVecOfChar, string charToSearch);
-    vector<string> concStrVector(vector<string> vecOfAllChars, vector<string> vecOfAChar);
+    vector<string> getCharFromFile(string charToSearch);
+
+    void concStrVector(vector<string> vecOfAChar);
+    vector<string> getFullStringOfChars();
+
+    void convStrToStrOfAscciChar(string strToconvert);
 };
 #endif
