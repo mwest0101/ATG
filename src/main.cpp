@@ -21,11 +21,15 @@ int main()
 
     FontManager_class fontsLoder("fonts\\Speed.flf");
     
-    vecOfAChar = getCharFromFile(fontsLoder.getCaractersArray(), "M");
-    printStrVector(vecOfAChar);
-    //vecOfAllChars = concStrVector(vecOfAllChars, vecOfAChar);
+    vecOfAChar = fontsLoder.getCharFromFile(fontsLoder.getCaractersArray(), "M");
+    //printStrVector(vecOfAChar);
+    vecOfAllChars = fontsLoder.concStrVector(vecOfAllChars, vecOfAChar);
     
+    vecOfAChar = fontsLoder.getCharFromFile(fontsLoder.getCaractersArray(), "a");
+    //printStrVector(vecOfAChar);
+    vecOfAllChars = fontsLoder.concStrVector(vecOfAllChars, vecOfAChar);
 
+    printStrVector(vecOfAllChars);
 /*
     struct TextConfig tc;
     ifstream myFile_Handler;

@@ -48,7 +48,7 @@ const string HEAD_FILE = "flf2";
         {
             strParam = myLine.substr(characterFound);
             paramsArray = splitStr(strParam, ' ');
-            /*
+            
             ConfigFont_class::found = characterFound;
             ConfigFont_class::p1 = paramsArray[0][0];
             ConfigFont_class::p2 = paramsArray[0][1];
@@ -57,7 +57,7 @@ const string HEAD_FILE = "flf2";
             ConfigFont_class::p5_maxLinLen = stoi(paramsArray[3]);
             ConfigFont_class::p6_defSmuMod = stoi(paramsArray[4]);
             ConfigFont_class::p7_numComm = stoi(paramsArray[5]);
-            */
+            
 
         }
     }
@@ -104,4 +104,37 @@ const string HEAD_FILE = "flf2";
     }
     vector<vector<string>> FontManager_class::getCaractersArray() {
         return c_caractersArray;
+    }
+
+    int FontManager_class::getPosOfCharInFile(string chartoSearch) {
+        int valRet = (-1);        
+        vector<string> strCharArray;        
+        string charOrder = "  ! \" # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \\ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ Ä Ö Ü ä ö ü ß ";
+        valRet = charOrder.find(chartoSearch);
+        valRet = (valRet / 2);
+        return valRet;
+
+    }
+
+
+    vector<string> FontManager_class::getCharFromFile(vector<vector <string>> sourceVecOfChar, string charToSearch) {
+        return sourceVecOfChar[FontManager_class::getPosOfCharInFile(charToSearch)];
+    }
+
+    vector<string> FontManager_class::concStrVector(vector<string> vecOfAllChars, vector<string> vecOfAChar) {
+        //cout << vecOfAChar.size() << endl;
+
+        if (vecOfAllChars.size() == 0) {
+            for (string data : vecOfAChar) {
+                vecOfAllChars.push_back(data);
+            }
+        }
+        else {
+            cout << "pase 2" << endl;
+            for (unsigned int i = 0; i < vecOfAChar.size(); i++) {
+                //cout << vecOfAChar[i] << endl;
+                vecOfAllChars[i] = vecOfAllChars[i] + vecOfAChar[i];
+            }
+        }
+        return vecOfAllChars;
     }

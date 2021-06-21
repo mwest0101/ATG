@@ -27,6 +27,8 @@ public:
     void getConfig(string myLine);
     void loadFileLinesInMemory();
     vector<vector<string>> getCaractersArray();
-    
+    int getPosOfCharInFile(string chartoSearch);
+    vector<string> getCharFromFile(vector<vector <string>> sourceVecOfChar, string charToSearch);
+    vector<string> concStrVector(vector<string> vecOfAllChars, vector<string> vecOfAChar);
 };
 #endif

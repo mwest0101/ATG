@@ -16,9 +16,7 @@ string leftTrim(string str, string chars);
 string rightTrim(string str, string chars);
 string trimString(string str, string chars);
 //void anlizeString(string strRest);
-int getPosOfCharInFile(string chartoSearch);
-vector<string> getCharFromFile(vector<vector <string>> sourceVecOfChar, string charToSearch);
-vector<string> concStrVector(vector<string> vecOfAChar, vector<string> vecOfAllChars);
+
 
 //void getInitConfig(ifstream &myFile_Handler);
 
