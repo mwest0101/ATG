@@ -1,0 +1,137 @@
+ https://patorjk.com/software/taag/fonts/3D Diagonal.flf
+ https://patorjk.com/software/taag/fonts/Alpha.flf
+ https://patorjk.com/software/taag/fonts/Acrobatic.flf
+ https://patorjk.com/software/taag/fonts/Avatar.flf
+ https://patorjk.com/software/taag/fonts/Big Money-ne.flf
+ https://patorjk.com/software/taag/fonts/Big Money-nw.flf
+ https://patorjk.com/software/taag/fonts/Big Money-se.flf
+ https://patorjk.com/software/taag/fonts/Big Money-sw.flf
+ https://patorjk.com/software/taag/fonts/Big.flf
+ https://patorjk.com/software/taag/fonts/Blocks.flf
+ https://patorjk.com/software/taag/fonts/Bulbhead.flf
+ https://patorjk.com/software/taag/fonts/Cards.flf
+ https://patorjk.com/software/taag/fonts/Chiseled.flf
+ https://patorjk.com/software/taag/fonts/Crawford2.flf
+ https://patorjk.com/software/taag/fonts/Crazy.flf
+ https://patorjk.com/software/taag/fonts/Dancing Font.flf
+ https://patorjk.com/software/taag/fonts/Doh.flf
+ https://patorjk.com/software/taag/fonts/Doom.flf
+ https://patorjk.com/software/taag/fonts/Efti Wall.flf
+ https://patorjk.com/software/taag/fonts/Epic.flf
+ https://patorjk.com/software/taag/fonts/Fire Font-k.flf
+ https://patorjk.com/software/taag/fonts/Fire Font-s.flf
+ https://patorjk.com/software/taag/fonts/Flower Power.flf
+ https://patorjk.com/software/taag/fonts/Fun Face.flf
+ https://patorjk.com/software/taag/fonts/Fun Faces.flf
+ https://patorjk.com/software/taag/fonts/Ghost.flf
+ https://patorjk.com/software/taag/fonts/Graceful.flf
+ https://patorjk.com/software/taag/fonts/Graffiti.flf
+ https://patorjk.com/software/taag/fonts/Impossible.flf
+ https://patorjk.com/software/taag/fonts/Isometric1.flf
+ https://patorjk.com/software/taag/fonts/JS Bracket Letters.flf
+ https://patorjk.com/software/taag/fonts/Lil Devil.flf
+ https://patorjk.com/software/taag/fonts/Merlin1.flf
+ https://patorjk.com/software/taag/fonts/Modular.flf
+ https://patorjk.com/software/taag/fonts/Ogre.flf
+ https://patorjk.com/software/taag/fonts/Patorjk's Cheese.flf
+ https://patorjk.com/software/taag/fonts/Patorjk-HeX.flf
+ https://patorjk.com/software/taag/fonts/Rectangles.flf
+ https://patorjk.com/software/taag/fonts/Slant.flf
+ https://patorjk.com/software/taag/fonts/Slant Relief.flf
+ https://patorjk.com/software/taag/fonts/Small.flf
+ https://patorjk.com/software/taag/fonts/Small Slant.flf
+ https://patorjk.com/software/taag/fonts/Small Isometric1.flf
+ https://patorjk.com/software/taag/fonts/Soft.flf
+ https://patorjk.com/software/taag/fonts/Standard.flf
+ https://patorjk.com/software/taag/fonts/Star Wars.flf
+ https://patorjk.com/software/taag/fonts/Sub-Zero.flf
+ https://patorjk.com/software/taag/fonts/Swamp Land.flf
+ https://patorjk.com/software/taag/fonts/Sweet.flf
+ https://patorjk.com/software/taag/fonts/Train.flf
+ https://patorjk.com/software/taag/fonts/Twisted.flf
+ https://patorjk.com/software/taag/fonts/Wet Letter.flf
+ https://patorjk.com/software/taag/fonts/Varsity.flf
+ https://patorjk.com/software/taag/fonts/3D-ASCII.flf
+ https://patorjk.com/software/taag/fonts/ANSI Regular.flf
+ https://patorjk.com/software/taag/fonts/ANSI Shadow.flf
+ https://patorjk.com/software/taag/fonts/Bloody.flf
+ https://patorjk.com/software/taag/fonts/Calvin S.flf
+ https://patorjk.com/software/taag/fonts/Delta Corps Priest 1.flf
+ https://patorjk.com/software/taag/fonts/Electronic.flf
+ https://patorjk.com/software/taag/fonts/Elite.flf
+ https://patorjk.com/software/taag/fonts/Stronger Than All.flf
+ https://patorjk.com/software/taag/fonts/THIS.flf
+ https://patorjk.com/software/taag/fonts/The Edge.flf
+ https://patorjk.com/software/taag/fonts/1Row.flf
+ https://patorjk.com/software/taag/fonts/4Max.flf
+ https://patorjk.com/software/taag/fonts/AMC AAA01.flf
+ https://patorjk.com/software/taag/fonts/AMC Razor2.flf
+ https://patorjk.com/software/taag/fonts/AMC Thin.flf
+ https://patorjk.com/software/taag/fonts/ASCII New Roman.flf
+ https://patorjk.com/software/taag/fonts/Alligator2.flf
+ https://patorjk.com/software/taag/fonts/B1FF.flf
+ https://patorjk.com/software/taag/fonts/Banner.flf
+ https://patorjk.com/software/taag/fonts/Banner3.flf
+ https://patorjk.com/software/taag/fonts/Bear.flf
+ https://patorjk.com/software/taag/fonts/Bigfig.flf
+ https://patorjk.com/software/taag/fonts/Block.flf
+ https://patorjk.com/software/taag/fonts/Bright.flf
+ https://patorjk.com/software/taag/fonts/Caligraphy.flf
+ https://patorjk.com/software/taag/fonts/Catwalk.flf
+ https://patorjk.com/software/taag/fonts/Cola.flf
+ https://patorjk.com/software/taag/fonts/Contrast.flf
+ https://patorjk.com/software/taag/fonts/Cricket.flf
+ https://patorjk.com/software/taag/fonts/Cybermedium.flf
+ https://patorjk.com/software/taag/fonts/DWhistled.flf
+ https://patorjk.com/software/taag/fonts/Decimal.flf
+ https://patorjk.com/software/taag/fonts/Digital.flf
+ https://patorjk.com/software/taag/fonts/Double Shorts.flf
+ https://patorjk.com/software/taag/fonts/Efti Font.flf
+ https://patorjk.com/software/taag/fonts/Efti Water.flf
+ https://patorjk.com/software/taag/fonts/Filter.flf
+ https://patorjk.com/software/taag/fonts/Four Tops.flf
+ https://patorjk.com/software/taag/fonts/Fuzzy.flf
+ https://patorjk.com/software/taag/fonts/Ghoulish.flf
+ https://patorjk.com/software/taag/fonts/Gothic.flf
+ https://patorjk.com/software/taag/fonts/Greek.flf
+ https://patorjk.com/software/taag/fonts/Hex.flf
+ https://patorjk.com/software/taag/fonts/Horizontal Right.flf
+ https://patorjk.com/software/taag/fonts/Italic.flf
+ https://patorjk.com/software/taag/fonts/JS Capital Curves.flf
+ https://patorjk.com/software/taag/fonts/Jacky.flf
+ https://patorjk.com/software/taag/fonts/Kban.flf
+ https://patorjk.com/software/taag/fonts/Konto Slant.flf
+ https://patorjk.com/software/taag/fonts/LCD.flf
+ https://patorjk.com/software/taag/fonts/Letters.flf
+ https://patorjk.com/software/taag/fonts/Lockergnome.flf
+ https://patorjk.com/software/taag/fonts/Maxfour.flf
+ https://patorjk.com/software/taag/fonts/Mini.flf
+ https://patorjk.com/software/taag/fonts/Morse.flf
+ https://patorjk.com/software/taag/fonts/Muzzle.flf
+ https://patorjk.com/software/taag/fonts/Nancyj-Fancy.flf
+ https://patorjk.com/software/taag/fonts/Nancyj.flf
+ https://patorjk.com/software/taag/fonts/Octal.flf
+ https://patorjk.com/software/taag/fonts/Peaks Slant.flf
+ https://patorjk.com/software/taag/fonts/Poison.flf
+ https://patorjk.com/software/taag/fonts/Rammstein.flf
+ https://patorjk.com/software/taag/fonts/Relief.flf
+ https://patorjk.com/software/taag/fonts/Rot13.flf
+ https://patorjk.com/software/taag/fonts/Rotated.flf
+ https://patorjk.com/software/taag/fonts/Rozzo.flf
+ https://patorjk.com/software/taag/fonts/SL Script.flf
+ https://patorjk.com/software/taag/fonts/Shadow.flf
+ https://patorjk.com/software/taag/fonts/Slide.flf
+ https://patorjk.com/software/taag/fonts/Small Keyboard.flf
+ https://patorjk.com/software/taag/fonts/Small Shadow.flf
+ https://patorjk.com/software/taag/fonts/Speed.flf
+ https://patorjk.com/software/taag/fonts/Stacey.flf
+ https://patorjk.com/software/taag/fonts/Star Strips.flf
+ https://patorjk.com/software/taag/fonts/Stick Letters.flf
+ https://patorjk.com/software/taag/fonts/Swan.flf
+ https://patorjk.com/software/taag/fonts/Tengwar.flf
+ https://patorjk.com/software/taag/fonts/Thin.flf
+ https://patorjk.com/software/taag/fonts/Ticks.flf
+ https://patorjk.com/software/taag/fonts/Trek.flf
+ https://patorjk.com/software/taag/fonts/Two Point.flf
+ https://patorjk.com/software/taag/fonts/Wavy.flf
+ https://patorjk.com/software/taag/fonts/Whimsy.flf

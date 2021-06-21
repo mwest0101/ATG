@@ -20,8 +20,8 @@ public:
     vector<vector<string>> c_caractersArray;
     vector<string> c_vecOfAllChars;
 
-    FontManager_class(string vPathToFile);
-
+    FontManager_class();
+    void load(string vPathToFile, string strToPrint);
     bool loadFile();
     void closeFile();
     

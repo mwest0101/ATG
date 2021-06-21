@@ -6,16 +6,23 @@ using namespace std;
 
 const string HEAD_FILE = "flf2";
 
-    FontManager_class::FontManager_class(string vPathToFile)
+    FontManager_class::FontManager_class()
     {
         
-        c_pathToFile = vPathToFile;
-        if(loadFile()){
-          loadFileLinesInMemory();
-          closeFile();  
-        }
+        
     }
 
+    void FontManager_class::load(string vPathToFile,string strToPrint) {
+        c_pathToFile = vPathToFile;
+        c_caractersArray.clear();
+        c_vecOfAllChars.clear();
+
+        if (loadFile()) {
+            loadFileLinesInMemory();
+            convStrToStrOfAscciChar(strToPrint);
+            closeFile();
+        }
+    }
     //"fonts\\Speed.flf"
     bool FontManager_class::loadFile()
     {
@@ -147,11 +154,8 @@ const string HEAD_FILE = "flf2";
     {
         string charTemp = "";
         for (unsigned i = 0; i < strToconvert.length();i++) {
-            charTemp=strToconvert.at(i);
-           
-           vector<string> charArray = getCharFromFile(charTemp);
-
-           concStrVector(charArray);
+            charTemp=strToconvert.at(i);                     
+            concStrVector(getCharFromFile(charTemp));
         }
        
     }
