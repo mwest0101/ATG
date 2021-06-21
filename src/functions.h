@@ -19,7 +19,7 @@ string trimString(string str, string chars);
 int getPosOfCharInFile(string chartoSearch);
 vector<string> getCharFromFile(vector<vector <string>> sourceVecOfChar, string charToSearch);
 vector<string> concStrVector(vector<string> vecOfAChar, vector<string> vecOfAllChars);
-struct TextConfig getInitConfig(string myLine);
+
 //void getInitConfig(ifstream &myFile_Handler);
 
 #endif

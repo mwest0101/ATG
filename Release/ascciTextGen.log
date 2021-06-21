@@ -1,10 +1,6 @@
 ﻿  FontManager_class.cpp
-  functions.cpp
-  functions_str.cpp
-  main.cpp
   Generando código
   Previous IPDB not found, fall back to full compilation.
-D:\pCpp\ascciTextGen\src\FontManager_class.cpp(57): warning C4715: 'FontManager_class::getConfig': no todas las rutas de acceso de control devuelven un valor
-  All 366 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 365 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Generación de código finalizada
   ascciTextGen.vcxproj -> D:\pCpp\ascciTextGen\Release\ascciTextGen.exe

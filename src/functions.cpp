@@ -6,16 +6,7 @@
 
 const string HEAD_FILE = "flf2";
 
-struct TextConfig {
-	int found = (-1);
-	string p1 = "";
-	string p2 = "";
-	int  p3_Height = 0;
-	int  p4_Height_nd = 0;
-	int  p5_maxLinLen = 0;
-	int  p6_defSmuMod = 0;
-	int  p7_numComm = 0;
-};
+
 using namespace std;
 
 int getPosOfCharInFile(string chartoSearch) {
@@ -32,7 +23,9 @@ int getPosOfCharInFile(string chartoSearch) {
 	valRet = charOrder.find(chartoSearch);
 	valRet = (valRet/2);
 	//printStrVector(strCharArray);
+	
 	return valRet;
+
 }
 
 

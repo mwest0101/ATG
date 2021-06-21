@@ -5,20 +5,10 @@
 #include "functions.h"
 #include "functions_str.h"
 #include "FontManager_class.h"
+#include "ConfigFont_class.h"
 using namespace std;
 
 
-
-struct TextConfig {
-    int found = (-1);
-    string p1 = "";
-    string p2 = "";
-    int  p3_Height = 0;
-    int  p4_Height_nd = 0;
-    int  p5_maxLinLen = 0;
-    int  p6_defSmuMod = 0;
-    int  p7_numComm = 0;
-};
 
 
 
