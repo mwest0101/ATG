@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\FontManager_class.cpp" />
     <ClCompile Include="src\functions.cpp" />
     <ClCompile Include="src\functions_str.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\FontManager_class.h" />
     <ClInclude Include="src\functions.h" />
     <ClInclude Include="src\functions_str.h" />
   </ItemGroup>

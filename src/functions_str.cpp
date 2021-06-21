@@ -3,7 +3,14 @@
 #include <iostream>
 #include <vector>
 
+
+
 using namespace std;
+
+
+
+
+
 string leftTrim(string str, string chars) {
 	str.erase(0, str.find_first_not_of(chars));
 	return str;
