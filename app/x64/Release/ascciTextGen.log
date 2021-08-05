@@ -1,0 +1,10 @@
+﻿  ConfigFont_class.cpp
+  FontManager_class.cpp
+  functions.cpp
+  functions_str.cpp
+  main.cpp
+  Generando código
+  Previous IPDB not found, fall back to full compilation.
+  All 367 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generación de código finalizada
+  ascciTextGen.vcxproj -> D:\pCpp\ascciTextGen\app\x64\Release\ascciTextGen.exe

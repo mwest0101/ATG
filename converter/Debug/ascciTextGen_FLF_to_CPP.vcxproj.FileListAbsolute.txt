@@ -1,0 +1,2 @@
+d:\pCpp\ascciTextGen_FLF_to_CPP\Debug\ascciTextGen_FLF_to_CPP.exe
+d:\pCpp\ascciTextGen_FLF_to_CPP\Debug\ascciTextGen_FLF_to_CPP.pdb

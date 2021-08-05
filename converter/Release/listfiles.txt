@@ -1,0 +1,148 @@
+ El volumen de la unidad D es Data
+ El n£mero de serie del volumen es: C475-9FA4
+
+ Directorio de D:\pCpp\ascciTextGen_FLF_to_CPP\Release\fonts
+
+30-06-2021  02:36 a. m.    <DIR>          .
+30-06-2021  02:36 a. m.    <DIR>          ..
+03-06-2012  05:05 p. m.             1,520 1Row.flf
+08-06-2012  03:39 p. m.            25,475 3D Diagonal.flf
+22-01-2014  12:13 a. m.            13,134 3D-ASCII.flf
+03-06-2012  05:05 p. m.             4,374 4Max.flf
+03-06-2012  05:05 p. m.            18,316 Acrobatic.flf
+03-06-2012  05:05 p. m.             9,550 Alligator2.flf
+03-06-2012  05:05 p. m.            36,258 Alpha.flf
+03-06-2012  05:05 p. m.            14,156 AMC AAA01.flf
+03-06-2012  05:05 p. m.             9,333 AMC Razor2.flf
+03-06-2012  05:05 p. m.             7,808 AMC Thin.flf
+15-04-2020  12:57 p. m.            12,180 ANSI Regular.flf
+22-01-2014  12:14 a. m.            12,180 ANSI Shadow.flf
+03-06-2012  05:05 p. m.             4,188 ASCII New Roman.flf
+03-06-2012  05:05 p. m.             5,213 Avatar.flf
+03-06-2012  05:05 p. m.             2,261 B1FF.flf
+03-06-2012  05:05 p. m.            34,391 Banner.flf
+03-06-2012  05:05 p. m.             8,130 Banner3.flf
+03-06-2012  05:05 p. m.            10,459 Bear.flf
+03-06-2012  05:05 p. m.            15,305 Big Money-ne.flf
+03-06-2012  05:05 p. m.            15,360 Big Money-nw.flf
+03-06-2012  05:05 p. m.            16,666 Big Money-se.flf
+03-06-2012  05:05 p. m.            16,714 Big Money-sw.flf
+03-06-2012  05:05 p. m.            28,584 Big.flf
+03-06-2012  05:05 p. m.             2,938 Bigfig.flf
+03-06-2012  05:05 p. m.            24,435 Block.flf
+03-06-2012  05:05 p. m.            24,677 Blocks.flf
+22-01-2014  12:13 a. m.            12,448 Bloody.flf
+03-06-2012  05:05 p. m.             7,010 Bright.flf
+03-06-2012  05:05 p. m.             4,454 Bulbhead.flf
+03-06-2012  05:05 p. m.            23,989 Caligraphy.flf
+22-01-2014  12:14 a. m.             2,419 Calvin S.flf
+03-06-2012  05:05 p. m.             7,229 Cards.flf
+03-06-2012  05:05 p. m.             9,427 Catwalk.flf
+03-06-2012  05:05 p. m.            15,069 Chiseled.flf
+03-06-2012  05:05 p. m.             7,541 Cola.flf
+03-06-2012  05:07 p. m.             7,002 Contrast.flf
+03-06-2012  05:07 p. m.             6,734 Crawford2.flf
+03-06-2012  05:07 p. m.            22,616 Crazy.flf
+03-06-2012  05:07 p. m.            10,719 Cricket.flf
+03-06-2012  05:08 p. m.             3,181 Cybermedium.flf
+03-06-2012  05:08 p. m.             8,486 Dancing Font.flf
+03-06-2012  05:08 p. m.             2,653 Decimal.flf
+22-01-2014  12:14 a. m.            13,154 Delta Corps Priest 1.flf
+03-06-2012  05:08 p. m.            15,135 Digital.flf
+03-06-2012  05:08 p. m.            49,467 Doh.flf
+03-06-2012  05:08 p. m.             7,553 Doom.flf
+03-06-2012  05:08 p. m.             3,450 Double Shorts.flf
+03-06-2012  05:08 p. m.             4,828 DWhistled.flf
+03-06-2012  05:08 p. m.             5,767 Efti Font.flf
+03-06-2012  05:08 p. m.             7,296 Efti Wall.flf
+03-06-2012  05:08 p. m.             3,086 Efti Water.flf
+22-01-2014  12:14 a. m.            25,578 Electronic.flf
+22-01-2014  12:14 a. m.             5,004 Elite.flf
+03-06-2012  05:08 p. m.             9,854 Epic.flf
+03-06-2012  05:08 p. m.             6,061 Filter.flf
+06-06-2012  01:13 a. m.             9,946 Fire Font-k.flf
+06-06-2012  01:13 a. m.             9,947 Fire Font-s.flf
+03-06-2012  05:08 p. m.            16,377 Flower Power.flf
+03-06-2012  05:08 p. m.             3,198 Four Tops.flf
+03-06-2012  05:08 p. m.             7,369 Fun Face.flf
+03-06-2012  05:08 p. m.             8,652 Fun Faces.flf
+03-06-2012  05:08 p. m.             5,959 Fuzzy.flf
+06-06-2012  01:13 a. m.            13,143 Ghost.flf
+03-06-2012  05:08 p. m.             8,569 Ghoulish.flf
+03-06-2012  05:08 p. m.             8,772 Gothic.flf
+03-06-2012  05:08 p. m.             8,611 Graceful.flf
+06-06-2012  01:13 a. m.             6,539 Graffiti.flf
+03-06-2012  05:08 p. m.            10,343 Greek.flf
+03-06-2012  05:08 p. m.             2,495 Hex.flf
+03-06-2012  05:08 p. m.             7,446 Horizontal Right.flf
+03-06-2012  05:08 p. m.            22,788 Impossible.flf
+03-06-2012  05:08 p. m.            12,753 Isometric1.flf
+03-06-2012  05:08 p. m.             2,664 Italic.flf
+03-06-2012  05:08 p. m.            12,329 Jacky.flf
+03-06-2012  05:08 p. m.             2,869 JS Bracket Letters.flf
+03-06-2012  05:08 p. m.             3,562 JS Capital Curves.flf
+03-06-2012  05:08 p. m.             6,887 Kban.flf
+03-06-2012  05:08 p. m.             2,140 Konto Slant.flf
+03-06-2012  05:08 p. m.             5,051 LCD.flf
+03-06-2012  05:08 p. m.             6,330 Letters.flf
+03-06-2012  05:08 p. m.            10,717 Lil Devil.flf
+09-06-2021  02:11 a. m.             7,539 listaDeFuentes.txt
+30-06-2021  02:36 a. m.                 0 listfiles.txt
+03-06-2012  05:08 p. m.             3,246 Lockergnome.flf
+03-06-2012  05:08 p. m.             3,211 Maxfour.flf
+03-06-2012  05:08 p. m.            12,362 Merlin1.flf
+03-06-2012  05:08 p. m.             9,099 Mini.flf
+03-06-2012  05:08 p. m.             7,996 Modular.flf
+03-06-2012  05:08 p. m.             2,496 Morse.flf
+03-06-2012  05:08 p. m.             3,066 Muzzle.flf
+03-06-2012  05:08 p. m.             9,593 Nancyj-Fancy.flf
+03-06-2012  05:08 p. m.             8,284 Nancyj.flf
+03-06-2012  05:08 p. m.             2,727 Octal.flf
+03-06-2012  05:08 p. m.             6,313 Ogre.flf
+03-06-2012  05:08 p. m.            15,628 Patorjk's Cheese.flf
+03-06-2012  05:08 p. m.            16,254 Patorjk-HeX.flf
+03-06-2012  05:08 p. m.            12,708 Peaks Slant.flf
+03-06-2012  05:08 p. m.            14,765 Poison.flf
+03-06-2012  05:10 p. m.             9,530 Rammstein.flf
+03-06-2012  05:10 p. m.             5,535 Rectangles.flf
+03-06-2012  05:10 p. m.             9,364 Relief.flf
+03-06-2012  05:10 p. m.             1,764 Rot13.flf
+03-06-2012  05:10 p. m.             2,725 Rotated.flf
+03-06-2012  05:10 p. m.             7,664 Rozzo.flf
+03-06-2012  05:10 p. m.            14,552 Shadow.flf
+03-06-2012  05:10 p. m.             4,900 SL Script.flf
+03-06-2012  05:10 p. m.            24,048 Slant Relief.flf
+30-06-2021  02:27 a. m.            15,522 Slant.flf
+03-06-2012  05:10 p. m.             5,989 Slide.flf
+03-06-2012  05:10 p. m.             5,944 Small Isometric1.flf
+03-06-2012  05:10 p. m.             5,764 Small Keyboard.flf
+03-06-2012  05:10 p. m.            10,829 Small Shadow.flf
+03-06-2012  05:10 p. m.            12,223 Small Slant.flf
+03-06-2012  05:10 p. m.            12,232 Small.flf
+06-06-2012  01:13 a. m.             9,149 Soft.flf
+13-06-2021  12:23 a. m.            12,994 Speed.flf
+03-06-2012  05:10 p. m.             6,228 Stacey.flf
+06-06-2012  01:13 a. m.            30,740 Standard.flf
+03-06-2012  05:10 p. m.            10,896 Star Strips.flf
+03-06-2012  05:10 p. m.             8,165 Star Wars.flf
+21-06-2016  10:22 a. m.             2,186 Stick Letters.flf
+22-01-2014  12:14 a. m.             7,247 Stronger Than All.flf
+03-06-2012  05:10 p. m.             5,877 Sub-Zero.flf
+03-06-2012  05:10 p. m.            10,812 Swamp Land.flf
+03-06-2012  05:10 p. m.             8,582 Swan.flf
+03-06-2012  05:10 p. m.            15,400 Sweet.flf
+03-06-2012  05:10 p. m.            14,173 Tengwar.flf
+22-01-2014  12:15 a. m.             5,706 The Edge.flf
+03-06-2012  05:10 p. m.             4,445 Thin.flf
+22-01-2014  12:14 a. m.             7,656 THIS.flf
+03-06-2012  05:10 p. m.             9,615 Ticks.flf
+03-06-2012  05:10 p. m.             7,641 Train.flf
+03-06-2012  05:10 p. m.             8,336 Trek.flf
+03-06-2012  05:10 p. m.            10,205 Twisted.flf
+03-06-2012  05:10 p. m.             1,535 Two Point.flf
+03-06-2012  05:10 p. m.             8,809 Varsity.flf
+03-06-2012  05:10 p. m.             8,422 Wavy.flf
+03-06-2012  05:10 p. m.             6,714 Wet Letter.flf
+03-06-2012  05:10 p. m.             8,607 Whimsy.flf
+             139 archivos      1,410,283 bytes
+               2 dirs  136,059,981,824 bytes libres
