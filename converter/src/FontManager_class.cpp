@@ -2,8 +2,6 @@
 
 using namespace std;
 
-
-
 const string HEAD_FILE = "flf2";
 
 FontManager_class::FontManager_class()
@@ -12,18 +10,28 @@ FontManager_class::FontManager_class()
 
 }
 
-void FontManager_class::load(string vPathToFile) {
+string FontManager_class::load(string vPathToFile) {
     c_pathToFile = vPathToFile;
     c_caractersArray.clear();
     c_vecOfAllChars.clear();
-
+    string result = "";
     if (loadFile()) {
-        loadFileLinesInMemory();
-        //convStrToStrOfAscciChar(strToPrint);
+        getConfig();
+        if (configFound == (-1)) {
+            cout << "No se encontro config" << endl;
+        }
+        else {
+            cout << "Se encontro config" << endl;
+        }
+
+        getCharThatCloseLines();
+        result=loadFileLinesInMemory();
+
         closeFile();
     }
+    return result;
 }
-//"fonts\\Speed.flf"
+
 bool FontManager_class::loadFile()
 {
     c_myFile_Handler.open(c_pathToFile);
@@ -42,21 +50,20 @@ void FontManager_class::closeFile() {
 
 }
 
-void FontManager_class::getConfig(string myLine)
+void FontManager_class::getConfig()
 {
     vector<string> paramsArray;
-    string strParam;
-    int characterFound = (-1);
+    string strParam,myLine;
 
-    characterFound = findEndOfStr(myLine, HEAD_FILE);
+    getline(c_myFile_Handler, myLine);
 
-
-    if (characterFound != (-1))
+    cout << myLine << endl;
+    if ((configFound = findEndOfStr(myLine, HEAD_FILE))!=(-1))
     {
-        strParam = myLine.substr(characterFound);
+        strParam = myLine.substr(configFound);
         paramsArray = splitStr(strParam, ' ');
 
-        ConfigFont_class::found = characterFound;
+        ConfigFont_class::found = configFound;
         ConfigFont_class::p1 = paramsArray[0][0];
         ConfigFont_class::p2 = paramsArray[0][1];
         ConfigFont_class::p3_Height = stoi(paramsArray[1]);
@@ -65,11 +72,40 @@ void FontManager_class::getConfig(string myLine)
         ConfigFont_class::p6_defSmuMod = stoi(paramsArray[4]);
         ConfigFont_class::p7_numComm = stoi(paramsArray[5]);
 
-
     }
+    
 }
+void FontManager_class::getCharThatCloseLines()
+{
+    // Keep reading the file
+    int characterFound = -1;
+  
+    string strVectorToOutputInFile;
+    string myLine, caracterStr, strChar;
+    vector<string> caracterArray;
+    try {
+        while (getline(c_myFile_Handler, myLine) && characterFound == (-1))
+        {
+            countline++; 
 
-void FontManager_class::loadFileLinesInMemory()
+            if ((characterFound = findStr(myLine, "@@")) != (-1)) {
+                finalChar = '@';
+                cout << "Se encontro @";
+            }else if ((characterFound = findStr(myLine, "##")) != (-1)) {
+                finalChar = '#';
+                cout << "Se encontro #";
+            }
+
+
+        }
+    } catch (int e) {
+        cout << "Entre al catch" << endl;        
+    }
+
+}
+    
+
+string FontManager_class::loadFileLinesInMemory()
 {
     // Keep reading the file
     int characterFound = 0;
@@ -81,18 +117,13 @@ void FontManager_class::loadFileLinesInMemory()
     vector<string> caracterArray;
 
 
-
+    
     while (getline(c_myFile_Handler, myLine))
     {
         countline++;
-        if (ConfigFont_class::found == (-1))
+        if ((configFound==(-1)) || (countline > ConfigFont_class::p7_numComm))
         {
-            getConfig(myLine);
-        }
-        else
-        {
-            if (countline > ConfigFont_class::p7_numComm)
-            {
+            //cout << "entro aquí" << endl;
                 if ((characterFound = findStr(myLine, "@@")) != (-1))
                 {
                     strChar = myLine.substr(0, characterFound);
@@ -110,12 +141,22 @@ void FontManager_class::loadFileLinesInMemory()
                         caracterStr = caracterStr + myLine;
                     }
                 }
-            }
         }
+        
     }
-    cout << strVectorToOutputInFile;
+    /*
+    vectorFonts.push_back("3D Diagonal");
+    if(font=="3D Diagonal"){
+        nl = "#"
+        conf = "p1:a,p2:$,p3_Height:16,p4_Height_nd:15,p5_maxLinLen:19,p6_defSmuMod:63,p7_numComm:20"
+        if ((charNumber==0) || (character=="!")){ oneChar=
+
+    */
+    //cout << strVectorToOutputInFile;
+    return strVectorToOutputInFile;
 
 }
+
 vector<vector<string>> FontManager_class::getCaractersArray() {
     return c_caractersArray;
 }

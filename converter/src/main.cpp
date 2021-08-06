@@ -23,7 +23,7 @@ int main(int argc, char* argv[], char* envp[])
         //fontsLoder.load("fonts\\Speed.flf");
         
         strResult=fontsLoder.load(argv[1]);
-        fontsLoder.writeFile(argv[2],strResult);
+       // fontsLoder.writeFile(argv[2],strResult);
         //printStrVector(fontsLoder.getFullStringOfChars());
     } 
     return 0;

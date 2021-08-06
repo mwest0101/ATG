@@ -20,14 +20,15 @@ public:
     char c_charType = ' ';
     vector<vector<string>> c_caractersArray;
     vector<string> c_vecOfAllChars;
-
+    char finalChar = '\"';
+    int configFound = (-1);
     FontManager_class();
     string load(string vPathToFile);
     bool loadFile();
    
     void closeFile();
-    
-    void getConfig(string myLine);
+    int countline = 0;
+    void getConfig();
     void getCharThatCloseLines();
     string loadFileLinesInMemory();
     vector<vector<string>> getCaractersArray();
