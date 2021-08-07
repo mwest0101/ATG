@@ -8,8 +8,7 @@ class ConfigFont_class
 {
 
 public:
-    
-    
+        
     static int found;
     static string p1;
     static string p2;

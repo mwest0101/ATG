@@ -2,6 +2,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
+//#include "config_inc.h"
+#include "Debug_class.h"
 #include "functions.h"
 #include "functions_str.h"
 #include "ConfigFont_class.h"
@@ -30,9 +32,10 @@ public:
     int countline = 0;
     void getConfig();
     void getCharThatCloseLines();
-    string loadFileLinesInMemory();
+    string getCharlines();
     vector<vector<string>> getCaractersArray();
     int getPosOfCharInFile(string chartoSearch);
+    string getCharFromPosInFile(int chartoSearch);
     string getCharOfPosInFile(int posChar);
     vector<string> getCharFromFile(string charToSearch);
 
@@ -40,6 +43,6 @@ public:
     vector<string> getFullStringOfChars();
 
     void convStrToStrOfAscciChar(string strToconvert);
-    void writeFile(string filename,string text);
+ 
 };
 #endif

@@ -11,6 +11,9 @@
 
 
 	string normalizeStr(string result);
+	string normalizeUrl(string result);
+	
+	void writeFile(string filename, string text);
 	//int IntLen(const char *cstr);
 	//bool isNumber(const char *cstr);	
 	//void changeConlorWithString(std::string colorStr);
