@@ -3,9 +3,48 @@
 #include <iostream>
 #include <vector>
 
-
-
 using namespace std;
+
+char* strTochars(string vStr) {
+	char* cstr = new char[vStr.length() + 1];
+	strcpy_s(cstr, vStr.length(),vStr.c_str());
+	return cstr;
+}
+
+char strTochar(string vStr) {
+	char charRet=' ';
+	charRet = vStr[0];	return charRet;
+}
+
+string charToStr(char vChar) {
+	string charRet(1, vChar);
+	return charRet;
+}
+
+string intToStr(int vInt) {
+	return to_string(vInt);
+}
+
+int strToInt(string vStr) {	
+		return stoi(vStr);
+}
+
+char intToChar(int vInt) {
+	return (char)vInt;
+};
+
+int charToInt(char vChar) {
+	int a = isdigit(vChar);
+	int ret = 0;
+	if (!a == 0) {		
+		int ret = vChar - '0';
+	}
+	return ret;
+}
+
+int charToIntAscci(char vChar) {
+	return (int)vChar;
+}
 
 
 

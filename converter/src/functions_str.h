@@ -7,6 +7,18 @@
 #ifndef FUNCTIONS_STR_H
 #define FUNCTIONS_STR_H
 	using namespace std;
+	
+
+	char * strTochars(string vStr);
+	char strTochar(string vStr);
+		
+	string charToStr(string vChar);
+
+	char intToChar(string vInt);
+	int charToInt(string vChar);
+	string intToStr(string vInt);
+	int strToInt(string vStr);
+
 	string leftTrim(string str, string chars);
 	string rightTrim(string str, string chars);
 	string trimString(string str, string chars);
