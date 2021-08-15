@@ -218,7 +218,7 @@ string FontManager_class::getCharlines()
 
     strResult += strConfig+"\n";
     strResult += strAllChars;
-    strResult += "}";
+    strResult += "}\n\n";
     /*
     
     
