@@ -21,13 +21,22 @@ int main(int argc, char* argv[], char* envp[])
     vector<string> vecOfAllChars;
     vector<string> vecOfAChar;
     string strResult;
+    string fileName;
     Debug_class::log("Inicio de la conversion");
     if (argc > 1) {
         FontManager_class fontsLoder;
         //fontsLoder.load("fonts\\Speed.flf");
         
         strResult=fontsLoder.load(argv[1]);
-        writeFile(argv[2],strResult);
+
+        if (argc > 2) {
+            fileName = argv[2];
+        }
+        else {
+            fileName = "default.cpp";
+        }
+            writeFile(fileName,strResult);
+
         //printStrVector(fontsLoder.getFullStringOfChars());
     } 
     return 0;

@@ -12,6 +12,7 @@
 
 
 	string normalizeStr(string result);
+	string normalizeChar(string result);
 	string normalizeUrl(string result);
 	void writeFile(string filename, string text);
 

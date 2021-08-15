@@ -14,6 +14,15 @@ string normalizeStr(string result) {
 	return result;
 }
 
+string normalizeChar(string result) {
+	result = strReplace(result, "\\", "\\\\");
+	//result = strReplace(result, "\'", "\\\'");
+	result = strReplace(result, "\"", "\\\"");
+
+	return result;
+}
+
+
 string normalizeUrl(string result) {
 	result = strReplace(result, "\\\\", "/");
 	result = strReplace(result, "\\'", "/");	

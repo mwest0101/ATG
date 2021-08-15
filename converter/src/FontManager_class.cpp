@@ -50,10 +50,19 @@ void FontManager_class::closeFile() {
 
 int FontManager_class::getPosOfCharInFile(string chartoSearch) {
     int valRet = (-1);
+    int count = 0;
     vector<string> strCharArray;
-    string charOrder = "  ! \" # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \\ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ Ä Ö Ü ä ö ü ß ";
-    valRet = charOrder.find(chartoSearch);
-    valRet = (valRet / 2);
+    string charOrder = "€ ! \" # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \\ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ Ä Ö Ü ä ö ü ß ";
+    
+    strCharArray = splitStr(charOrder, ' ');
+    for (string data : strCharArray) {
+        if (chartoSearch == data) {
+            valRet = count;
+            break;
+        }
+        count++;
+    }
+    
     return valRet;
 
 }
@@ -61,7 +70,7 @@ int FontManager_class::getPosOfCharInFile(string chartoSearch) {
 string FontManager_class::getCharFromPosInFile(int chartoSearch) {
     string valRet = "";
     vector<string> strCharArray;
-    string charOrder = "  ! \" # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \\ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ Ä Ö Ü ä ö ü ß ";
+    string charOrder = "€ ! \" # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \\ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ Ä Ö Ü ä ö ü ß ";
     strCharArray = splitStr(charOrder,' ');
     valRet = strCharArray[chartoSearch];
     return valRet;
@@ -160,16 +169,17 @@ string FontManager_class::getCharlines()
                 if ((characterFound = findStr(myLine, doubleChar)) != (-1))
                 {
                     //Debug_class::log("Entre a getCharLines 2");
-                    countChar++;
+                    
                     strChar = myLine.substr(0, characterFound);
                     oneChar = oneChar + strChar;
-                    strAllChars += "    if ((charNumber == " + to_string(countChar) + ") || (character == \"" + getCharFromPosInFile(countChar) + "\" )) { oneChar =\"" + oneChar + "\" };\n";
+                    strAllChars += "    if ((charNumber == " + to_string(countChar) + ") || (character == \"" + normalizeChar(getCharFromPosInFile(countChar)) + "\" )) { strResturn =\"" + oneChar + "\";}\n";
+                    countChar++;
                     oneChar = "";
                     
                     
                 }else{
                     if (findStr(myLine, singleChar) != (-1)) {
-                        oneChar += myLine;
+                        oneChar += normalizeStr(myLine);
                         //cout << oneChar << endl;
                     }
                 }
@@ -187,18 +197,23 @@ string FontManager_class::getCharlines()
     vector<string> fileNameParts = splitStr(fileNameParts[fileNameParts.size()-1], '.');
     cout << fileNameParts[0] << endl;
     */
+    
     strResult += "vectorFonts.push_back(\""+ nameWithoutExt+"\");\n";
+
     strResult += "if(font==\""+ nameWithoutExt +"\"){\n";
-    strResult += "   nl = \""+singleChar+"\"\n";
-    string strConfig = "";
-    strConfig += "found = " + ConfigFont_class::found;
-    strConfig += "p1 = " + ConfigFont_class::p1;
-    strConfig += "p2 = " + ConfigFont_class::p2;
-    strConfig += "p3_Height = " + ConfigFont_class::p3_Height;
-    strConfig += "p4_Height_nd = " + ConfigFont_class::p4_Height_nd;
-    strConfig += "p5_maxLinLen = " + ConfigFont_class::p5_maxLinLen;
-    strConfig += "p6_defSmuMod = " + ConfigFont_class::p6_defSmuMod;
-    strConfig += "p7_numComm = " + ConfigFont_class::p7_numComm;
+
+    string strConfig;
+    strConfig += "    if ((charNumber == (-1)) || (character == \"conf\" )) {";
+    strConfig += "strResturn=\"nl="+singleChar;
+    strConfig += ",found=" + to_string(ConfigFont_class::found);
+    strConfig += ",p1=" + ConfigFont_class::p1;
+    strConfig += ",p2=" + ConfigFont_class::p2;
+    strConfig += ",p3_Height=" + to_string(ConfigFont_class::p3_Height);
+    strConfig += ",p4_Height_nd=" + to_string(ConfigFont_class::p4_Height_nd);
+    strConfig += ",p5_maxLinLen=" + to_string(ConfigFont_class::p5_maxLinLen);
+    strConfig += ",p6_defSmuMod=" + to_string(ConfigFont_class::p6_defSmuMod);
+    strConfig += ",p7_numComm=" + to_string(ConfigFont_class::p7_numComm);
+    strConfig += "\";}";
 
 
     strResult += strConfig+"\n";
