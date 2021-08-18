@@ -5,5 +5,6 @@ using namespace std;
 
 void  Debug_class::log(string text) {
 	cout << text << endl;
+	//writeFile("debug.log", text);
 
 }

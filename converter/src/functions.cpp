@@ -4,6 +4,7 @@
 #include <vector>
 #include "functions_str.h"
 #include <locale>
+#include "Debug_class.h"
 using namespace std;
 
 
@@ -36,31 +37,27 @@ inline bool fileExist(const std::string& name) {
 
 void writeFile(string filename, string textToInsert) {
     fstream newfile;
-/*
-	unsigned char smarker[3];
-	smarker[0] = 0xEF;
-	smarker[1] = 0xBB;
-	smarker[2] = 0xBF;
-	*/
 	
-
+	Debug_class::log("Prepare for storage");
 	if (fileExist(filename)) {
-		newfile.open(filename, ios::binary | ios::out | ios::app);
+		newfile.open(filename,  ios::out | ios::app);
 		if (newfile.is_open()) //checking whether the file is open
 		{			
 			newfile << textToInsert;   //inserting text
 			newfile.close();    //close the file object
-			cout << "archivo existe" << endl;
+			//cout << "archivo existe" << endl;
+			Debug_class::log("The File : "+filename+" Exist");
 		}
 	}
 	else {
-		newfile.open(filename, ios::binary | ios::out | ios::app);
+		newfile.open(filename, ios::out | ios::app);
 		if (newfile.is_open()) //checking whether the file is open
 		{
 			newfile << "\xEF\xBB\xBF";
 			newfile << textToInsert;   //inserting text
-			newfile.close();    //close the file object
-			cout << "archivo NO existe" << endl;
+			newfile.close();    //close the file object	
+			//cout << "archivo NO existe" << endl;
+			Debug_class::log("The File : " + filename + " Not exist");
 		}
 	}
     

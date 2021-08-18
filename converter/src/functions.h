@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-
+#include "Debug_class.h"
 
 
 #ifndef FUNCTIONS_H

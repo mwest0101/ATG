@@ -103,6 +103,7 @@ void FontManager_class::getConfig()
     if (configFound == (-1)) {
         //cout << "No se encontro config" << endl;
        // debug.log("No se encontro config");
+        Debug_class::log("Config string from File was NOT found");
     }else {
         Debug_class::log("Config string from File was found");        
     }
@@ -132,10 +133,11 @@ void FontManager_class::getCharThatCloseLines()
 
         }
         if (characterFound == (-1)) {
+            Debug_class::log("The char of end of line WAS NOT FOUND");
             cout << "The char of end of line was seted by defult to : \\n" << endl;
         }
     } catch (int e) {
-        cout << "Error reading file lines" << endl;        
+        cout << "Error reading file lines " << e << endl;        
     }
 
 }
@@ -155,12 +157,12 @@ string FontManager_class::getCharlines()
     string singleChar(1, finalChar);
         
     doubleChar = singleChar+ singleChar;
-    cout << " doublechar " << doubleChar << endl;
-    Debug_class::log("Entre a getCharLines");
+    //cout << " doublechar " << doubleChar << endl;
+    Debug_class::log("Entering to parse lines");
 
     while (getline(c_myFile_Handler, myLine))
     {
-       // Debug_class::log("Entre a getCharLines 2");
+        Debug_class::log(myLine);
         countline++;
         if ((configFound==(-1)) || (countline > ConfigFont_class::p7_numComm))
         {
@@ -186,7 +188,7 @@ string FontManager_class::getCharlines()
         }
         
     }
-
+    Debug_class::log("Creating and normalizing strings");
     vector<string> fileNameParts = splitStr(normalizeUrl(c_pathToFile), '/');
     string nameWithoutPath= fileNameParts[fileNameParts.size()-1];
     fileNameParts = splitStr(normalizeUrl(nameWithoutPath), '.');
@@ -219,6 +221,7 @@ string FontManager_class::getCharlines()
     strResult += strConfig+"\n";
     strResult += strAllChars;
     strResult += "}\n\n";
+    Debug_class::log("Complete string to write in file");
     /*
     
     
@@ -226,6 +229,7 @@ string FontManager_class::getCharlines()
         nl = "#"
         conf = "p1:a,p2:$,p3_Height:16,p4_Height_nd:15,p5_maxLinLen:19,p6_defSmuMod:63,p7_numComm:20"
         if ((charNumber==0) || (character=="!")){ oneChar=
+
 
     */
     //cout << strVectorToOutputInFile;

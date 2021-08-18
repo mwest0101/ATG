@@ -22,7 +22,8 @@ int main(int argc, char* argv[], char* envp[])
     vector<string> vecOfAChar;
     string strResult;
     string fileName;
-    Debug_class::log("Inicio de la conversion");
+    Debug_class::log("=========================");
+    Debug_class::log("initializing converting");
     if (argc > 1) {
         FontManager_class fontsLoder;
         //fontsLoder.load("fonts\\Speed.flf");
