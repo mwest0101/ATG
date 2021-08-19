@@ -1,0 +1,1246 @@
+----
+=========================
+* initializing converting
+* Config string from File **was found**
+* The char of end of line is : **@**
+* Processing: **"fonts/Banner.flf"** 
+* Entering to parse lines
+ $ $@
+ $ $@
+ $ $@
+ $ $@
+ $ $@
+ $ $@
+ $ $@
+* add one Char to the string 1 !
+ ###$@
+ ###$@
+ ###$@
+  # $@
+    $@
+ ###$@
+ ###$@
+* add one Char to the string 2 \"
+ ### ###$@
+ ### ###$@
+  #   # $@
+ $      $@
+ $      $@
+        $@
+        $@
+* add one Char to the string 3 #
+   # #  $@
+   # #  $@
+ #######$@
+   # #  $@
+ #######$@
+   # #  $@
+   # #  $@
+* add one Char to the string 4 $
+  ##### $@
+ #  #  #$@
+ #  #   $@
+  ##### $@
+    #  #$@
+ #  #  #$@
+  ##### $@
+* add one Char to the string 5 %
+ ###   #$@
+ # #  # $@
+ ### #  $@
+    #   $@
+   # ###$@
+  #  # #$@
+ #   ###$@
+* add one Char to the string 6 &
+   ##   $@
+  #  #  $@
+   ##   $@
+  ###   $@
+ #   # #$@
+ #    # $@
+  ###  #$@
+* add one Char to the string 7 '
+ ###$@
+ ###$@
+  # $@
+ #  $@
+    $@
+    $@
+    $@
+* add one Char to the string 8 (
+   ##$@
+  #  $@
+ #   $@
+ #   $@
+ #   $@
+  #  $@
+   ##$@
+* add one Char to the string 9 )
+ ##  $@
+   # $@
+    #$@
+    #$@
+    #$@
+   # $@
+ ##  $@
+* add one Char to the string 10 *
+        $@
+  #   # $@
+   # #  $@
+ #######$@
+   # #  $@
+  #   # $@
+        $@
+* add one Char to the string 11 +
+      $@
+   #  $@
+   #  $@
+ #####$@
+   #  $@
+   #  $@
+      $@
+* add one Char to the string 12 ,
+    $@
+    $@
+    $@
+    $@
+ ###$@
+ ###$@
+  # $@
+* add one Char to the string 13 -
+      $@
+      $@
+      $@
+ #####$@
+      $@
+      $@
+      $@
+* add one Char to the string 14 .
+    $@
+    $@
+    $@
+    $@
+ ###$@
+ ###$@
+ ###$@
+* add one Char to the string 15 /
+       #$@
+      # $@
+     #  $@
+    #   $@
+   #    $@
+  #     $@
+ #      $@
+* add one Char to the string 16 0
+   ###  $@
+  #   # $@
+ #     #$@
+ #     #$@
+ #     #$@
+  #   # $@
+   ###  $@
+* add one Char to the string 17 1
+   #  $@
+  ##  $@
+ # #  $@
+   #  $@
+   #  $@
+   #  $@
+ #####$@
+* add one Char to the string 18 2
+  ##### $@
+ #     #$@
+       #$@
+  ##### $@
+ #      $@
+ #      $@
+ #######$@
+* add one Char to the string 19 3
+  ##### $@
+ #     #$@
+       #$@
+  ##### $@
+       #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 20 4
+ #      $@
+ #    # $@
+ #    # $@
+ #    # $@
+ #######$@
+      # $@
+      # $@
+* add one Char to the string 21 5
+ #######$@
+ #      $@
+ #      $@
+ ###### $@
+       #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 22 6
+  ##### $@
+ #     #$@
+ #      $@
+ ###### $@
+ #     #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 23 7
+ #######$@
+ #    # $@
+     #  $@
+    #   $@
+   #    $@
+   #    $@
+   #    $@
+* add one Char to the string 24 8
+  ##### $@
+ #     #$@
+ #     #$@
+  ##### $@
+ #     #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 25 9
+  ##### $@
+ #     #$@
+ #     #$@
+  ######$@
+       #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 26 :
+  # $@
+ ###$@
+  # $@
+    $@
+  # $@
+ ###$@
+  # $@
+* add one Char to the string 27 ;
+    $@
+ ###$@
+ ###$@
+    $@
+ ###$@
+ ###$@
+  # $@
+* add one Char to the string 28 <
+    #$@
+   # $@
+  #  $@
+ #   $@
+  #  $@
+   # $@
+    #$@
+* add one Char to the string 29 =
+      $@
+      $@
+ #####$@
+      $@
+ #####$@
+      $@
+      $@
+* add one Char to the string 30 >
+ #   $@
+  #  $@
+   # $@
+    #$@
+   # $@
+  #  $@
+ #   $@
+* add one Char to the string 31 ?
+  ##### $@
+ #     #$@
+       #$@
+    ### $@
+    #   $@
+        $@
+    #   $@
+* add one Char to the string 32 @
+  ##### $@
+ #     #$@
+ # ### #$@
+ # ### #$@
+ # #### $@
+ #      $@
+  ##### $@
+* add one Char to the string 33 A
+    #   $@
+   # #  $@
+  #   # $@
+ #     #$@
+ #######$@
+ #     #$@
+ #     #$@
+* add one Char to the string 34 B
+ ###### $@
+ #     #$@
+ #     #$@
+ ###### $@
+ #     #$@
+ #     #$@
+ ###### $@
+* add one Char to the string 35 C
+  ##### $@
+ #     #$@
+ #      $@
+ #      $@
+ #      $@
+ #     #$@
+  ##### $@
+* add one Char to the string 36 D
+ ###### $@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+ ###### $@
+* add one Char to the string 37 E
+ #######$@
+ #      $@
+ #      $@
+ #####  $@
+ #      $@
+ #      $@
+ #######$@
+* add one Char to the string 38 F
+ #######$@
+ #      $@
+ #      $@
+ #####  $@
+ #      $@
+ #      $@
+ #      $@
+* add one Char to the string 39 G
+  ##### $@
+ #     #$@
+ #      $@
+ #  ####$@
+ #     #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 40 H
+ #     #$@
+ #     #$@
+ #     #$@
+ #######$@
+ #     #$@
+ #     #$@
+ #     #$@
+* add one Char to the string 41 I
+ ###$@
+  # $@
+  # $@
+  # $@
+  # $@
+  # $@
+ ###$@
+* add one Char to the string 42 J
+       #$@
+       #$@
+       #$@
+       #$@
+ #     #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 43 K
+ #    #$@
+ #   # $@
+ #  #  $@
+ ###   $@
+ #  #  $@
+ #   # $@
+ #    #$@
+* add one Char to the string 44 L
+ #      $@
+ #      $@
+ #      $@
+ #      $@
+ #      $@
+ #      $@
+ #######$@
+* add one Char to the string 45 M
+ #     #$@
+ ##   ##$@
+ # # # #$@
+ #  #  #$@
+ #     #$@
+ #     #$@
+ #     #$@
+* add one Char to the string 46 N
+ #     #$@
+ ##    #$@
+ # #   #$@
+ #  #  #$@
+ #   # #$@
+ #    ##$@
+ #     #$@
+* add one Char to the string 47 O
+ #######$@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+ #######$@
+* add one Char to the string 48 P
+ ###### $@
+ #     #$@
+ #     #$@
+ ###### $@
+ #      $@
+ #      $@
+ #      $@
+* add one Char to the string 49 Q
+  ##### $@
+ #     #$@
+ #     #$@
+ #     #$@
+ #   # #$@
+ #    # $@
+  #### #$@
+* add one Char to the string 50 R
+ ###### $@
+ #     #$@
+ #     #$@
+ ###### $@
+ #   #  $@
+ #    # $@
+ #     #$@
+* add one Char to the string 51 S
+  ##### $@
+ #     #$@
+ #      $@
+  ##### $@
+       #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 52 T
+ #######$@
+    #   $@
+    #   $@
+    #   $@
+    #   $@
+    #   $@
+    #   $@
+* add one Char to the string 53 U
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 54 V
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+  #   # $@
+   # #  $@
+    #   $@
+* add one Char to the string 55 W
+ #     #$@
+ #  #  #$@
+ #  #  #$@
+ #  #  #$@
+ #  #  #$@
+ #  #  #$@
+  ## ## $@
+* add one Char to the string 56 X
+ #     #$@
+  #   # $@
+   # #  $@
+    #   $@
+   # #  $@
+  #   # $@
+ #     #$@
+* add one Char to the string 57 Y
+ #     #$@
+  #   # $@
+   # #  $@
+    #   $@
+    #   $@
+    #   $@
+    #   $@
+* add one Char to the string 58 Z
+ #######$@
+      # $@
+     #  $@
+    #   $@
+   #    $@
+  #     $@
+ #######$@
+* add one Char to the string 59 [
+ #####$@
+ #    $@
+ #    $@
+ #    $@
+ #    $@
+ #    $@
+ #####$@
+* add one Char to the string 60 \\
+ #      $@
+  #     $@
+   #    $@
+    #   $@
+     #  $@
+      # $@
+       #$@
+* add one Char to the string 61 ]
+ #####$@
+     #$@
+     #$@
+     #$@
+     #$@
+     #$@
+ #####$@
+* add one Char to the string 62 ^
+   #  $@
+  # # $@
+ #   #$@
+      $@
+      $@
+      $@
+      $@
+* add one Char to the string 63 _
+        $@
+        $@
+        $@
+        $@
+        $@
+        $@
+        $@
+* add one Char to the string 64 `
+ ###$@
+ ###$@
+  # $@
+   #$@
+    $@
+    $@
+    $@
+* add one Char to the string 65 a
+       $@
+   ##  $@
+  #  # $@
+ #    #$@
+ ######$@
+ #    #$@
+ #    #$@
+* add one Char to the string 66 b
+       $@
+ ##### $@
+ #    #$@
+ ##### $@
+ #    #$@
+ #    #$@
+ ##### $@
+* add one Char to the string 67 c
+       $@
+  #### $@
+ #    #$@
+ #     $@
+ #     $@
+ #    #$@
+  #### $@
+* add one Char to the string 68 d
+       $@
+ ##### $@
+ #    #$@
+ #    #$@
+ #    #$@
+ #    #$@
+ ##### $@
+* add one Char to the string 69 e
+       $@
+ ######$@
+ #     $@
+ ##### $@
+ #     $@
+ #     $@
+ ######$@
+* add one Char to the string 70 f
+       $@
+ ######$@
+ #     $@
+ ##### $@
+ #     $@
+ #     $@
+ #     $@
+* add one Char to the string 71 g
+       $@
+  #### $@
+ #    #$@
+ #     $@
+ #  ###$@
+ #    #$@
+  #### $@
+* add one Char to the string 72 h
+       $@
+ #    #$@
+ #    #$@
+ ######$@
+ #    #$@
+ #    #$@
+ #    #$@
+* add one Char to the string 73 i
+  $@
+ #$@
+ #$@
+ #$@
+ #$@
+ #$@
+ #$@
+* add one Char to the string 74 j
+       $@
+      #$@
+      #$@
+      #$@
+      #$@
+ #    #$@
+  #### $@
+* add one Char to the string 75 k
+       $@
+ #    #$@
+ #   # $@
+ ####  $@
+ #  #  $@
+ #   # $@
+ #    #$@
+* add one Char to the string 76 l
+       $@
+ #     $@
+ #     $@
+ #     $@
+ #     $@
+ #     $@
+ ######$@
+* add one Char to the string 77 m
+       $@
+ #    #$@
+ ##  ##$@
+ # ## #$@
+ #    #$@
+ #    #$@
+ #    #$@
+* add one Char to the string 78 n
+       $@
+ #    #$@
+ ##   #$@
+ # #  #$@
+ #  # #$@
+ #   ##$@
+ #    #$@
+* add one Char to the string 79 o
+       $@
+  #### $@
+ #    #$@
+ #    #$@
+ #    #$@
+ #    #$@
+  #### $@
+* add one Char to the string 80 p
+       $@
+ ##### $@
+ #    #$@
+ #    #$@
+ ##### $@
+ #     $@
+ #     $@
+* add one Char to the string 81 q
+       $@
+  #### $@
+ #    #$@
+ #    #$@
+ #  # #$@
+ #   # $@
+  ### #$@
+* add one Char to the string 82 r
+       $@
+ ##### $@
+ #    #$@
+ #    #$@
+ ##### $@
+ #   # $@
+ #    #$@
+* add one Char to the string 83 s
+       $@
+  #### $@
+ #     $@
+  #### $@
+      #$@
+ #    #$@
+  #### $@
+* add one Char to the string 84 t
+      $@
+ #####$@
+   #  $@
+   #  $@
+   #  $@
+   #  $@
+   #  $@
+* add one Char to the string 85 u
+       $@
+ #    #$@
+ #    #$@
+ #    #$@
+ #    #$@
+ #    #$@
+  #### $@
+* add one Char to the string 86 v
+       $@
+ #    #$@
+ #    #$@
+ #    #$@
+ #    #$@
+  #  # $@
+   ##  $@
+* add one Char to the string 87 w
+       $@
+ #    #$@
+ #    #$@
+ #    #$@
+ # ## #$@
+ ##  ##$@
+ #    #$@
+* add one Char to the string 88 x
+       $@
+ #    #$@
+  #  # $@
+   ##  $@
+   ##  $@
+  #  # $@
+ #    #$@
+* add one Char to the string 89 y
+      $@
+ #   #$@
+  # # $@
+   #  $@
+   #  $@
+   #  $@
+   #  $@
+* add one Char to the string 90 z
+       $@
+ ######$@
+     # $@
+    #  $@
+   #   $@
+  #    $@
+ ######$@
+* add one Char to the string 91 {
+   ###$@
+  #   $@
+  #   $@
+ ##   $@
+  #   $@
+  #   $@
+   ###$@
+* add one Char to the string 92 |
+ #$@
+ #$@
+ #$@
+  $@
+ #$@
+ #$@
+ #$@
+* add one Char to the string 93 }
+ ###  $@
+    # $@
+    # $@
+    ##$@
+    # $@
+    # $@
+ ###  $@
+* add one Char to the string 94 ~
+  ##    $@
+ #  #  #$@
+     ## $@
+        $@
+        $@
+        $@
+        $@
+* add one Char to the string 95 Ä
+ #  #  #$@
+   # #  $@
+  #   # $@
+ #     #$@
+ #######$@
+ #     #$@
+ #     #$@
+* add one Char to the string 96 Ö
+ #     #$@
+  ##### $@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 97 Ü
+ #     #$@
+        $@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 98 ä
+       $@
+ #    #$@
+  #### $@
+ #    #$@
+ ######$@
+ #    #$@
+ #    #$@
+* add one Char to the string 99 ö
+       $@
+ #    #$@
+  #### $@
+ #    #$@
+ #    #$@
+ #    #$@
+  #### $@
+* add one Char to the string 100 ü
+       $@
+ #    #$@
+       $@
+ #    #$@
+ #    #$@
+ #    #$@
+  #### $@
+* add one Char to the string 101 ß
+ ###### $@
+ #     #$@
+ #     #$@
+ ###### $@
+ #     #$@
+ #     #$@
+ ###### $@
+* add one Char to the string 102 
+         $@
+         $@
+         $@
+         $@
+ ########$@
+    ##   $@
+    ##   $@
+* add one Char to the string 103 
+ $@
+ $@
+ $@
+ $@
+ $@
+ $@
+ $@
+* add one Char to the string 104 
+         $@
+         $@
+         $@
+         $@
+ ########$@
+         $@
+         $@
+* add one Char to the string 105 
+    ##   $@
+    ##   $@
+    ##   $@
+    ##   $@
+ ########$@
+    ##   $@
+    ##   $@
+* add one Char to the string 106 
+ ##   $@
+ ##   $@
+ #####$@
+ ##   $@
+ #####$@
+ ##   $@
+ ##   $@
+* add one Char to the string 107 
+ #  #  #$@
+   # #  $@
+  #   # $@
+ #     #$@
+ #######$@
+ #     #$@
+ #     #$@
+* add one Char to the string 108 
+ #     #$@
+  ##### $@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 109 
+ #     #$@
+        $@
+ #     #$@
+ #     #$@
+ #     #$@
+ #     #$@
+  ##### $@
+* add one Char to the string 110 
+ ###### $@
+ #     #$@
+ #     #$@
+ ###### $@
+ #     #$@
+ #     #$@
+ ###### $@
+* add one Char to the string 111 
+       $@
+ #    #$@
+  #### $@
+ #    #$@
+ ######$@
+ #    #$@
+ #    #$@
+* add one Char to the string 112 
+       $@
+ #    #$@
+  #### $@
+ #    #$@
+ #    #$@
+ #    #$@
+  #### $@
+* add one Char to the string 113 
+ #### $@
+ #### $@
+ #### $@
+ #### $@
+ #####$@
+ #### $@
+ #### $@
+* add one Char to the string 114 
+       $@
+ #    #$@
+       $@
+ #    #$@
+ #    #$@
+ #    #$@
+  #### $@
+* add one Char to the string 115 
+ ########$@
+ ########$@
+ ########$@
+ ########$@
+ ########$@
+ ########$@
+ ########$@
+* add one Char to the string 116 
+    ####$@
+   ## ##$@
+  ##  ##$@
+ ##   ##$@
+ #######$@
+ ##   ##$@
+ ##   ##$@
+* add one Char to the string 117 
+ #######$@
+ ##     $@
+ ##     $@
+ ###### $@
+ ##   ##$@
+ ##   ##$@
+ ###### $@
+* add one Char to the string 118 
+ ###### $@
+ ##   ##$@
+ ##   ##$@
+ ###### $@
+ ##   ##$@
+ ##   ##$@
+ ###### $@
+* add one Char to the string 119 
+ #######$@
+ ##     $@
+ ##     $@
+ ##     $@
+ ##     $@
+ ##     $@
+ ##     $@
+* add one Char to the string 120 
+   #### $@
+  ## ## $@
+  ## ## $@
+  ## ## $@
+  ## ## $@
+ #######$@
+ ##   ##$@
+* add one Char to the string 121 
+ #######$@
+ ##     $@
+ ##     $@
+ ###### $@
+ ##     $@
+ ##     $@
+ #######$@
+* add one Char to the string 122 
+ ## # ##$@
+  # # # $@
+   ###  $@
+   ###  $@
+  # # # $@
+  # # # $@
+ ## # ##$@
+* add one Char to the string 123 
+  ##### $@
+ ##   ##$@
+      ##$@
+    ##  $@
+      ##$@
+ ##   ##$@
+  ##### $@
+* add one Char to the string 124 
+ ##   ##$@
+ ##  ###$@
+ ##  ###$@
+ ## # ##$@
+ ###  ##$@
+ ##   ##$@
+ ##   ##$@
+* add one Char to the string 125 
+ ## ## #$@
+ ##   ##$@
+ ##  ###$@
+ ## # ##$@
+ ###  ##$@
+ ##   ##$@
+ ##   ##$@
+* add one Char to the string 126 
+ ##   ##$@
+ ##  ## $@
+ ## ##  $@
+ #####  $@
+ ##  ## $@
+ ##   ##$@
+ ##   ##$@
+* add one Char to the string 127 
+   #####$@
+  ##  ##$@
+  ##  ##$@
+  ##  ##$@
+  ##  ##$@
+  ##  ##$@
+ ##   ##$@
+* add one Char to the string 128 
+ ##   ##$@
+ ##   ##$@
+ ### ###$@
+ ## # ##$@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+* add one Char to the string 129 
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+ #######$@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+* add one Char to the string 130 
+  ##### $@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+  ##### $@
+* add one Char to the string 131 
+ #######$@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+* add one Char to the string 132 
+ ###### $@
+ ##   ##$@
+ ##   ##$@
+ ###### $@
+ ##     $@
+ ##     $@
+ ##     $@
+* add one Char to the string 133 
+  ##### $@
+ ##   ##$@
+ ##     $@
+ ##     $@
+ ##     $@
+ ##   ##$@
+  ##### $@
+* add one Char to the string 134 
+ ###### $@
+   ##   $@
+   ##   $@
+   ##   $@
+   ##   $@
+   ##   $@
+   ##   $@
+* add one Char to the string 135 
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+  ######$@
+      ##$@
+ ##   ##$@
+  ##### $@
+* add one Char to the string 136 
+    #   $@
+  ##### $@
+ ## # ##$@
+ ## # ##$@
+ ## # ##$@
+  ##### $@
+    #   $@
+* add one Char to the string 137 
+ ##   ##$@
+  ## ## $@
+   ###  $@
+   ###  $@
+   ###  $@
+  ## ## $@
+ ##   ##$@
+* add one Char to the string 138 
+ ##  ## $@
+ ##  ## $@
+ ##  ## $@
+ ##  ## $@
+ ##  ## $@
+ ##  ## $@
+ #######$@
+* add one Char to the string 139 
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+  ######$@
+      ##$@
+      ##$@
+      ##$@
+* add one Char to the string 140 
+ ## # ##$@
+ ## # ##$@
+ ## # ##$@
+ ## # ##$@
+ ## # ##$@
+ ## # ##$@
+ #######$@
+* add one Char to the string 141 
+ ## # ##$@
+ ## # ##$@
+ ## # ##$@
+ ## # ##$@
+ ## # ##$@
+ ## # ##$@
+ #######$@
+* add one Char to the string 142 
+ ###    $@
+ ###    $@
+  ##    $@
+  ##### $@
+  ##  ##$@
+  ##  ##$@
+  ##### $@
+* add one Char to the string 143 
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+ ####  #$@
+ ##  # #$@
+ ##  # #$@
+ ####  #$@
+* add one Char to the string 144 
+ ##     $@
+ ##     $@
+ ##     $@
+ ###### $@
+ ##   ##$@
+ ##   ##$@
+ ###### $@
+* add one Char to the string 145 
+  ##### $@
+ ##   ##$@
+      ##$@
+   #####$@
+      ##$@
+ ##   ##$@
+  ##### $@
+* add one Char to the string 146 
+ ##  ## $@
+ ## # ##$@
+ ## # ##$@
+ #### ##$@
+ ## # ##$@
+ ## # ##$@
+ ##  ## $@
+* add one Char to the string 147 
+   #####$@
+  ##  ##$@
+  ##  ##$@
+   #####$@
+   ## ##$@
+  ##  ##$@
+ ##   ##$@
+* add one Char to the string 148 
+        $@
+        $@
+  ####  $@
+     ## $@
+  ##### $@
+ ##  ## $@
+  ######$@
+* add one Char to the string 149 
+        $@
+     ## $@
+  ####  $@
+ ##     $@
+ ###### $@
+ ##   ##$@
+  ##### $@
+* add one Char to the string 150 
+        $@
+        $@
+ #####  $@
+ ##  ## $@
+ ###### $@
+ ##   ##$@
+ ###### $@
+* add one Char to the string 151 
+        $@
+        $@
+  ##### $@
+      ##$@
+  ##### $@
+ ##     $@
+  ######$@
+* add one Char to the string 152 
+        $@
+   #### $@
+      ##$@
+   #####$@
+  ##  ##$@
+ ##   ##$@
+  ##### $@
+* add one Char to the string 153 
+        $@
+        $@
+  ##### $@
+ ##   ##$@
+ ###### $@
+ ##     $@
+  ##### $@
+* add one Char to the string 154 
+        $@
+        $@
+ ## # ##$@
+  # # # $@
+   ###  $@
+  # # # $@
+ ## # ##$@

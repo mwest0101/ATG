@@ -29,6 +29,7 @@ public:
     bool loadFile();
    
     void closeFile();
+    
     int countline = 0;
     void getConfig();
     void getCharThatCloseLines();

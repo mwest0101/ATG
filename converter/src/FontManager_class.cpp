@@ -39,7 +39,7 @@ bool FontManager_class::loadFile()
     else
     {
         
-        Debug_class::log("Unable to open the file!");
+        Debug_class::log("**Unable to open the file!**");
         return false;
     }
 }
@@ -52,10 +52,17 @@ int FontManager_class::getPosOfCharInFile(string chartoSearch) {
     int valRet = (-1);
     int count = 0;
     vector<string> strCharArray;
-    string charOrder = "€ ! \" # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \\ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ Ä Ö Ü ä ö ü ß ";
-    
-    strCharArray = splitStr(charOrder, ' ');
-    for (string data : strCharArray) {
+
+    string charOrder[] = {
+        " ","!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",
+        "0","1","2","3","4","5","6","7","8","9",":",";","<","=",">","?","@",
+        "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+        "[","\\","]","^","_","`",
+        "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
+        "{","|","}","~","Ä","Ö","Ü","ä","ö","ü","ß"
+    };
+
+    for (string data : charOrder) {
         if (chartoSearch == data) {
             valRet = count;
             break;
@@ -70,9 +77,16 @@ int FontManager_class::getPosOfCharInFile(string chartoSearch) {
 string FontManager_class::getCharFromPosInFile(int chartoSearch) {
     string valRet = "";
     vector<string> strCharArray;
-    string charOrder = "€ ! \" # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \\ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ Ä Ö Ü ä ö ü ß ";
-    strCharArray = splitStr(charOrder,' ');
-    valRet = strCharArray[chartoSearch];
+    string charOrder[] = {
+        " ","!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",
+        "0","1","2","3","4","5","6","7","8","9",":",";","<","=",">","?","@",
+        "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+        "[","\\","]","^","_","`",
+        "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
+        "{","|","}","~","Ä","Ö","Ü","ä","ö","ü","ß"
+    };
+
+    valRet = charOrder[chartoSearch];
     return valRet;
 
 }
@@ -103,9 +117,9 @@ void FontManager_class::getConfig()
     if (configFound == (-1)) {
         //cout << "No se encontro config" << endl;
        // debug.log("No se encontro config");
-        Debug_class::log("Config string from File was NOT found");
+        Debug_class::log("* Config string from File **was NOT found**");
     }else {
-        Debug_class::log("Config string from File was found");        
+        Debug_class::log("* Config string from File **was found**");        
     }
     
 }
@@ -124,20 +138,20 @@ void FontManager_class::getCharThatCloseLines()
 
             if ((characterFound = findStr(myLine, "@@")) != (-1)) {
                 finalChar = '@';
-                Debug_class::log("The char of end of line is : @");
+                Debug_class::log("* The char of end of line is : **@**");
             }else if ((characterFound = findStr(myLine, "##")) != (-1)) {
                 finalChar = '#';
-                Debug_class::log("The char of end of line is : #");
+                Debug_class::log("* The char of end of line is : **#**");
             }
 
 
         }
         if (characterFound == (-1)) {
-            Debug_class::log("The char of end of line WAS NOT FOUND");
-            cout << "The char of end of line was seted by defult to : \\n" << endl;
+            Debug_class::log("* The char of end of line **WAS NOT FOUND**");
+            cout << "* The char of end of line was seted by defult to : \\n" << endl;
         }
     } catch (int e) {
-        cout << "Error reading file lines " << e << endl;        
+        cout << "**Error reading file lines**" << e << endl;        
     }
 
 }
@@ -158,11 +172,13 @@ string FontManager_class::getCharlines()
         
     doubleChar = singleChar+ singleChar;
     //cout << " doublechar " << doubleChar << endl;
-    Debug_class::log("Entering to parse lines");
+
+    Debug_class::log("* Processing: **\""+ c_pathToFile+"\"** ");
+    Debug_class::log("* Entering to parse lines");
 
     while (getline(c_myFile_Handler, myLine))
     {
-        Debug_class::log(myLine);
+        
         countline++;
         if ((configFound==(-1)) || (countline > ConfigFont_class::p7_numComm))
         {
@@ -177,18 +193,21 @@ string FontManager_class::getCharlines()
                     strAllChars += "    if ((charNumber == " + to_string(countChar) + ") || (character == \"" + normalizeChar(getCharFromPosInFile(countChar)) + "\" )) { strResturn =\"" + oneChar + "\";}\n";
                     countChar++;
                     oneChar = "";
+                    Debug_class::log("* add one Char to the string "+to_string(countChar)+" "+normalizeChar(getCharFromPosInFile(countChar)), true);
                     
                     
                 }else{
                     if (findStr(myLine, singleChar) != (-1)) {
                         oneChar += normalizeStr(myLine);
+                        Debug_class::log(myLine, true);
+                        //Debug_class::log("* add one Char to the string " + to_string(countChar), true);
                         //cout << oneChar << endl;
                     }
                 }
         }
         
     }
-    Debug_class::log("Creating and normalizing strings");
+    Debug_class::log("* Creating and normalizing strings");
     vector<string> fileNameParts = splitStr(normalizeUrl(c_pathToFile), '/');
     string nameWithoutPath= fileNameParts[fileNameParts.size()-1];
     fileNameParts = splitStr(normalizeUrl(nameWithoutPath), '.');
@@ -221,7 +240,7 @@ string FontManager_class::getCharlines()
     strResult += strConfig+"\n";
     strResult += strAllChars;
     strResult += "}\n\n";
-    Debug_class::log("Complete string to write in file");
+    Debug_class::log("* Complete string to write in file");
     /*
     
     

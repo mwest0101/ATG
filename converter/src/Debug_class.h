@@ -14,7 +14,7 @@ using namespace std;
 
 class Debug_class{
 public:
-	static void log(string text);
+	static void log(string text, bool toFile=true);
 	
 
 };
