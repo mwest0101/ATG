@@ -1,4 +1,6 @@
 #include <string>
+#include <vector>
+
 
 #ifndef CONFIG_FONT_CLASS_H
 #define CONFIG_FONT_CLASS_H
@@ -17,6 +19,8 @@ public:
     static int p5_maxLinLen;
     static int p6_defSmuMod;
     static int p7_numComm;
+    //static string charOrder[];
+    static vector<string> charOrder[];
     
 };
 #endif

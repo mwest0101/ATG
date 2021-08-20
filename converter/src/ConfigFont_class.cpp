@@ -15,3 +15,5 @@ using namespace std;
     int ConfigFont_class::p7_numComm = 0;
 
 
+
+

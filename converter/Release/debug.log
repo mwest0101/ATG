@@ -5,6 +5,8 @@
 * The char of end of line is : **@**
 * Processing: **"fonts/Banner.flf"** 
 * Entering to parse lines
+* Creating and normalizing strings
+Prepare for storage
  $ $@
  $ $@
  $ $@
@@ -12,6 +14,7 @@
  $ $@
  $ $@
  $ $@
+Prepare for storage
 * add one Char to the string 1 !
  ###$@
  ###$@
@@ -20,6 +23,7 @@
     $@
  ###$@
  ###$@
+Prepare for storage
 * add one Char to the string 2 \"
  ### ###$@
  ### ###$@
@@ -28,6 +32,7 @@
  $      $@
         $@
         $@
+Prepare for storage
 * add one Char to the string 3 #
    # #  $@
    # #  $@
@@ -36,6 +41,7 @@
  #######$@
    # #  $@
    # #  $@
+Prepare for storage
 * add one Char to the string 4 $
   ##### $@
  #  #  #$@
@@ -44,6 +50,7 @@
     #  #$@
  #  #  #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 5 %
  ###   #$@
  # #  # $@
@@ -52,6 +59,7 @@
    # ###$@
   #  # #$@
  #   ###$@
+Prepare for storage
 * add one Char to the string 6 &
    ##   $@
   #  #  $@
@@ -60,6 +68,7 @@
  #   # #$@
  #    # $@
   ###  #$@
+Prepare for storage
 * add one Char to the string 7 '
  ###$@
  ###$@
@@ -68,6 +77,7 @@
     $@
     $@
     $@
+Prepare for storage
 * add one Char to the string 8 (
    ##$@
   #  $@
@@ -76,6 +86,7 @@
  #   $@
   #  $@
    ##$@
+Prepare for storage
 * add one Char to the string 9 )
  ##  $@
    # $@
@@ -84,6 +95,7 @@
     #$@
    # $@
  ##  $@
+Prepare for storage
 * add one Char to the string 10 *
         $@
   #   # $@
@@ -92,6 +104,7 @@
    # #  $@
   #   # $@
         $@
+Prepare for storage
 * add one Char to the string 11 +
       $@
    #  $@
@@ -100,6 +113,7 @@
    #  $@
    #  $@
       $@
+Prepare for storage
 * add one Char to the string 12 ,
     $@
     $@
@@ -108,6 +122,7 @@
  ###$@
  ###$@
   # $@
+Prepare for storage
 * add one Char to the string 13 -
       $@
       $@
@@ -116,6 +131,7 @@
       $@
       $@
       $@
+Prepare for storage
 * add one Char to the string 14 .
     $@
     $@
@@ -124,6 +140,7 @@
  ###$@
  ###$@
  ###$@
+Prepare for storage
 * add one Char to the string 15 /
        #$@
       # $@
@@ -132,6 +149,7 @@
    #    $@
   #     $@
  #      $@
+Prepare for storage
 * add one Char to the string 16 0
    ###  $@
   #   # $@
@@ -140,6 +158,7 @@
  #     #$@
   #   # $@
    ###  $@
+Prepare for storage
 * add one Char to the string 17 1
    #  $@
   ##  $@
@@ -148,6 +167,7 @@
    #  $@
    #  $@
  #####$@
+Prepare for storage
 * add one Char to the string 18 2
   ##### $@
  #     #$@
@@ -156,6 +176,7 @@
  #      $@
  #      $@
  #######$@
+Prepare for storage
 * add one Char to the string 19 3
   ##### $@
  #     #$@
@@ -164,6 +185,7 @@
        #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 20 4
  #      $@
  #    # $@
@@ -172,6 +194,7 @@
  #######$@
       # $@
       # $@
+Prepare for storage
 * add one Char to the string 21 5
  #######$@
  #      $@
@@ -180,6 +203,7 @@
        #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 22 6
   ##### $@
  #     #$@
@@ -188,6 +212,7 @@
  #     #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 23 7
  #######$@
  #    # $@
@@ -196,6 +221,7 @@
    #    $@
    #    $@
    #    $@
+Prepare for storage
 * add one Char to the string 24 8
   ##### $@
  #     #$@
@@ -204,6 +230,7 @@
  #     #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 25 9
   ##### $@
  #     #$@
@@ -212,6 +239,7 @@
        #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 26 :
   # $@
  ###$@
@@ -220,6 +248,7 @@
   # $@
  ###$@
   # $@
+Prepare for storage
 * add one Char to the string 27 ;
     $@
  ###$@
@@ -228,6 +257,7 @@
  ###$@
  ###$@
   # $@
+Prepare for storage
 * add one Char to the string 28 <
     #$@
    # $@
@@ -236,6 +266,7 @@
   #  $@
    # $@
     #$@
+Prepare for storage
 * add one Char to the string 29 =
       $@
       $@
@@ -244,6 +275,7 @@
  #####$@
       $@
       $@
+Prepare for storage
 * add one Char to the string 30 >
  #   $@
   #  $@
@@ -252,6 +284,7 @@
    # $@
   #  $@
  #   $@
+Prepare for storage
 * add one Char to the string 31 ?
   ##### $@
  #     #$@
@@ -260,6 +293,7 @@
     #   $@
         $@
     #   $@
+Prepare for storage
 * add one Char to the string 32 @
   ##### $@
  #     #$@
@@ -268,6 +302,7 @@
  # #### $@
  #      $@
   ##### $@
+Prepare for storage
 * add one Char to the string 33 A
     #   $@
    # #  $@
@@ -276,6 +311,7 @@
  #######$@
  #     #$@
  #     #$@
+Prepare for storage
 * add one Char to the string 34 B
  ###### $@
  #     #$@
@@ -284,6 +320,7 @@
  #     #$@
  #     #$@
  ###### $@
+Prepare for storage
 * add one Char to the string 35 C
   ##### $@
  #     #$@
@@ -292,6 +329,7 @@
  #      $@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 36 D
  ###### $@
  #     #$@
@@ -300,6 +338,7 @@
  #     #$@
  #     #$@
  ###### $@
+Prepare for storage
 * add one Char to the string 37 E
  #######$@
  #      $@
@@ -308,6 +347,7 @@
  #      $@
  #      $@
  #######$@
+Prepare for storage
 * add one Char to the string 38 F
  #######$@
  #      $@
@@ -316,6 +356,7 @@
  #      $@
  #      $@
  #      $@
+Prepare for storage
 * add one Char to the string 39 G
   ##### $@
  #     #$@
@@ -324,6 +365,7 @@
  #     #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 40 H
  #     #$@
  #     #$@
@@ -332,6 +374,7 @@
  #     #$@
  #     #$@
  #     #$@
+Prepare for storage
 * add one Char to the string 41 I
  ###$@
   # $@
@@ -340,6 +383,7 @@
   # $@
   # $@
  ###$@
+Prepare for storage
 * add one Char to the string 42 J
        #$@
        #$@
@@ -348,6 +392,7 @@
  #     #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 43 K
  #    #$@
  #   # $@
@@ -356,6 +401,7 @@
  #  #  $@
  #   # $@
  #    #$@
+Prepare for storage
 * add one Char to the string 44 L
  #      $@
  #      $@
@@ -364,6 +410,7 @@
  #      $@
  #      $@
  #######$@
+Prepare for storage
 * add one Char to the string 45 M
  #     #$@
  ##   ##$@
@@ -372,6 +419,7 @@
  #     #$@
  #     #$@
  #     #$@
+Prepare for storage
 * add one Char to the string 46 N
  #     #$@
  ##    #$@
@@ -380,6 +428,7 @@
  #   # #$@
  #    ##$@
  #     #$@
+Prepare for storage
 * add one Char to the string 47 O
  #######$@
  #     #$@
@@ -388,6 +437,7 @@
  #     #$@
  #     #$@
  #######$@
+Prepare for storage
 * add one Char to the string 48 P
  ###### $@
  #     #$@
@@ -396,6 +446,7 @@
  #      $@
  #      $@
  #      $@
+Prepare for storage
 * add one Char to the string 49 Q
   ##### $@
  #     #$@
@@ -404,6 +455,7 @@
  #   # #$@
  #    # $@
   #### #$@
+Prepare for storage
 * add one Char to the string 50 R
  ###### $@
  #     #$@
@@ -412,6 +464,7 @@
  #   #  $@
  #    # $@
  #     #$@
+Prepare for storage
 * add one Char to the string 51 S
   ##### $@
  #     #$@
@@ -420,6 +473,7 @@
        #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 52 T
  #######$@
     #   $@
@@ -428,6 +482,7 @@
     #   $@
     #   $@
     #   $@
+Prepare for storage
 * add one Char to the string 53 U
  #     #$@
  #     #$@
@@ -436,6 +491,7 @@
  #     #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 54 V
  #     #$@
  #     #$@
@@ -444,6 +500,7 @@
   #   # $@
    # #  $@
     #   $@
+Prepare for storage
 * add one Char to the string 55 W
  #     #$@
  #  #  #$@
@@ -452,6 +509,7 @@
  #  #  #$@
  #  #  #$@
   ## ## $@
+Prepare for storage
 * add one Char to the string 56 X
  #     #$@
   #   # $@
@@ -460,6 +518,7 @@
    # #  $@
   #   # $@
  #     #$@
+Prepare for storage
 * add one Char to the string 57 Y
  #     #$@
   #   # $@
@@ -468,6 +527,7 @@
     #   $@
     #   $@
     #   $@
+Prepare for storage
 * add one Char to the string 58 Z
  #######$@
       # $@
@@ -476,6 +536,7 @@
    #    $@
   #     $@
  #######$@
+Prepare for storage
 * add one Char to the string 59 [
  #####$@
  #    $@
@@ -484,6 +545,7 @@
  #    $@
  #    $@
  #####$@
+Prepare for storage
 * add one Char to the string 60 \\
  #      $@
   #     $@
@@ -492,6 +554,7 @@
      #  $@
       # $@
        #$@
+Prepare for storage
 * add one Char to the string 61 ]
  #####$@
      #$@
@@ -500,6 +563,7 @@
      #$@
      #$@
  #####$@
+Prepare for storage
 * add one Char to the string 62 ^
    #  $@
   # # $@
@@ -508,6 +572,7 @@
       $@
       $@
       $@
+Prepare for storage
 * add one Char to the string 63 _
         $@
         $@
@@ -516,6 +581,7 @@
         $@
         $@
         $@
+Prepare for storage
 * add one Char to the string 64 `
  ###$@
  ###$@
@@ -524,6 +590,7 @@
     $@
     $@
     $@
+Prepare for storage
 * add one Char to the string 65 a
        $@
    ##  $@
@@ -532,6 +599,7 @@
  ######$@
  #    #$@
  #    #$@
+Prepare for storage
 * add one Char to the string 66 b
        $@
  ##### $@
@@ -540,6 +608,7 @@
  #    #$@
  #    #$@
  ##### $@
+Prepare for storage
 * add one Char to the string 67 c
        $@
   #### $@
@@ -548,6 +617,7 @@
  #     $@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 68 d
        $@
  ##### $@
@@ -556,6 +626,7 @@
  #    #$@
  #    #$@
  ##### $@
+Prepare for storage
 * add one Char to the string 69 e
        $@
  ######$@
@@ -564,6 +635,7 @@
  #     $@
  #     $@
  ######$@
+Prepare for storage
 * add one Char to the string 70 f
        $@
  ######$@
@@ -572,6 +644,7 @@
  #     $@
  #     $@
  #     $@
+Prepare for storage
 * add one Char to the string 71 g
        $@
   #### $@
@@ -580,6 +653,7 @@
  #  ###$@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 72 h
        $@
  #    #$@
@@ -588,6 +662,7 @@
  #    #$@
  #    #$@
  #    #$@
+Prepare for storage
 * add one Char to the string 73 i
   $@
  #$@
@@ -596,6 +671,7 @@
  #$@
  #$@
  #$@
+Prepare for storage
 * add one Char to the string 74 j
        $@
       #$@
@@ -604,6 +680,7 @@
       #$@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 75 k
        $@
  #    #$@
@@ -612,6 +689,7 @@
  #  #  $@
  #   # $@
  #    #$@
+Prepare for storage
 * add one Char to the string 76 l
        $@
  #     $@
@@ -620,6 +698,7 @@
  #     $@
  #     $@
  ######$@
+Prepare for storage
 * add one Char to the string 77 m
        $@
  #    #$@
@@ -628,6 +707,7 @@
  #    #$@
  #    #$@
  #    #$@
+Prepare for storage
 * add one Char to the string 78 n
        $@
  #    #$@
@@ -636,6 +716,7 @@
  #  # #$@
  #   ##$@
  #    #$@
+Prepare for storage
 * add one Char to the string 79 o
        $@
   #### $@
@@ -644,6 +725,7 @@
  #    #$@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 80 p
        $@
  ##### $@
@@ -652,6 +734,7 @@
  ##### $@
  #     $@
  #     $@
+Prepare for storage
 * add one Char to the string 81 q
        $@
   #### $@
@@ -660,6 +743,7 @@
  #  # #$@
  #   # $@
   ### #$@
+Prepare for storage
 * add one Char to the string 82 r
        $@
  ##### $@
@@ -668,6 +752,7 @@
  ##### $@
  #   # $@
  #    #$@
+Prepare for storage
 * add one Char to the string 83 s
        $@
   #### $@
@@ -676,6 +761,7 @@
       #$@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 84 t
       $@
  #####$@
@@ -684,6 +770,7 @@
    #  $@
    #  $@
    #  $@
+Prepare for storage
 * add one Char to the string 85 u
        $@
  #    #$@
@@ -692,6 +779,7 @@
  #    #$@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 86 v
        $@
  #    #$@
@@ -700,6 +788,7 @@
  #    #$@
   #  # $@
    ##  $@
+Prepare for storage
 * add one Char to the string 87 w
        $@
  #    #$@
@@ -708,6 +797,7 @@
  # ## #$@
  ##  ##$@
  #    #$@
+Prepare for storage
 * add one Char to the string 88 x
        $@
  #    #$@
@@ -716,6 +806,7 @@
    ##  $@
   #  # $@
  #    #$@
+Prepare for storage
 * add one Char to the string 89 y
       $@
  #   #$@
@@ -724,6 +815,7 @@
    #  $@
    #  $@
    #  $@
+Prepare for storage
 * add one Char to the string 90 z
        $@
  ######$@
@@ -732,6 +824,7 @@
    #   $@
   #    $@
  ######$@
+Prepare for storage
 * add one Char to the string 91 {
    ###$@
   #   $@
@@ -740,6 +833,7 @@
   #   $@
   #   $@
    ###$@
+Prepare for storage
 * add one Char to the string 92 |
  #$@
  #$@
@@ -748,6 +842,7 @@
  #$@
  #$@
  #$@
+Prepare for storage
 * add one Char to the string 93 }
  ###  $@
     # $@
@@ -756,6 +851,7 @@
     # $@
     # $@
  ###  $@
+Prepare for storage
 * add one Char to the string 94 ~
   ##    $@
  #  #  #$@
@@ -764,6 +860,7 @@
         $@
         $@
         $@
+Prepare for storage
 * add one Char to the string 95 Ä
  #  #  #$@
    # #  $@
@@ -772,6 +869,7 @@
  #######$@
  #     #$@
  #     #$@
+Prepare for storage
 * add one Char to the string 96 Ö
  #     #$@
   ##### $@
@@ -780,6 +878,7 @@
  #     #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 97 Ü
  #     #$@
         $@
@@ -788,6 +887,7 @@
  #     #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 98 ä
        $@
  #    #$@
@@ -796,6 +896,7 @@
  ######$@
  #    #$@
  #    #$@
+Prepare for storage
 * add one Char to the string 99 ö
        $@
  #    #$@
@@ -804,6 +905,7 @@
  #    #$@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 100 ü
        $@
  #    #$@
@@ -812,6 +914,7 @@
  #    #$@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 101 ß
  ###### $@
  #     #$@
@@ -820,6 +923,7 @@
  #     #$@
  #     #$@
  ###### $@
+Prepare for storage
 * add one Char to the string 102 
          $@
          $@
@@ -828,7 +932,10 @@
  ########$@
     ##   $@
     ##   $@
+Prepare for storage
 * add one Char to the string 103 
+Captura de caracter EXTRA
+HexaCode 169
  $@
  $@
  $@
@@ -836,7 +943,10 @@
  $@
  $@
  $@
+Prepare for storage
 * add one Char to the string 104 
+Captura de caracter EXTRA
+HexaCode 176
          $@
          $@
          $@
@@ -844,7 +954,10 @@
  ########$@
          $@
          $@
+Prepare for storage
 * add one Char to the string 105 
+Captura de caracter EXTRA
+HexaCode 178
     ##   $@
     ##   $@
     ##   $@
@@ -852,7 +965,10 @@
  ########$@
     ##   $@
     ##   $@
+Prepare for storage
 * add one Char to the string 106 
+Captura de caracter EXTRA
+HexaCode 183
  ##   $@
  ##   $@
  #####$@
@@ -860,7 +976,10 @@
  #####$@
  ##   $@
  ##   $@
+Prepare for storage
 * add one Char to the string 107 
+Captura de caracter EXTRA
+HexaCode 196
  #  #  #$@
    # #  $@
   #   # $@
@@ -868,7 +987,10 @@
  #######$@
  #     #$@
  #     #$@
+Prepare for storage
 * add one Char to the string 108 
+Captura de caracter EXTRA
+HexaCode 214
  #     #$@
   ##### $@
  #     #$@
@@ -876,7 +998,10 @@
  #     #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 109 
+Captura de caracter EXTRA
+HexaCode 220
  #     #$@
         $@
  #     #$@
@@ -884,7 +1009,10 @@
  #     #$@
  #     #$@
   ##### $@
+Prepare for storage
 * add one Char to the string 110 
+Captura de caracter EXTRA
+HexaCode 223
  ###### $@
  #     #$@
  #     #$@
@@ -892,7 +1020,10 @@
  #     #$@
  #     #$@
  ###### $@
+Prepare for storage
 * add one Char to the string 111 
+Captura de caracter EXTRA
+HexaCode 228
        $@
  #    #$@
   #### $@
@@ -900,7 +1031,10 @@
  ######$@
  #    #$@
  #    #$@
+Prepare for storage
 * add one Char to the string 112 
+Captura de caracter EXTRA
+HexaCode 246
        $@
  #    #$@
   #### $@
@@ -908,7 +1042,10 @@
  #    #$@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 113 
+Captura de caracter EXTRA
+HexaCode 247
  #### $@
  #### $@
  #### $@
@@ -916,7 +1053,10 @@
  #####$@
  #### $@
  #### $@
+Prepare for storage
 * add one Char to the string 114 
+Captura de caracter EXTRA
+HexaCode 252
        $@
  #    #$@
        $@
@@ -924,7 +1064,10 @@
  #    #$@
  #    #$@
   #### $@
+Prepare for storage
 * add one Char to the string 115 
+Captura de caracter EXTRA
+HexaCode 0x0401
  ########$@
  ########$@
  ########$@
@@ -932,7 +1075,10 @@
  ########$@
  ########$@
  ########$@
+Prepare for storage
 * add one Char to the string 116 
+Captura de caracter EXTRA
+HexaCode 0x0410
     ####$@
    ## ##$@
   ##  ##$@
@@ -940,7 +1086,10 @@
  #######$@
  ##   ##$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 117 
+Captura de caracter EXTRA
+HexaCode 0x0411
  #######$@
  ##     $@
  ##     $@
@@ -948,7 +1097,10 @@
  ##   ##$@
  ##   ##$@
  ###### $@
+Prepare for storage
 * add one Char to the string 118 
+Captura de caracter EXTRA
+HexaCode 0x0412
  ###### $@
  ##   ##$@
  ##   ##$@
@@ -956,7 +1108,10 @@
  ##   ##$@
  ##   ##$@
  ###### $@
+Prepare for storage
 * add one Char to the string 119 
+Captura de caracter EXTRA
+HexaCode 0x0413
  #######$@
  ##     $@
  ##     $@
@@ -964,7 +1119,10 @@
  ##     $@
  ##     $@
  ##     $@
+Prepare for storage
 * add one Char to the string 120 
+Captura de caracter EXTRA
+HexaCode 0x0414
    #### $@
   ## ## $@
   ## ## $@
@@ -972,7 +1130,10 @@
   ## ## $@
  #######$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 121 
+Captura de caracter EXTRA
+HexaCode 0x0415
  #######$@
  ##     $@
  ##     $@
@@ -980,7 +1141,10 @@
  ##     $@
  ##     $@
  #######$@
+Prepare for storage
 * add one Char to the string 122 
+Captura de caracter EXTRA
+HexaCode 0x0416
  ## # ##$@
   # # # $@
    ###  $@
@@ -988,7 +1152,10 @@
   # # # $@
   # # # $@
  ## # ##$@
+Prepare for storage
 * add one Char to the string 123 
+Captura de caracter EXTRA
+HexaCode 0x0417
   ##### $@
  ##   ##$@
       ##$@
@@ -996,7 +1163,10 @@
       ##$@
  ##   ##$@
   ##### $@
+Prepare for storage
 * add one Char to the string 124 
+Captura de caracter EXTRA
+HexaCode 0x0418
  ##   ##$@
  ##  ###$@
  ##  ###$@
@@ -1004,7 +1174,10 @@
  ###  ##$@
  ##   ##$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 125 
+Captura de caracter EXTRA
+HexaCode 0x0419
  ## ## #$@
  ##   ##$@
  ##  ###$@
@@ -1012,7 +1185,10 @@
  ###  ##$@
  ##   ##$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 126 
+Captura de caracter EXTRA
+HexaCode 0x041A
  ##   ##$@
  ##  ## $@
  ## ##  $@
@@ -1020,7 +1196,10 @@
  ##  ## $@
  ##   ##$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 127 
+Captura de caracter EXTRA
+HexaCode 0x041B
    #####$@
   ##  ##$@
   ##  ##$@
@@ -1028,7 +1207,10 @@
   ##  ##$@
   ##  ##$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 128 
+Captura de caracter EXTRA
+HexaCode 0x041C
  ##   ##$@
  ##   ##$@
  ### ###$@
@@ -1036,7 +1218,10 @@
  ##   ##$@
  ##   ##$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 129 
+Captura de caracter EXTRA
+HexaCode 0x041D
  ##   ##$@
  ##   ##$@
  ##   ##$@
@@ -1044,7 +1229,10 @@
  ##   ##$@
  ##   ##$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 130 
+Captura de caracter EXTRA
+HexaCode 0x041E
   ##### $@
  ##   ##$@
  ##   ##$@
@@ -1052,7 +1240,10 @@
  ##   ##$@
  ##   ##$@
   ##### $@
+Prepare for storage
 * add one Char to the string 131 
+Captura de caracter EXTRA
+HexaCode 0x041F
  #######$@
  ##   ##$@
  ##   ##$@
@@ -1060,7 +1251,10 @@
  ##   ##$@
  ##   ##$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 132 
+Captura de caracter EXTRA
+HexaCode 0x0420
  ###### $@
  ##   ##$@
  ##   ##$@
@@ -1068,7 +1262,10 @@
  ##     $@
  ##     $@
  ##     $@
+Prepare for storage
 * add one Char to the string 133 
+Captura de caracter EXTRA
+HexaCode 0x0421
   ##### $@
  ##   ##$@
  ##     $@
@@ -1076,7 +1273,10 @@
  ##     $@
  ##   ##$@
   ##### $@
+Prepare for storage
 * add one Char to the string 134 
+Captura de caracter EXTRA
+HexaCode 0x0422
  ###### $@
    ##   $@
    ##   $@
@@ -1084,7 +1284,10 @@
    ##   $@
    ##   $@
    ##   $@
+Prepare for storage
 * add one Char to the string 135 
+Captura de caracter EXTRA
+HexaCode 0x0423
  ##   ##$@
  ##   ##$@
  ##   ##$@
@@ -1092,7 +1295,10 @@
       ##$@
  ##   ##$@
   ##### $@
+Prepare for storage
 * add one Char to the string 136 
+Captura de caracter EXTRA
+HexaCode 0x0424
     #   $@
   ##### $@
  ## # ##$@
@@ -1100,7 +1306,10 @@
  ## # ##$@
   ##### $@
     #   $@
+Prepare for storage
 * add one Char to the string 137 
+Captura de caracter EXTRA
+HexaCode 0x0425
  ##   ##$@
   ## ## $@
    ###  $@
@@ -1108,7 +1317,10 @@
    ###  $@
   ## ## $@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 138 
+Captura de caracter EXTRA
+HexaCode 0x0426
  ##  ## $@
  ##  ## $@
  ##  ## $@
@@ -1116,7 +1328,10 @@
  ##  ## $@
  ##  ## $@
  #######$@
+Prepare for storage
 * add one Char to the string 139 
+Captura de caracter EXTRA
+HexaCode 0x0427
  ##   ##$@
  ##   ##$@
  ##   ##$@
@@ -1124,7 +1339,10 @@
       ##$@
       ##$@
       ##$@
+Prepare for storage
 * add one Char to the string 140 
+Captura de caracter EXTRA
+HexaCode 0x0428
  ## # ##$@
  ## # ##$@
  ## # ##$@
@@ -1132,7 +1350,10 @@
  ## # ##$@
  ## # ##$@
  #######$@
+Prepare for storage
 * add one Char to the string 141 
+Captura de caracter EXTRA
+HexaCode 0x0429
  ## # ##$@
  ## # ##$@
  ## # ##$@
@@ -1140,7 +1361,10 @@
  ## # ##$@
  ## # ##$@
  #######$@
+Prepare for storage
 * add one Char to the string 142 
+Captura de caracter EXTRA
+HexaCode 0x042A
  ###    $@
  ###    $@
   ##    $@
@@ -1148,7 +1372,10 @@
   ##  ##$@
   ##  ##$@
   ##### $@
+Prepare for storage
 * add one Char to the string 143 
+Captura de caracter EXTRA
+HexaCode 0x042B
  ##   ##$@
  ##   ##$@
  ##   ##$@
@@ -1156,7 +1383,10 @@
  ##  # #$@
  ##  # #$@
  ####  #$@
+Prepare for storage
 * add one Char to the string 144 
+Captura de caracter EXTRA
+HexaCode 0x042C
  ##     $@
  ##     $@
  ##     $@
@@ -1164,7 +1394,10 @@
  ##   ##$@
  ##   ##$@
  ###### $@
+Prepare for storage
 * add one Char to the string 145 
+Captura de caracter EXTRA
+HexaCode 0x042D
   ##### $@
  ##   ##$@
       ##$@
@@ -1172,7 +1405,10 @@
       ##$@
  ##   ##$@
   ##### $@
+Prepare for storage
 * add one Char to the string 146 
+Captura de caracter EXTRA
+HexaCode 0x042E
  ##  ## $@
  ## # ##$@
  ## # ##$@
@@ -1180,7 +1416,10 @@
  ## # ##$@
  ## # ##$@
  ##  ## $@
+Prepare for storage
 * add one Char to the string 147 
+Captura de caracter EXTRA
+HexaCode 0x042F
    #####$@
   ##  ##$@
   ##  ##$@
@@ -1188,7 +1427,10 @@
    ## ##$@
   ##  ##$@
  ##   ##$@
+Prepare for storage
 * add one Char to the string 148 
+Captura de caracter EXTRA
+HexaCode 0x0430
         $@
         $@
   ####  $@
@@ -1196,7 +1438,10 @@
   ##### $@
  ##  ## $@
   ######$@
+Prepare for storage
 * add one Char to the string 149 
+Captura de caracter EXTRA
+HexaCode 0x0431
         $@
      ## $@
   ####  $@
@@ -1204,7 +1449,10 @@
  ###### $@
  ##   ##$@
   ##### $@
+Prepare for storage
 * add one Char to the string 150 
+Captura de caracter EXTRA
+HexaCode 0x0432
         $@
         $@
  #####  $@
@@ -1212,7 +1460,10 @@
  ###### $@
  ##   ##$@
  ###### $@
+Prepare for storage
 * add one Char to the string 151 
+Captura de caracter EXTRA
+HexaCode 0x0433
         $@
         $@
   ##### $@
@@ -1220,7 +1471,10 @@
   ##### $@
  ##     $@
   ######$@
+Prepare for storage
 * add one Char to the string 152 
+Captura de caracter EXTRA
+HexaCode 0x0434
         $@
    #### $@
       ##$@
@@ -1228,7 +1482,10 @@
   ##  ##$@
  ##   ##$@
   ##### $@
+Prepare for storage
 * add one Char to the string 153 
+Captura de caracter EXTRA
+HexaCode 0x0435
         $@
         $@
   ##### $@
@@ -1236,7 +1493,10 @@
  ###### $@
  ##     $@
   ##### $@
+Prepare for storage
 * add one Char to the string 154 
+Captura de caracter EXTRA
+HexaCode 0x0436
         $@
         $@
  ## # ##$@
@@ -1244,3 +1504,169 @@
    ###  $@
   # # # $@
  ## # ##$@
+Prepare for storage
+* add one Char to the string 155 
+Captura de caracter EXTRA
+HexaCode 0x0437
+        $@
+        $@
+  ##### $@
+ ##   ##$@
+    ### $@
+ ##   ##$@
+  ##### $@
+Prepare for storage
+* add one Char to the string 156 
+Captura de caracter EXTRA
+HexaCode 0x0438
+        $@
+        $@
+ ##   ##$@
+ ##  ###$@
+ ## # ##$@
+ ###  ##$@
+ ##   ##$@
+Prepare for storage
+* add one Char to the string 157 
+Captura de caracter EXTRA
+HexaCode 0x0439
+        $@
+    ##  $@
+ ##   ##$@
+ ##  ###$@
+ ## # ##$@
+ ###  ##$@
+ ##   ##$@
+Prepare for storage
+* add one Char to the string 158 
+Captura de caracter EXTRA
+HexaCode 0x043A
+        $@
+        $@
+ ##   ##$@
+ ##  ## $@
+ #####  $@
+ ##  ## $@
+ ##   ##$@
+Prepare for storage
+* add one Char to the string 159 
+Captura de caracter EXTRA
+HexaCode 0x043B
+        $@
+        $@
+   #####$@
+  ##  ##$@
+  ##  ##$@
+  ##  ##$@
+ ##   ##$@
+Prepare for storage
+* add one Char to the string 160 
+Captura de caracter EXTRA
+HexaCode 0x043C
+        $@
+        $@
+ ##   ##$@
+ ### ###$@
+ ## # ##$@
+ ##   ##$@
+ ##   ##$@
+Prepare for storage
+* add one Char to the string 161 
+Captura de caracter EXTRA
+HexaCode 0x043D
+        $@
+        $@
+ ##   ##$@
+ ##   ##$@
+ #######$@
+ ##   ##$@
+ ##   ##$@
+Prepare for storage
+* add one Char to the string 162 
+Captura de caracter EXTRA
+HexaCode 0x043E
+        $@
+        $@
+  ##### $@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+  ##### $@
+Prepare for storage
+* add one Char to the string 163 
+Captura de caracter EXTRA
+HexaCode 0x043F
+        $@
+        $@
+ ###### $@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+Prepare for storage
+* add one Char to the string 164 
+Captura de caracter EXTRA
+HexaCode 0x0440
+        $@
+        $@
+ ###### $@
+ ##   ##$@
+ ###### $@
+ ##     $@
+ ##     $@
+Prepare for storage
+* add one Char to the string 165 
+Captura de caracter EXTRA
+HexaCode 0x0441
+        $@
+        $@
+  ##### $@
+ ##     $@
+ ##     $@
+ ##     $@
+  ##### $@
+Prepare for storage
+* add one Char to the string 166 
+Captura de caracter EXTRA
+HexaCode 0x0442
+        $@
+        $@
+ ###### $@
+   ##   $@
+   ##   $@
+   ##   $@
+   ##   $@
+Prepare for storage
+* add one Char to the string 167 
+Captura de caracter EXTRA
+HexaCode 0x0443
+        $@
+        $@
+ ##   ##$@
+ ##   ##$@
+ ##   ##$@
+  ######$@
+      ##$@
+Prepare for storage
+* add one Char to the string 168 
+Captura de caracter EXTRA
+HexaCode 0x0444
+        $@
+    #   $@
+  ##### $@
+ ## # ##$@
+ ## # ##$@
+  ##### $@
+    #   $@
+Prepare for storage
+* add one Char to the string 169 
+Captura de caracter EXTRA
+HexaCode 0x0445
+        $@
+        $@
+ ##   ##$@
+  ## ## $@
+   ###  $@
+  ## ## $@
+ ##   ##$@
+Prepare for storage

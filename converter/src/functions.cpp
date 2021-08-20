@@ -39,12 +39,14 @@ void writeFile(string filename, string textToInsert) {
     fstream newfile;
 	
 	Debug_class::log("Prepare for storage");
+	/*
 	if (fileExist(filename)) {
 		newfile.open(filename,  ios::out | ios::app);
 		if (newfile.is_open()) //checking whether the file is open
 		{			
 			newfile << textToInsert;   //inserting text
 			newfile.close();    //close the file object
+			Debug_class::log("File storaged");
 			//cout << "archivo existe" << endl;
 			Debug_class::log("The File : "+filename+" Exist");
 		}
@@ -60,7 +62,7 @@ void writeFile(string filename, string textToInsert) {
 			Debug_class::log("The File : " + filename + " Not exist");
 		}
 	}
-    
+    */
     
         //cout << textToInsert;
 		

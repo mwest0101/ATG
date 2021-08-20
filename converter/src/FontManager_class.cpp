@@ -10,7 +10,8 @@ FontManager_class::FontManager_class()
 
 }
 
-string FontManager_class::load(string vPathToFile) {
+string FontManager_class::load(string vPathToFile,string fileName) {
+    fileNameToStorageResult = fileName;
     c_pathToFile = vPathToFile;
     c_caractersArray.clear();
     c_vecOfAllChars.clear();
@@ -47,22 +48,24 @@ void FontManager_class::closeFile() {
     c_myFile_Handler.close();
 
 }
+vector<string> FontManager_class::getVectorOfChars() {
+    vector<string> charOrder{
+    " ","!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",
+    "0","1","2","3","4","5","6","7","8","9",":",";","<","=",">","?","@",
+    "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+    "[","\\","]","^","_","`",
+    "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
+    "{","|","}","~","Ä","Ö","Ü","ä","ö","ü","ß"
+    };
+    return charOrder;
+}
 
 int FontManager_class::getPosOfCharInFile(string chartoSearch) {
     int valRet = (-1);
     int count = 0;
     vector<string> strCharArray;
 
-    string charOrder[] = {
-        " ","!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",
-        "0","1","2","3","4","5","6","7","8","9",":",";","<","=",">","?","@",
-        "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-        "[","\\","]","^","_","`",
-        "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-        "{","|","}","~","Ä","Ö","Ü","ä","ö","ü","ß"
-    };
-
-    for (string data : charOrder) {
+    for (string data : getVectorOfChars()){    
         if (chartoSearch == data) {
             valRet = count;
             break;
@@ -76,15 +79,9 @@ int FontManager_class::getPosOfCharInFile(string chartoSearch) {
 
 string FontManager_class::getCharFromPosInFile(int chartoSearch) {
     string valRet = "";
-    vector<string> strCharArray;
-    string charOrder[] = {
-        " ","!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",
-        "0","1","2","3","4","5","6","7","8","9",":",";","<","=",">","?","@",
-        "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-        "[","\\","]","^","_","`",
-        "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-        "{","|","}","~","Ä","Ö","Ü","ä","ö","ü","ß"
-    };
+    
+    vector<string> charOrder = getVectorOfChars();
+        
 
     valRet = charOrder[chartoSearch];
     return valRet;
@@ -151,7 +148,7 @@ void FontManager_class::getCharThatCloseLines()
             cout << "* The char of end of line was seted by defult to : \\n" << endl;
         }
     } catch (int e) {
-        cout << "**Error reading file lines**" << e << endl;        
+        cout << "**Error reading file lines**" << e << endl;
     }
 
 }
@@ -162,70 +159,35 @@ string FontManager_class::getCharlines()
     // Keep reading the file
     int characterFound = 0;
     int countline = 0;
-    int countChar = 0;
+    unsigned int countChar = 0;
     string strResult;
     string myLine, caracterStr, strChar;
     string strAllChars;
     string oneChar;
     string doubleChar;
     string singleChar(1, finalChar);
-        
+    vector<string> numAscciCode;
     doubleChar = singleChar+ singleChar;
     //cout << " doublechar " << doubleChar << endl;
 
     Debug_class::log("* Processing: **\""+ c_pathToFile+"\"** ");
     Debug_class::log("* Entering to parse lines");
 
-    while (getline(c_myFile_Handler, myLine))
-    {
-        
-        countline++;
-        if ((configFound==(-1)) || (countline > ConfigFont_class::p7_numComm))
-        {
-
-            
-                if ((characterFound = findStr(myLine, doubleChar)) != (-1))
-                {
-                    //Debug_class::log("Entre a getCharLines 2");
-                    
-                    strChar = myLine.substr(0, characterFound);
-                    oneChar = oneChar + strChar;
-                    strAllChars += "    if ((charNumber == " + to_string(countChar) + ") || (character == \"" + normalizeChar(getCharFromPosInFile(countChar)) + "\" )) { strResturn =\"" + oneChar + "\";}\n";
-                    countChar++;
-                    oneChar = "";
-                    Debug_class::log("* add one Char to the string "+to_string(countChar)+" "+normalizeChar(getCharFromPosInFile(countChar)), true);
-                    
-                    
-                }else{
-                    if (findStr(myLine, singleChar) != (-1)) {
-                        oneChar += normalizeStr(myLine);
-                        Debug_class::log(myLine, true);
-                        //Debug_class::log("* add one Char to the string " + to_string(countChar), true);
-                        //cout << oneChar << endl;
-                    }
-                }
-        }
-        
-    }
     Debug_class::log("* Creating and normalizing strings");
     vector<string> fileNameParts = splitStr(normalizeUrl(c_pathToFile), '/');
-    string nameWithoutPath= fileNameParts[fileNameParts.size()-1];
+    string nameWithoutPath = fileNameParts[fileNameParts.size() - 1];
     fileNameParts = splitStr(normalizeUrl(nameWithoutPath), '.');
     string nameWithoutExt = fileNameParts[0];
+    string hexaCode;
+    string charString;
 
-    
-    /*
-    vector<string> fileNameParts = splitStr(fileNameParts[fileNameParts.size()-1], '.');
-    cout << fileNameParts[0] << endl;
-    */
-    
-    strResult += "vectorFonts.push_back(\""+ nameWithoutExt+"\");\n";
+    strResult += "vectorFonts.push_back(\"" + nameWithoutExt + "\");\n";
 
-    strResult += "if(font==\""+ nameWithoutExt +"\"){\n";
+    strResult += "if(font==\"" + nameWithoutExt + "\"){\n";
 
     string strConfig;
     strConfig += "    if ((charNumber == (-1)) || (character == \"conf\" )) {";
-    strConfig += "strResturn=\"nl="+singleChar;
+    strConfig += "strResturn=\"nl=" + singleChar;
     strConfig += ",found=" + to_string(ConfigFont_class::found);
     strConfig += ",p1=" + ConfigFont_class::p1;
     strConfig += ",p2=" + ConfigFont_class::p2;
@@ -236,10 +198,80 @@ string FontManager_class::getCharlines()
     strConfig += ",p7_numComm=" + to_string(ConfigFont_class::p7_numComm);
     strConfig += "\";}";
 
+    strResult += strConfig + "\n";
+    writeFile(fileNameToStorageResult, strResult);
+    strResult = "";
 
-    strResult += strConfig+"\n";
-    strResult += strAllChars;
+
+    while (getline(c_myFile_Handler, myLine))
+    {
+        
+        countline++;
+        if ((configFound==(-1)) || (countline > ConfigFont_class::p7_numComm))
+        {
+            
+            
+            if ((countChar > getVectorOfChars().size()) && (findStr(myLine, singleChar) == (-1))) {
+                
+                
+                    numAscciCode = splitStr(myLine, ' ');
+
+                    hexaCode = numAscciCode[0];
+                    Debug_class::log("Captura de caracter EXTRA");
+                    Debug_class::log("HexaCode "+ hexaCode);
+                    //cout << "----->" << numAscciCode[0] << endl;
+                   // cout << "codigo de fuente "<< endl;
+                    //cout << "codigo de fuente " << numAscciCode[0];
+                
+            }
+            else {
+                
+
+                if ((characterFound = findStr(myLine, doubleChar)) != (-1))
+                {
+                    //Debug_class::log("Entre a getCharLines 2");
+
+                    strChar = myLine.substr(0, characterFound);
+                    oneChar = oneChar + strChar;
+                    if (hexaCode!=""){
+                        charString = hexaCode;
+
+                    }
+                    else {
+                        charString = normalizeChar(getCharFromPosInFile(countChar));
+                    }
+                    
+
+                    strAllChars += "    if ((charNumber == " + to_string(countChar) + ") || (character == \"" + charString+ "\" )) { strResturn =\"" + oneChar + "\";}\n";
+                    countChar++;
+                    oneChar = "";
+                    
+                    writeFile(fileNameToStorageResult, strAllChars);
+                    strAllChars = "";
+
+                    Debug_class::log("* add one Char to the string " + to_string(countChar) + " " + normalizeChar(getCharFromPosInFile(countChar)), true);
+                    hexaCode = "";
+
+                }
+                else {
+                    if (findStr(myLine, singleChar) != (-1)) {
+                        oneChar += normalizeStr(myLine);
+                        Debug_class::log(myLine, true);
+                        //Debug_class::log("* add one Char to the string " + to_string(countChar), true);
+                        //cout << oneChar << endl;
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    
+
+    strResult = "";
+    
     strResult += "}\n\n";
+    writeFile(fileNameToStorageResult, strResult);
     Debug_class::log("* Complete string to write in file");
     /*
     

@@ -22,14 +22,15 @@ public:
     char c_charType = ' ';
     vector<vector<string>> c_caractersArray;
     vector<string> c_vecOfAllChars;
-    char finalChar = '\"';
+    char finalChar = '\n';
+
     int configFound = (-1);
     FontManager_class();
-    string load(string vPathToFile);
+    string load(string vPathToFile, string fileName);
     bool loadFile();
    
     void closeFile();
-    
+    vector<string> getVectorOfChars();
     int countline = 0;
     void getConfig();
     void getCharThatCloseLines();
@@ -39,7 +40,7 @@ public:
     string getCharFromPosInFile(int chartoSearch);
     string getCharOfPosInFile(int posChar);
     vector<string> getCharFromFile(string charToSearch);
-
+    string fileNameToStorageResult;
     void concStrVector(vector<string> vecOfAChar);
     vector<string> getFullStringOfChars();
 
