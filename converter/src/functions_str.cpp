@@ -114,41 +114,26 @@ string strReplace(string strOrig, string strToFind, string strToPut) {
 	string tempFind= "";
 	string lastTempFind = "";
 	string tempRes = "";
-
-	string result = "";
-	
-	while (cont < strOrig.size()) {
-		
+	string result = "";	
+	while (cont < strOrig.size()) {		
 		if (tempFind.size() <= strToFind.size()) {
-			tempFind += strOrig[cont];
-			cout << tempFind << endl;
-			
+			tempFind += strOrig[cont];					
 		}
-		
-
+			
 		if (tempFind.size() >= strToFind.size()) {
-
-			if (tempFind == strToFind) {
-
-				
+			if (tempFind == strToFind) {				
 				result = result.substr(0,(result.size()-(strToFind.size()-1)))+ strToPut;
 			}
-			else {
-				
+			else {				
 				result += strOrig[cont];
 			}
 			tempFind = tempFind.substr(1, tempFind.size());;
 
-
-
 		}
 		else {
 			result += strOrig[cont];
-		}
-		
-
-		cont++;
-		
+		}		
+		cont++;	
 	
 	}
 	return result;
@@ -166,12 +151,14 @@ string normalizeChar(string result) {
 	result = strReplace(result, "\\", "\\\\");
 	// //result = strReplace(result, "\'", "\\\'");
 	result = strReplace(result, "\"", "\\\"");
+	result = strReplace(result, "\'", "\\\'");
 
 	return result;
 }
 
 
 string normalizeUrl(string result) {
+	result = strReplace(result, "\\\\\\\\", "/");
 	result = strReplace(result, "\\\\\\", "/");
 	result = strReplace(result, "\\\\", "/");
 	result = strReplace(result, "\\'", "/");

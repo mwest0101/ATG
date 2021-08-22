@@ -202,8 +202,8 @@ string FontManager_class::getCharlines()
     strResult += "if(font==\"" + nameWithoutExt + "\"){\n";
 
     string strConfig;
-    strConfig += "    if ((charNumber == (-1)) || (character == \"conf\" )) {";
-    strConfig += "strResturn=\"nl=" + singleChar;
+    strConfig += "    if ((cn == (-1)) || (cs == \"conf\" )) {";
+    strConfig += "sr=\"nl=" + singleChar;
     strConfig += ",found=" + to_string(ConfigFont_class::found);
     strConfig += ",p1=" + ConfigFont_class::p1;
     strConfig += ",p2=" + ConfigFont_class::p2;
@@ -272,7 +272,7 @@ string FontManager_class::getCharlines()
                     }
                     
 
-                    strAllChars += "    if ((charNumber == " + to_string(countChar) + ") || (character == \"" + charString+ "\" )) { strResturn =\"" + oneChar + "\";}\n";
+                    strAllChars += "    if ((cn == " + to_string(countChar) + ") || (cs == \"" + charString+ "\" )) { sr =\"" + oneChar + "\";}\n";
                     countChar++;
                     oneChar = "";
                     

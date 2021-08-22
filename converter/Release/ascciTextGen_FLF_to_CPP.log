@@ -1,7 +1,7 @@
-﻿  main.cpp
+﻿  FontManager_class.cpp
   Generando código
-  1 of 233 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+  1 of 395 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   ascciTextGen_FLF_to_CPP.vcxproj -> D:\pCpp\ascciTextGen\converter\Release\ascciTextGen_FLF_to_CPP.exe

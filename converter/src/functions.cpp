@@ -35,7 +35,7 @@ void writeFile(string filename, string textToInsert) {
 		newfile.open(filename, ios::out | ios::app);
 		if (newfile.is_open()) //checking whether the file is open
 		{
-			//newfile << "\xEF\xBB\xBF";
+			newfile << "\xEF\xBB\xBF"; // 0xEF, 0xBB, 0xBF   -   original UTF8 BOMM"\xEF\xBB\xBF"
 			newfile << textToInsert;   //inserting text
 			newfile.close();    //close the file object	
 			//cout << "archivo NO existe" << endl;
