@@ -20,6 +20,7 @@ public:
     string c_pathToFile;
     ifstream c_myFile_Handler;
     char c_charType = ' ';
+    vector<string> c_allContent;
     vector<vector<string>> c_caractersArray;
     vector<string> c_vecOfAllChars;
     char finalChar = '\n';

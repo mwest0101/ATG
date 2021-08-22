@@ -28,4 +28,9 @@
 	int findStrLastChar(string stringFile, string stringToSearh);
 	int findEndOfStr(string stringFile, string stringToSearh);
 	string strReplace(string strOrig, string strToFind, string strToPut);
+
+	string normalizeStr(string result);
+	string normalizeChar(string result);
+	string normalizeUrl(string result);
+
 #endif

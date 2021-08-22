@@ -111,14 +111,69 @@ int findEndOfStr(string stringFile, string stringToSearh) {
 string strReplace(string strOrig, string strToFind, string strToPut) {
 	unsigned int cont = 0;
 	string retStr = "";
-	string temp = "";
-	string result = "";
+	string tempFind= "";
+	string lastTempFind = "";
+	string tempRes = "";
 
+	string result = "";
+	
 	while (cont < strOrig.size()) {
-		temp = strOrig[cont];
-		(temp == strToFind)? retStr = strToPut :retStr = strOrig[cont];
-		result += retStr;
+		
+		if (tempFind.size() <= strToFind.size()) {
+			tempFind += strOrig[cont];
+			cout << tempFind << endl;
+			
+		}
+		
+
+		if (tempFind.size() >= strToFind.size()) {
+
+			if (tempFind == strToFind) {
+
+				
+				result = result.substr(0,(result.size()-(strToFind.size()-1)))+ strToPut;
+			}
+			else {
+				
+				result += strOrig[cont];
+			}
+			tempFind = tempFind.substr(1, tempFind.size());;
+
+
+
+		}
+		else {
+			result += strOrig[cont];
+		}
+		
+
 		cont++;
+		
+	
 	}
+	return result;
+}
+
+string normalizeStr(string result) {
+	result = strReplace(result, "\\", "\\\\");
+	result = strReplace(result, "\'", "\\\'");
+	result = strReplace(result, "\"", "\\\"");
+
+	return result;
+}
+
+string normalizeChar(string result) {
+	result = strReplace(result, "\\", "\\\\");
+	// //result = strReplace(result, "\'", "\\\'");
+	result = strReplace(result, "\"", "\\\"");
+
+	return result;
+}
+
+
+string normalizeUrl(string result) {
+	result = strReplace(result, "\\\\\\", "/");
+	result = strReplace(result, "\\\\", "/");
+	result = strReplace(result, "\\'", "/");
 	return result;
 }

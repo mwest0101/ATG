@@ -25,6 +25,9 @@ int main(int argc, char* argv[], char* envp[])
     Debug_class::log("----");
     Debug_class::log("=========================");
     Debug_class::log("* initializing converting");
+
+    cout << "resul : " << strReplace("| prueba mia prueba mia prueba mia prueba mia |", "|", "") << endl;
+    /*
     if (argc > 1) {
         FontManager_class fontsLoder;
         //fontsLoder.load("fonts\\Speed.flf");
@@ -37,10 +40,11 @@ int main(int argc, char* argv[], char* envp[])
         strResult=fontsLoder.load(argv[1], fileName);
 
      
-            writeFile(fileName,strResult);
+            //writeFile(fileName,strResult);
 
         //printStrVector(fontsLoder.getFullStringOfChars());
-    } 
+    } */
+
     return 0;
 }
 

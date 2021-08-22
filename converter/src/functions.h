@@ -11,9 +11,7 @@
 
 
 
-	string normalizeStr(string result);
-	string normalizeChar(string result);
-	string normalizeUrl(string result);
+	bool fileExist(const std::string& name);
 	void writeFile(string filename, string text);
 
 #endif

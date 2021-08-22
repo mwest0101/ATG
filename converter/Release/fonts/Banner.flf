@@ -1,7 +1,7 @@
 flf2a$ 8 7 54 0 12 0 64 185
 banner.flf version 2 by Ryan Youck (youck@cs.uregina.ca)
 (From a unix program called banner)
-I am not responsible for use of this font  
+I am not responsible for use of this font
 Thanks to Glenn Chappell for his help
 Katakana characters by Vinney Thai <ssfiit@eris.cs.umb.edu>
 Cyrillic characters from "koi8x8" BDF font.
@@ -2474,21 +2474,3 @@ of new full-width/kern/smush alternatives, but default output is NOT changed.
    ##     $@
  ##       $@
           $@@
--0x0004  KATAMAP
-                                                    @
-a-A i-B u-C e-D o-E ka-F ki-G ku-H ke-I ko-J        @
-sa-K shi-L su-M se-N so-O ta-P chi-Q tsu-R te-S to-T@
-na-U ni-V nu-W ne-X no-Y ha-Z hi-a fu-b he-c ho-d   @
-ma-e mi-f mu-g me-h mo-i ya-j yu-k we-l yo-m        @
-ra-n ri-o ru-p re-q ro-r wa-s wi-t wo-u             @
-n-v                                                 @
-                                                    @@
--0x0006  MOSCOWMAP
-a-a, b-b, v-v, g-g, d-d, e-e, zh-j, z-z, i-i@
-short i->, k-k, l-l, m-m, n-n, o-o, p-p, r-r@
-s-s, t-t, u-u, f-f, kh-h, ts-q, ch-c, sh-w  @
-shch-x, hard-\, yeru-|, soft-/, reverse e-~ @
-yu-`, ya-y                                  @
-Capitals use Latin capital letters, except: @
-Reverse E-<, Yu-@                           @
-No caps for short i, hard, yeru, soft.      @@

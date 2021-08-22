@@ -77,13 +77,19 @@ int FontManager_class::getPosOfCharInFile(string chartoSearch) {
 
 }
 
-string FontManager_class::getCharFromPosInFile(int chartoSearch) {
+string FontManager_class::getCharFromPosInFile(int charToSearch) {
     string valRet = "";
     
     vector<string> charOrder = getVectorOfChars();
-        
+    
+    if ((unsigned)charToSearch < charOrder.size()) {
+        valRet = charOrder[charToSearch];
+    }
+    else {
+        valRet = " ";
+    }
+    //Debug_class::log("Characters " + charOrder[charToSearch]);
 
-    valRet = charOrder[chartoSearch];
     return valRet;
 
 }
@@ -174,13 +180,23 @@ string FontManager_class::getCharlines()
     Debug_class::log("* Entering to parse lines");
 
     Debug_class::log("* Creating and normalizing strings");
+
+    Debug_class::log("------------------>"+c_pathToFile);
     vector<string> fileNameParts = splitStr(normalizeUrl(c_pathToFile), '/');
     string nameWithoutPath = fileNameParts[fileNameParts.size() - 1];
-    fileNameParts = splitStr(normalizeUrl(nameWithoutPath), '.');
+    fileNameParts = splitStr(nameWithoutPath, '.');
     string nameWithoutExt = fileNameParts[0];
     string hexaCode;
+    hexaCode = "";
     string charString;
-
+    Debug_class::log("------------------>"+nameWithoutExt);
+    if (!fileExist(fileNameToStorageResult)) {
+        Debug_class::log("-> defining vector name ");
+        writeFile(fileNameToStorageResult, "vector<string> vectorFonts;\n\n");
+    }
+    else {
+        Debug_class::log("-> vector name is defined why the file exist");
+    }
     strResult += "vectorFonts.push_back(\"" + nameWithoutExt + "\");\n";
 
     strResult += "if(font==\"" + nameWithoutExt + "\"){\n";
@@ -201,22 +217,33 @@ string FontManager_class::getCharlines()
     strResult += strConfig + "\n";
     writeFile(fileNameToStorageResult, strResult);
     strResult = "";
+    /*
+    while (getline(c_myFile_Handler, myLine)) {
+        c_allContent.push_back(myLine);
+
+    }
 
 
-    while (getline(c_myFile_Handler, myLine))
-    {
         
+
+     for (string myLine : c_allContent)
+     {
+         */
+    while (getline(c_myFile_Handler, myLine)) {
+         //Debug_class::log(myLine, true);
         countline++;
         if ((configFound==(-1)) || (countline > ConfigFont_class::p7_numComm))
         {
             
             
-            if ((countChar > getVectorOfChars().size()) && (findStr(myLine, singleChar) == (-1))) {
+            if ((countChar >= getVectorOfChars().size()) && (findStr(myLine, singleChar) == (-1))) {
+                    
                 
                 
                     numAscciCode = splitStr(myLine, ' ');
 
                     hexaCode = numAscciCode[0];
+                    Debug_class::log("----------------------------");
                     Debug_class::log("Captura de caracter EXTRA");
                     Debug_class::log("HexaCode "+ hexaCode);
                     //cout << "----->" << numAscciCode[0] << endl;
@@ -230,6 +257,8 @@ string FontManager_class::getCharlines()
                 if ((characterFound = findStr(myLine, doubleChar)) != (-1))
                 {
                     //Debug_class::log("Entre a getCharLines 2");
+                    Debug_class::log("================================================================");
+                    Debug_class::log("Processing normal character");
 
                     strChar = myLine.substr(0, characterFound);
                     oneChar = oneChar + strChar;
@@ -239,6 +268,7 @@ string FontManager_class::getCharlines()
                     }
                     else {
                         charString = normalizeChar(getCharFromPosInFile(countChar));
+                        //charString = getCharFromPosInFile(countChar);
                     }
                     
 
@@ -249,13 +279,14 @@ string FontManager_class::getCharlines()
                     writeFile(fileNameToStorageResult, strAllChars);
                     strAllChars = "";
 
-                    Debug_class::log("* add one Char to the string " + to_string(countChar) + " " + normalizeChar(getCharFromPosInFile(countChar)), true);
+                    Debug_class::log("* add one Char to the string " + to_string(countChar) + " " + charString, true);
                     hexaCode = "";
 
                 }
                 else {
                     if (findStr(myLine, singleChar) != (-1)) {
                         oneChar += normalizeStr(myLine);
+                        
                         Debug_class::log(myLine, true);
                         //Debug_class::log("* add one Char to the string " + to_string(countChar), true);
                         //cout << oneChar << endl;
@@ -268,23 +299,13 @@ string FontManager_class::getCharlines()
     }
     
 
-    strResult = "";
+        
+    //strResult = "";
     
-    strResult += "}\n\n";
+    strResult = "}\n\n";
     writeFile(fileNameToStorageResult, strResult);
     Debug_class::log("* Complete string to write in file");
-    /*
     
-    
-    if(font=="3D Diagonal"){
-        nl = "#"
-        conf = "p1:a,p2:$,p3_Height:16,p4_Height_nd:15,p5_maxLinLen:19,p6_defSmuMod:63,p7_numComm:20"
-        if ((charNumber==0) || (character=="!")){ oneChar=
-
-
-    */
-    //cout << strVectorToOutputInFile;
-    //cout << strAllChars << endl;
     return strResult;
 
 }
