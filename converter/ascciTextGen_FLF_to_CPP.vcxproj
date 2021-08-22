@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="src\ConfigFont_class.cpp" />
     <ClCompile Include="src\config_inc.cpp" />
+    <ClCompile Include="src\convert_string.cpp" />
     <ClCompile Include="src\Debug_class.cpp" />
     <ClCompile Include="src\FontManager_class.cpp" />
     <ClCompile Include="src\functions.cpp" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="src\ConfigFont_class.h" />
     <ClInclude Include="src\config_inc.h" />
+    <ClInclude Include="src\convert_string.h" />
     <ClInclude Include="src\Debug_class.h" />
     <ClInclude Include="src\FontManager_class.h" />
     <ClInclude Include="src\functions.h" />

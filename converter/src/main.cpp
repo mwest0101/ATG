@@ -2,11 +2,12 @@
 #include <fstream>
 #include <string>
 #include <vector>
-//#include "functions.h"
+
 #include "functions_str.h"
 #include "FontManager_class.h"
 #include "ConfigFont_class.h"
 #include "Debug_class.h"
+
 
 
 using namespace std;
@@ -23,13 +24,15 @@ int main(int argc, char* argv[], char* envp[])
     string strResult;
     string fileName;
     Debug_class::log("----");
-    Debug_class::log("=========================");
-    Debug_class::log("* initializing converting");
+    Debug_class::log("==========================");
+    Debug_class::log("* initializing converting ");
 
     //cout << "resul : " << strReplace("88888$#    88$#o.  88$#\"bodP'$\";}", "P", "-") << endl;
 
     
     if (argc > 1) {
+       
+ 
         FontManager_class fontsLoder;
         //fontsLoder.load("fonts\\Speed.flf");
         if (argc > 2) {

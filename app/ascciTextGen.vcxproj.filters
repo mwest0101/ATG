@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\utf8">
+      <UniqueIdentifier>{ae4ca321-2c6f-490f-8700-b97694ceb917}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\functions.cpp">
@@ -33,6 +36,9 @@
     <ClCompile Include="src\fonts.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="convertToUtf8.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\functions.h">
@@ -49,6 +55,24 @@
     </ClInclude>
     <ClInclude Include="src\fonts.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\converter\src\utf8.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\converter\src\utf8\checked.h">
+      <Filter>Archivos de encabezado\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\converter\src\utf8\core.h">
+      <Filter>Archivos de encabezado\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\converter\src\utf8\cpp11.h">
+      <Filter>Archivos de encabezado\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\converter\src\utf8\cpp17.h">
+      <Filter>Archivos de encabezado\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\converter\src\utf8\unchecked.h">
+      <Filter>Archivos de encabezado\utf8</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

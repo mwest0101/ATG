@@ -5,6 +5,7 @@
 #include "functions_str.h"
 #include <locale>
 #include "Debug_class.h"
+#include "convert_string.h"
 using namespace std;
 
 
@@ -27,16 +28,25 @@ char* iso_latin_1_to_utf8(char* buffer, char* end, unsigned char c) {
 	}
 	return buffer;
 }
+string convertToUtf8(string data) {
+	wstring widestr = wstring(data.begin(), data.end());
+	const wchar_t* widecstr = widestr.c_str();
+	string textToInsert;
+	convert_unicode_to_utf8_string(textToInsert, widecstr, widestr.size());
+	return textToInsert;
+}
 
 void writeFile(string filename, string textToInsert) {
     fstream newfile;
 	
+
 	Debug_class::log("Prepare for storage");
 	
 	if (fileExist(filename)) {
 		newfile.open(filename,  ios::out | ios::app);
 		if (newfile.is_open()) //checking whether the file is open
 		{			
+			
 			newfile << textToInsert;   //inserting text
 			newfile.close();    //close the file object
 			Debug_class::log("File storaged");
@@ -49,7 +59,6 @@ void writeFile(string filename, string textToInsert) {
 		if (newfile.is_open()) //checking whether the file is open
 		{
 			newfile << "\xEF\xBB\xBF"; // \xEF\xBF\xBD -  original UTF8 BOMM"\xEF\xBB\xBF"
-
 
 			newfile << textToInsert;   //inserting text
 			newfile.close();    //close the file object	

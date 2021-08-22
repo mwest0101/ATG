@@ -7,6 +7,7 @@
 #include "functions.h"
 #include "functions_str.h"
 #include "ConfigFont_class.h"
+#include "convert_string.h"
 
 #ifndef FONT_MANAGER_CLASS_H
 #define FONT_MANAGER_CLASS_H

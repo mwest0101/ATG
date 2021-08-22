@@ -2,6 +2,9 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <AtlBase.h>
+#include <atlconv.h>
+
 #include "Debug_class.h"
 
 
@@ -10,7 +13,7 @@
 	using namespace std;
 
 
-
+	string convertToUtf8(string data);
 	bool fileExist(const std::string& name);
 	void writeFile(string filename, string text);
 

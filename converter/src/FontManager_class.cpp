@@ -55,7 +55,7 @@ vector<string> FontManager_class::getVectorOfChars() {
     "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
     "[","\\","]","^","_","`",
     "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-    "{","|","}","~","Ä","Ö","Ü","ä","ö","ü","ß"
+    "{","|","}","~","Ã„","Ã–","Ãœ","Ã¤","Ã¶","Ã¼","ÃŸ"
     };
     return charOrder;
 }
@@ -153,12 +153,15 @@ void FontManager_class::getCharThatCloseLines()
                 doubleChar = "@@";
                 singleChar = "@";
                 Debug_class::log("* The char of end of line is : **@@**");
+                break;
             }else if ((characterFound = findStr(myLine, "##")) != (-1)) {                
                 doubleChar = "##";
                 singleChar="#";
 
                 Debug_class::log("* The char of end of line is : **##**");
+                break;
             }
+
     }
     if (characterFound == (-1)) {
         for (string myLine : allLines)
@@ -169,12 +172,14 @@ void FontManager_class::getCharThatCloseLines()
                 doubleChar = "@";
                 singleChar = "@";
                 Debug_class::log("* The char of end of line is : **@**");
+                break;
             }
             else if ((characterFound = findStr(myLine, "#")) != (-1)) {
                 doubleChar = "#";
                 singleChar = "#";
 
                 Debug_class::log("* The char of end of line is : **#**");
+                break;
             }
         }
     }
@@ -322,8 +327,8 @@ string FontManager_class::getCharlines()
                 }
                 else {
                     if (findStr(myLine, singleChar) != (-1)) {
+                        //oneChar += convertToUtf8(normalizeStr(myLine));
                         oneChar += normalizeStr(myLine);
-                        
                         Debug_class::log(myLine, true);
                         //Debug_class::log("* add one Char to the string " + to_string(countChar), true);
                         //cout << oneChar << endl;

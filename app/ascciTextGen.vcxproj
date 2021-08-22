@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="convertToUtf8.cpp" />
     <ClCompile Include="src\ConfigFont_class.cpp" />
     <ClCompile Include="src\FontManager_class.cpp" />
     <ClCompile Include="src\fonts.cpp" />
@@ -147,6 +148,12 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\converter\src\utf8.h" />
+    <ClInclude Include="..\converter\src\utf8\checked.h" />
+    <ClInclude Include="..\converter\src\utf8\core.h" />
+    <ClInclude Include="..\converter\src\utf8\cpp11.h" />
+    <ClInclude Include="..\converter\src\utf8\cpp17.h" />
+    <ClInclude Include="..\converter\src\utf8\unchecked.h" />
     <ClInclude Include="src\ConfigFont_class.h" />
     <ClInclude Include="src\FontManager_class.h" />
     <ClInclude Include="src\fonts.h" />
