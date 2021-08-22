@@ -1,2 +1,0 @@
-d:\pCpp\ascciTextGen\Debug\ascciTextGen.exe
-d:\pCpp\ascciTextGen\Debug\ascciTextGen.pdb

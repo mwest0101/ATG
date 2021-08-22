@@ -1,2 +1,0 @@
-d:\pCpp\ascciTextGen_FLF_to_CPP\Release\ascciTextGen_FLF_to_CPP.exe
-D:\pCpp\ascciTextGen\converter\Release\ascciTextGen_FLF_to_CPP.exe

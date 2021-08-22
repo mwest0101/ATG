@@ -1,2 +1,0 @@
-D:\pCpp\ascciTextGen\Release\ascciTextGen.exe
-D:\pCpp\ascciTextGen\app\Release\ascciTextGen.exe
