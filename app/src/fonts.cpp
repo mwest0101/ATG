@@ -23983,5 +23983,6 @@ string show(string font, int cn, string cs, string sr) {
         if ((cn == 100) || (cs == "�")) { sr = "@@@@@@@@@"; }
         if ((cn == 101) || (cs == "�")) { sr = "@@@@@@@@@"; }
     }
+    return sr;
 
 }
