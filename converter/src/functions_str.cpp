@@ -141,9 +141,12 @@ string strReplace(string strOrig, string strToFind, string strToPut) {
 
 string normalizeStr(string result) {
 	result = strReplace(result, "\\", "\\\\");
-	result = strReplace(result, "\'", "\\\'");
-	result = strReplace(result, "\"", "\\\"");
 
+	result = strReplace(result, "\"", "\\\"");
+	
+	//result = strReplace(result, "\'", "\\\'");
+	
+	//result = strReplace(result, "\\", "\\\\");
 	return result;
 }
 
@@ -153,14 +156,16 @@ string normalizeChar(string result) {
 	result = strReplace(result, "\"", "\\\"");
 	result = strReplace(result, "\'", "\\\'");
 
+	
+
 	return result;
 }
 
 
 string normalizeUrl(string result) {
-	result = strReplace(result, "\\\\\\\\", "/");
-	result = strReplace(result, "\\\\\\", "/");
-	result = strReplace(result, "\\\\", "/");
-	result = strReplace(result, "\\'", "/");
+	result = strReplace(result, "\\", "/");
+	result = strReplace(result, "//", "/");
+	result = strReplace(result, "//", "/");
+	result = strReplace(result, "//", "/");
 	return result;
 }

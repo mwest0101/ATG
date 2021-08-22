@@ -29,6 +29,8 @@ public:
     FontManager_class();
     string load(string vPathToFile, string fileName);
     bool loadFile();
+    string doubleChar;
+    string singleChar;
    
     void closeFile();
     vector<string> getVectorOfChars();

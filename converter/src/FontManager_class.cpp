@@ -134,28 +134,55 @@ void FontManager_class::getCharThatCloseLines()
     string strVectorToOutputInFile;
     string myLine, caracterStr, strChar;
     vector<string> caracterArray;
+    vector<string> allLines;
     try {
-        while (getline(c_myFile_Handler, myLine) && characterFound == (-1))
-        {
-            countline++; 
+        while (getline(c_myFile_Handler, myLine)) {
 
-            if ((characterFound = findStr(myLine, "@@")) != (-1)) {
-                finalChar = '@';
-                Debug_class::log("* The char of end of line is : **@**");
-            }else if ((characterFound = findStr(myLine, "##")) != (-1)) {
-                finalChar = '#';
-                Debug_class::log("* The char of end of line is : **#**");
-            }
-
-
+            allLines.push_back(myLine);
         }
-        if (characterFound == (-1)) {
-            Debug_class::log("* The char of end of line **WAS NOT FOUND**");
-            cout << "* The char of end of line was seted by defult to : \\n" << endl;
-        }
-    } catch (int e) {
+    }
+    catch (int e) {
         cout << "**Error reading file lines**" << e << endl;
     }
+    
+    for(string myLine : allLines)
+    {
+            
+
+            if ((characterFound = findStr(myLine, "@@")) != (-1)) {                
+                doubleChar = "@@";
+                singleChar = "@";
+                Debug_class::log("* The char of end of line is : **@@**");
+            }else if ((characterFound = findStr(myLine, "##")) != (-1)) {                
+                doubleChar = "##";
+                singleChar="#";
+
+                Debug_class::log("* The char of end of line is : **##**");
+            }
+    }
+    if (characterFound == (-1)) {
+        for (string myLine : allLines)
+        {
+
+
+            if ((characterFound = findStr(myLine, "@")) != (-1)) {
+                doubleChar = "@";
+                singleChar = "@";
+                Debug_class::log("* The char of end of line is : **@**");
+            }
+            else if ((characterFound = findStr(myLine, "#")) != (-1)) {
+                doubleChar = "#";
+                singleChar = "#";
+
+                Debug_class::log("* The char of end of line is : **#**");
+            }
+        }
+    }
+    if (characterFound == (-1)) {
+       Debug_class::log("* The char of end of line **WAS NOT FOUND**");
+       cout << "* The char of end of line was seted by defult to : \\n" << endl;
+    }
+    
 
 }
     
@@ -170,10 +197,9 @@ string FontManager_class::getCharlines()
     string myLine, caracterStr, strChar;
     string strAllChars;
     string oneChar;
-    string doubleChar;
-    string singleChar(1, finalChar);
+    
     vector<string> numAscciCode;
-    doubleChar = singleChar+ singleChar;
+    
     //cout << " doublechar " << doubleChar << endl;
 
     Debug_class::log("* Processing: **\""+ c_pathToFile+"\"** ");
@@ -189,10 +215,21 @@ string FontManager_class::getCharlines()
     string hexaCode;
     hexaCode = "";
     string charString;
+    string initFilestring="";
     Debug_class::log("------------------>"+nameWithoutExt);
     if (!fileExist(fileNameToStorageResult)) {
         Debug_class::log("-> defining vector name ");
-        writeFile(fileNameToStorageResult, "vector<string> vectorFonts;\n\n");
+
+        initFilestring += "#include \"fonts.h\"\n";
+        initFilestring += "string show(string font,int cn,string cs,string sr){\n\n";
+
+        
+
+
+
+
+
+        writeFile(fileNameToStorageResult, initFilestring);
     }
     else {
         Debug_class::log("-> vector name is defined why the file exist");
@@ -261,7 +298,7 @@ string FontManager_class::getCharlines()
                     Debug_class::log("Processing normal character");
 
                     strChar = myLine.substr(0, characterFound);
-                    oneChar = oneChar + strChar;
+                    oneChar = oneChar + normalizeStr(strChar);
                     if (hexaCode!=""){
                         charString = hexaCode;
 

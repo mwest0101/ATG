@@ -8,7 +8,7 @@
 
 using namespace std;
 
-
+vector<string> vectorFonts;
 
 void show();
 #endif
