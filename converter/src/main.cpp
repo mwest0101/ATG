@@ -28,8 +28,11 @@ int main(int argc, char* argv[], char* envp[])
     Debug_class::log("* initializing converting ");
 
     //cout << "resul : " << strReplace("88888$#    88$#o.  88$#\"bodP'$\";}", "P", "-") << endl;
+    getFileCoding(argv[1]);
 
-    
+
+    //getFileCoding(" ");
+    /*
     if (argc > 1) {
        
  
@@ -48,7 +51,7 @@ int main(int argc, char* argv[], char* envp[])
 
         //printStrVector(fontsLoder.getFullStringOfChars());
     }
-    
+    */
     return 0;
 }
 

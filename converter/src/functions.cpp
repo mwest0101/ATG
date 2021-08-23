@@ -8,6 +8,13 @@
 #include "text_encoding_detect.h"
 #include "Debug_class.h"
 #include "convert_string.h"
+
+#include <stdio.h>
+#include <tchar.h>
+
+#include "text_encoding_detect.h"
+using namespace AutoIt::Common;
+
 using namespace std;
 
 
@@ -51,16 +58,23 @@ string convertToUtf8(string data) {
 string getFileCoding(string fileName)
 {
 
-	std::wstring unicode = L"" + fileName;
-	// Open file in binary mode
-
-
-
-	FILE* file = _wfopen(stringToWstring(fileName), L"rb");
-
-	if (file == NULL)
+	//FILE* file = _wfopen_s(stringToWstring(fileName), L"rb");
+	FILE* file = NULL;
+	wprintf(L"\n ---->.%ls \n", stringToWchar_t2(fileName));
+	//_wfopen_s(&file, L"Banner.flf", L"rb");
+	cout << "Analizing :" << fileName << endl;
+	cout << "llegue aca" << endl;
+	//BOOL err = _wfopen_s(&file,stringToWstring(fileName), L"rb");
+	BOOL err = _wfopen_s(&file, stringToWchar_t2(fileName), L"rb");
+	//BOOL err = _wfopen_s(&file, fileName, L"rb");
+	
+	cout << "llegue aca 2" << endl;
+	//FILE* file = _wfopen(L"D:\\pCpp\\ascciTextGen\\fonts\\3D Diagonal", L"rb");
+	//wprintf(L"Strings in field (2):\n%25S\n"L"%25.4hs\n   %s%25.3ls\n",	string, string, wstring, wstring);
+	if (err != 0) 
 	{
-		wprintf(L"\nCould not open file.\n");
+		wprintf(L"\nCould not open file %ls .\n", stringToWchar_t2(fileName));
+		//cout << fileName << endl;
 		return "-1";
 	}
 
@@ -95,7 +109,7 @@ string getFileCoding(string fileName)
 	// Free up
 	delete[] buffer;
 
-	return 0;
+	return "coding";
 }
 
 

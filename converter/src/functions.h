@@ -7,6 +7,13 @@
 #include "text_encoding_detect.h"
 #include "Debug_class.h"
 
+#include <stdio.h>
+#include <tchar.h>
+
+#include "text_encoding_detect.h"
+using namespace AutoIt::Common;
+
+
 
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H

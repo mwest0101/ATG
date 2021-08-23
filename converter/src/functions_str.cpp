@@ -170,8 +170,28 @@ string normalizeUrl(string result) {
 	return result;
 }
 
-const wchar_t* stringToWstring(string data){
+const wchar_t* stringToWchar_t(string data){
 	wstring wsFileName = wstring(data.begin(), data.end());
 	const wchar_t* wStringFileName = wsFileName.c_str();
 	return wStringFileName;
+}
+wchar_t* stringToWchar_t2(string data) {
+	wchar_t* wide_string = new wchar_t[data.length() + 1];
+	copy(data.begin(), data.end(), wide_string);
+	wide_string[data.length()] = 0;
+	//foo(wide_string);
+	return wide_string;
+}
+
+wstring stringToWstring2(const string& multi) {
+	wstring wide; wchar_t w; mbstate_t mb{};
+	size_t n = 0, len = multi.length() + 1;
+	while (auto res = mbrtowc(&w, multi.c_str() + n, len - n, &mb)) {
+		if (res == size_t(-1) || res == size_t(-2))
+			throw "invalid encoding";
+
+		n += res;
+		wide += w;
+	}
+	return wide;
 }
