@@ -1,4 +1,6 @@
 #include <string>
+#include <vector>
+
 
 #ifndef CONFIG_FONT_CLASS_H
 #define CONFIG_FONT_CLASS_H
@@ -8,9 +10,8 @@ class ConfigFont_class
 {
 
 public:
-    
-    
-    static size_t found;
+        
+    static int found;
     static string p1;
     static string p2;
     static int p3_Height;
@@ -18,6 +19,8 @@ public:
     static int p5_maxLinLen;
     static int p6_defSmuMod;
     static int p7_numComm;
+    //static string charOrder[];
+    static vector<string> charOrder[];
     
 };
 #endif

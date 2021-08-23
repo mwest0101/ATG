@@ -19,7 +19,7 @@ int main()
     vector<string> vecOfAllChars;
     vector<string> vecOfAChar;
     FontManager_class fontsLoder;
-    fontsLoder.load("fonts\\Speed.flf","Mauricio");       
+    fontsLoder.load("Speed","Mauricio");       
     printStrVector(fontsLoder.getFullStringOfChars());
     
    /* fontsLoder.load("fonts\\3D-ASCII.flf","Cintia");    

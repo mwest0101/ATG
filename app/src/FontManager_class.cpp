@@ -12,8 +12,8 @@ const string HEAD_FILE = "flf2";
         
     }
 
-    void FontManager_class::load(string vPathToFile,string strToPrint) {
-        c_pathToFile = vPathToFile;
+    void FontManager_class::load(string fontName,string strToPrint) {
+        c_pathToFile = fontName;
         c_caractersArray.clear();
         c_vecOfAllChars.clear();
 
@@ -41,7 +41,7 @@ const string HEAD_FILE = "flf2";
         c_myFile_Handler.close();
 
     }
-    
+    /*
     void FontManager_class::getConfig(string myLine)
     {
         vector<string> paramsArray;
@@ -67,7 +67,7 @@ const string HEAD_FILE = "flf2";
             
 
         }
-    }
+    }*/
 
     void FontManager_class::loadFileLinesInMemory()
     {

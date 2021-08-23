@@ -226,7 +226,8 @@ string FontManager_class::getCharlines()
         Debug_class::log("-> defining vector name ");
 
         initFilestring += "#include \"fonts.h\"\n";
-        initFilestring += "string show(string font,int cn,string cs,string sr){\n\n";
+        initFilestring += "string show(string font,int cn,string cs){\n";
+        initFilestring += "     string sr;\n\n";
 
         
 
@@ -327,8 +328,9 @@ string FontManager_class::getCharlines()
                 }
                 else {
                     if (findStr(myLine, singleChar) != (-1)) {
-                        //oneChar += convertToUtf8(normalizeStr(myLine));
-                        oneChar += normalizeStr(myLine);
+                        oneChar += convertToUtf8(normalizeStr(myLine));
+                        //oneChar += normalizeStr(myLine);
+
                         Debug_class::log(myLine, true);
                         //Debug_class::log("* add one Char to the string " + to_string(countChar), true);
                         //cout << oneChar << endl;

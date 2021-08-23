@@ -1,38 +1,81 @@
-#include "functions.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
 #include "functions_str.h"
-
-const string HEAD_FILE = "flf2";
-
-
+#include <locale>
+#include "Debug_class.h"
+#include "convert_string.h"
 using namespace std;
 
 
 
 
-/*
-void anlizeString(string str) {
-	int count_find = 0;
+bool fileExist(const std::string& name) {
+	ifstream f(name.c_str());
+	return f.good();
+}
 
-	string subStr;
-
-	int newPos = 0;
-
-	subStr = str;
-	int band = 1;
-
-	while (band) {
-		if ((count_find == 0) && ((newPos = str.find("((")) != -1)) {
-			subStr = str.substr(0, newPos);
-			cout << subStr;
-			str = str.substr(newPos + 2);
-			count_find = 1;
-		} else {
-			cout << str; //Imprimo cadena posterior al parametro			
-			band = 0;
-		}
-
+char* iso_latin_1_to_utf8(char* buffer, char* end, unsigned char c) {
+	if (c < 128) {
+		if (buffer == end) { throw std::runtime_error("out of space"); }
+		*buffer++ = c;
 	}
-}*/
+	else {
+		if (end - buffer < 2) { throw std::runtime_error("out of space"); }
+		*buffer++ = 0xC0 | (c >> 6);
+		*buffer++ = 0x80 | (c & 0x3f);
+	}
+	return buffer;
+}
+string convertToUtf8(string data) {
+	wstring widestr = wstring(data.begin(), data.end());
+	const wchar_t* widecstr = widestr.c_str();
+	string textToInsert;
+	convert_unicode_to_utf8_string(textToInsert, widecstr, widestr.size());
+	return textToInsert;
+}
+
+void writeFile(string filename, string textToInsert) {
+    fstream newfile;
+	
+
+	Debug_class::log("Prepare for storage");
+	
+	if (fileExist(filename)) {
+		newfile.open(filename,  ios::out | ios::app);
+		if (newfile.is_open()) //checking whether the file is open
+		{			
+			
+			newfile << textToInsert;   //inserting text
+			newfile.close();    //close the file object
+			Debug_class::log("File storaged");
+			//cout << "archivo existe" << endl;
+			Debug_class::log("The File : "+filename+" Exist");
+		}
+	}
+	else {
+		newfile.open(filename, ios::out | ios::app);
+		if (newfile.is_open()) //checking whether the file is open
+		{
+			newfile << "\xEF\xBB\xBF"; // \xEF\xBF\xBD -  original UTF8 BOMM"\xEF\xBB\xBF"
+
+			newfile << textToInsert;   //inserting text
+			newfile.close();    //close the file object	
+			//cout << "archivo NO existe" << endl;
+			Debug_class::log("The File : " + filename + " Not exist");
+		}
+	}
+    
+    
+        //cout << textToInsert;
+		
+    
+	
+	
+}
+
+
 
 
 

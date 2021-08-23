@@ -169,3 +169,9 @@ string normalizeUrl(string result) {
 	result = strReplace(result, "//", "/");
 	return result;
 }
+
+const wchar_t* stringToWstring(string data){
+	wstring wsFileName = wstring(data.begin(), data.end());
+	const wchar_t* wStringFileName = wsFileName.c_str();
+	return wStringFileName;
+}

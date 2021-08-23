@@ -32,5 +32,6 @@
 	string normalizeStr(string result);
 	string normalizeChar(string result);
 	string normalizeUrl(string result);
+	const wchar_t* stringToWstring(string data);
 
 #endif

@@ -10,6 +10,7 @@ using namespace std;
 
 vector<string> vectorFonts;
 
-void show();
+string show(string font, int cn, string cs);
+
 #endif
 

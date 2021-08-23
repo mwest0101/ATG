@@ -7,11 +7,30 @@
 #ifndef FUNCTIONS_STR_H
 #define FUNCTIONS_STR_H
 	using namespace std;
+	
+
+	char * strTochars(string vStr);
+	char strTochar(string vStr);
+		
+	string charToStr(string vChar);
+
+	char intToChar(string vInt);
+	int charToInt(string vChar);
+	string intToStr(string vInt);
+	int strToInt(string vStr);
+
 	string leftTrim(string str, string chars);
 	string rightTrim(string str, string chars);
 	string trimString(string str, string chars);
 	vector<string> splitStr(string str, char sep);
 	void printStrVector(vector<string> strVec);
-	size_t findStr(string stringFile, string stringToSearh);
-	size_t findEndOfStr(string stringFile, string stringToSearh);
+	int findStr(string stringFile, string stringToSearh);
+	int findStrLastChar(string stringFile, string stringToSearh);
+	int findEndOfStr(string stringFile, string stringToSearh);
+	string strReplace(string strOrig, string strToFind, string strToPut);
+
+	string normalizeStr(string result);
+	string normalizeChar(string result);
+	string normalizeUrl(string result);
+
 #endif

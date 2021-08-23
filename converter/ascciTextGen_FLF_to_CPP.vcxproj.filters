@@ -39,6 +39,9 @@
     <ClCompile Include="src\convert_string.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\text_encoding_detect.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\config_inc.h">
@@ -60,6 +63,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\convert_string.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="src\text_encoding_detect.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
