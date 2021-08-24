@@ -8,9 +8,9 @@
 
 using namespace std;
 
-vector<string> vectorFonts;
 
-string show(string font, int cn, string cs);
 
+
+string showfonts(string font="allNameFonts", int cn = -100, string cs = "-100");
 #endif
 

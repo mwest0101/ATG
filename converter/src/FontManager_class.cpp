@@ -98,7 +98,9 @@ void FontManager_class::getConfig()
 {
     vector<string> paramsArray;
     string strParam,myLine;
-
+    c_fileEncoding = getFileCoding(c_pathToFile);
+    Debug_class::log("The file codifing is : " + c_fileEncoding);
+    if (c_fileEncoding =="UTF-8") Debug_class::log("does not it is necessary codifying the file to UTF-8");
     getline(c_myFile_Handler, myLine);
 
     cout << myLine << endl;
@@ -212,7 +214,7 @@ string FontManager_class::getCharlines()
 
     Debug_class::log("* Creating and normalizing strings");
 
-    Debug_class::log("------------------>"+c_pathToFile);
+    //Debug_class::log("------------------>"+c_pathToFile);
     vector<string> fileNameParts = splitStr(normalizeUrl(c_pathToFile), '/');
     string nameWithoutPath = fileNameParts[fileNameParts.size() - 1];
     fileNameParts = splitStr(nameWithoutPath, '.');
@@ -221,7 +223,7 @@ string FontManager_class::getCharlines()
     hexaCode = "";
     string charString;
     string initFilestring="";
-    Debug_class::log("------------------>"+nameWithoutExt);
+    //Debug_class::log("------------------>"+nameWithoutExt);
     if (!fileExist(fileNameToStorageResult)) {
         Debug_class::log("-> defining vector name ");
 
@@ -238,7 +240,7 @@ string FontManager_class::getCharlines()
         writeFile(fileNameToStorageResult, initFilestring);
     }
     else {
-        Debug_class::log("-> vector name is defined why the file exist");
+        Debug_class::log("    -> vector name is defined why the file exist");
     }
     strResult += "vectorFonts.push_back(\"" + nameWithoutExt + "\");\n";
 
@@ -260,48 +262,29 @@ string FontManager_class::getCharlines()
     strResult += strConfig + "\n";
     writeFile(fileNameToStorageResult, strResult);
     strResult = "";
-    /*
+
     while (getline(c_myFile_Handler, myLine)) {
-        c_allContent.push_back(myLine);
-
-    }
-
-
-        
-
-     for (string myLine : c_allContent)
-     {
-         */
-    while (getline(c_myFile_Handler, myLine)) {
-         //Debug_class::log(myLine, true);
+      
         countline++;
         if ((configFound==(-1)) || (countline > ConfigFont_class::p7_numComm))
         {
             
             
             if ((countChar >= getVectorOfChars().size()) && (findStr(myLine, singleChar) == (-1))) {
-                    
-                
-                
-                    numAscciCode = splitStr(myLine, ' ');
 
+                    numAscciCode = splitStr(myLine, ' ');
                     hexaCode = numAscciCode[0];
                     Debug_class::log("----------------------------");
                     Debug_class::log("Captura de caracter EXTRA");
                     Debug_class::log("HexaCode "+ hexaCode);
-                    //cout << "----->" << numAscciCode[0] << endl;
-                   // cout << "codigo de fuente "<< endl;
-                    //cout << "codigo de fuente " << numAscciCode[0];
-                
-            }
-            else {
-                
+
+            } else {
 
                 if ((characterFound = findStr(myLine, doubleChar)) != (-1))
                 {
                     //Debug_class::log("Entre a getCharLines 2");
                     Debug_class::log("================================================================");
-                    Debug_class::log("Processing normal character");
+                    Debug_class::log("    Processing normal character");
 
                     strChar = myLine.substr(0, characterFound);
                     oneChar = oneChar + normalizeStr(strChar);
@@ -322,13 +305,13 @@ string FontManager_class::getCharlines()
                     writeFile(fileNameToStorageResult, strAllChars);
                     strAllChars = "";
 
-                    Debug_class::log("* add one Char to the string " + to_string(countChar) + " " + charString, true);
+                    Debug_class::log("    * add one Char to the string " + to_string(countChar) + " " + charString, true);
                     hexaCode = "";
 
                 }
                 else {
                     if (findStr(myLine, singleChar) != (-1)) {
-                        oneChar += convertToUtf8(normalizeStr(myLine));
+                        oneChar += convertToUtf8(normalizeStr(myLine), c_fileEncoding);
                         //oneChar += normalizeStr(myLine);
 
                         Debug_class::log(myLine, true);

@@ -5,12 +5,13 @@
 #include <AtlBase.h>
 #include <atlconv.h>
 #include "text_encoding_detect.h"
+
 #include "Debug_class.h"
 
 #include <stdio.h>
 #include <tchar.h>
 
-#include "text_encoding_detect.h"
+
 using namespace AutoIt::Common;
 
 
@@ -22,7 +23,7 @@ using namespace AutoIt::Common;
 
 	string convertToUtf8(string data);
 	bool fileExist(const std::string& name);
-	string convertToUtf8(string data);
+	string convertToUtf8(string data,string fileEncoding);
 	string getFileCoding(string fileName);
 	void writeFile(string filename, string text);
 

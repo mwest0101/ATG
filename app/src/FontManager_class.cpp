@@ -2,166 +2,125 @@
 
 using namespace std;
 
-
-
 const string HEAD_FILE = "flf2";
 
-    FontManager_class::FontManager_class()
-    {
-        
-        
+FontManager_class::FontManager_class()
+{
+
+
+}
+
+string FontManager_class::load(string fontName,string stringToPrint) {
+    string result = "";
+    string conf = "";
+    cout << "entre a load " << endl;
+    cout << fontName << endl;
+    if (fontName == "names") {
+        fontName = "allNameFonts";
+        result = showfonts(fontName, -100, stringToPrint);
+    }else if (fontName!="" && stringToPrint!=""){
+        conf = showfonts(fontName, -100, "conf");        
+        getConfig(conf);    
+
+        generateVectorOfStrings(fontName, stringToPrint);
+        generateStringResult();
+
+        result = getStringResult();
     }
 
-    void FontManager_class::load(string fontName,string strToPrint) {
-        c_pathToFile = fontName;
-        c_caractersArray.clear();
-        c_vecOfAllChars.clear();
+    
+    return result;
+}
 
-        if (loadFile()) {
-            loadFileLinesInMemory();
-            convStrToStrOfAscciChar(strToPrint);
-            closeFile();
-        }
-    }
-    //"fonts\\Speed.flf"
-    bool FontManager_class::loadFile()
-    {
-        c_myFile_Handler.open(c_pathToFile);
-        if (c_myFile_Handler.is_open())
-        {
-            return true;
-        }
-        else
-        {
-            cout << "Unable to open the file!";
-            return false;
-        }
-    }
-    void FontManager_class::closeFile(){
-        c_myFile_Handler.close();
+vector<string> FontManager_class::getVectorfromOnechar(string data) {
+    return splitStr(data, strTochar(ConfigFont_class::nl));
+}
 
-    }
-    /*
-    void FontManager_class::getConfig(string myLine)
-    {
-        vector<string> paramsArray;
-        string strParam;
-        size_t characterFound = (-1);
+void FontManager_class::concatenateChar(vector<string> oneChar) {
 
-        characterFound = findEndOfStr(myLine, HEAD_FILE);
-        
-
-        if (characterFound != (-1))
-        {
-            strParam = myLine.substr(characterFound);
-            paramsArray = splitStr(strParam, ' ');
-            
-            ConfigFont_class::found = characterFound;
-            ConfigFont_class::p1 = paramsArray[0][0];
-            ConfigFont_class::p2 = paramsArray[0][1];
-            ConfigFont_class::p3_Height = stoi(paramsArray[1]);
-            ConfigFont_class::p4_Height_nd = stoi(paramsArray[2]);
-            ConfigFont_class::p5_maxLinLen = stoi(paramsArray[3]);
-            ConfigFont_class::p6_defSmuMod = stoi(paramsArray[4]);
-            ConfigFont_class::p7_numComm = stoi(paramsArray[5]);
-            
-
-        }
-    }*/
-
-    void FontManager_class::loadFileLinesInMemory()
-    {
-        // Keep reading the file
-        size_t characterFound = 0;
-        int countline = 0;
-
-        string myLine, caracterStr, strChar;
-
-        vector<string> caracterArray;
-
-        
-
-        while (getline(c_myFile_Handler, myLine))
-        {
-            countline++;
-            if (ConfigFont_class::found == (-1))
-            {
-                getConfig(myLine);
-            }
-            else
-            {
-                if (countline > ConfigFont_class::p7_numComm)
-                {
-                    if ((characterFound = findStr(myLine, "@@")) != (-1))
-                    {
-                        strChar = myLine.substr(0, characterFound);
-                        caracterStr = caracterStr + strChar;
-                        caracterArray = splitStr(caracterStr, '@');
-                        c_caractersArray.push_back(caracterArray);
-                        caracterStr = "";
-                    }
-                    else
-                    {
-                        caracterStr = caracterStr + myLine;
-                    }
-                }
-            }
-        }
-
-    }
-    vector<vector<string>> FontManager_class::getCaractersArray() {
-        return c_caractersArray;
-    }
-
-    size_t FontManager_class::getPosOfCharInFile(string chartoSearch) {
-        size_t valRet = (-1);
-        vector<string> strCharArray;        
-        string charOrder = "  ! \" # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \\ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ Ä Ö Ü ä ö ü ß ";
-        valRet = charOrder.find(chartoSearch);
-        valRet = (valRet / 2);
-        return valRet;
-
-    }
-
-
-    vector<string> FontManager_class::getCharFromFile(string charToSearch) {
-        return c_caractersArray[FontManager_class::getPosOfCharInFile(charToSearch)];
-    }
-
-    void FontManager_class::concStrVector(vector<string> vecOfAChar) {
-        //cout << vecOfAChar.size() << endl;
-
-        if (c_vecOfAllChars.size() == 0) {
-            for (string data : vecOfAChar) {
-                c_vecOfAllChars.push_back(data);
-            }
+    for (unsigned int i = 0; i < oneChar.size(); i++) {
+        if (resultAsciiArtVector.size() < oneChar.size()) {
+            resultAsciiArtVector.push_back(oneChar[i]);
         }
         else {
-            //cout << "pase 2" << endl;
-            for (unsigned int i = 0; i < vecOfAChar.size(); i++) {
-                //cout << vecOfAChar[i] << endl;
-                c_vecOfAllChars[i] = c_vecOfAllChars[i] + vecOfAChar[i];
-            }
+            resultAsciiArtVector[i] += oneChar[i];
+
         }
-     
-    }
-    
-    vector<string> FontManager_class::getFullStringOfChars() {
-        return c_vecOfAllChars;
+
+
     }
 
-    void FontManager_class::convStrToStrOfAscciChar(string strToconvert)
+
+}
+
+void FontManager_class::generateVectorOfStrings(string fontName,string sourceString) {
+    string strOfChar;
+    for (unsigned int i = 0; i < sourceString.length(); i++) {
+        string charToSeek(1, sourceString[i]);
+        strOfChar=showfonts(fontName, -100, charToSeek);
+        concatenateChar(getVectorfromOnechar(strOfChar));
+    }
+}
+
+
+void FontManager_class::generateStringResult() {
+    string strOfChar;
+    resultAsciiArtString = "";
+    for (string data : resultAsciiArtVector) {
+        resultAsciiArtString += data + "\n";
+    }
+}
+
+void FontManager_class::setSmush(bool value) {
+    c_smush = value;
+}
+string FontManager_class::reformatString(string data) {
+    string fontSmush = ConfigFont_class::p2;
+    if (fontSmush != "") {
+        if (!c_smush) {
+           data = strReplace(data, fontSmush, " ");
+            //cout << "pase 1 " << endl;
+        }
+        else {
+            data = strReplace(data, fontSmush, "");
+            //cout << "pase 2 " << endl;
+        }
+    }
+    return data;
+}
+
+
+string FontManager_class::getStringResult() {
+    resultAsciiArtString = reformatString(resultAsciiArtString);
+    return resultAsciiArtString;
+}
+
+
+void FontManager_class::getConfig(string data)
+{
+    vector<string> paramsArray = splitStr(data, ',');
+    vector<vector<string>> aparam;
+    for (string data : paramsArray) {
+        aparam.push_back(splitStr(data, '='));
+    }
+    /*
+    cout << aparam[0][0] << endl;
+    cout << aparam[0][1] << endl;*/
+    
+    
+    if (aparam[1][1]!="")
     {
-        string charTemp = "";
-        for (unsigned i = 0; i < strToconvert.length();i++) {
-            charTemp=strToconvert.at(i);                     
-            concStrVector(getCharFromFile(charTemp));
-        }
-       
-    }
-    
-    
-    void convStrToStrOfAscciChar(string strToconvert) {
+        ConfigFont_class::nl = aparam[0][1];
+        ConfigFont_class::found = stoi(aparam[1][1]);
+        ConfigFont_class::p1 = aparam[2][1];
+        ConfigFont_class::p2 = aparam[3][1];
+        ConfigFont_class::p3_Height = stoi(aparam[4][1]);
+        ConfigFont_class::p4_Height_nd = stoi(aparam[5][1]);
+        ConfigFont_class::p5_maxLinLen = stoi(aparam[6][1]);
+        ConfigFont_class::p6_defSmuMod = stoi(aparam[7][1]);
+        ConfigFont_class::p7_numComm = stoi(aparam[8][1]);
 
-        
     }
+
+    
+}

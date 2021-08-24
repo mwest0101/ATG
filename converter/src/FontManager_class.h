@@ -32,6 +32,8 @@ public:
     bool loadFile();
     string doubleChar;
     string singleChar;
+
+    string c_fileEncoding;
    
     void closeFile();
     vector<string> getVectorOfChars();

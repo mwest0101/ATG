@@ -10,7 +10,7 @@ class ConfigFont_class
 {
 
 public:
-        
+    static string nl;
     static int found;
     static string p1;
     static string p2;

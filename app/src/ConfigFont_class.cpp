@@ -4,7 +4,7 @@
 using namespace std;
 
 
-
+    string ConfigFont_class::nl = "";
     int ConfigFont_class::found = (-1);
     string ConfigFont_class::p1 = "";
     string ConfigFont_class::p2 = "";

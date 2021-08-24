@@ -32,8 +32,7 @@
 	string normalizeStr(string result);
 	string normalizeChar(string result);
 	string normalizeUrl(string result);
-	const wchar_t* stringToWchar_t(string data);
-	wchar_t* stringToWchar_t2(string data);
-	wstring stringToWstring2(const string& multi);
-
+	const wchar_t* stringToConstWchar_t(string data);
+	wchar_t* stringToWchar_t(string data);
+	wstring stringToWstring(const string& multi);
 #endif

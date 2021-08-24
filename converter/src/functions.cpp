@@ -38,78 +38,71 @@ char* iso_latin_1_to_utf8(char* buffer, char* end, unsigned char c) {
 	return buffer;
 }*/
 
-string convertToUtf8(string data) {
+string convertToUtf8(string data,string fileEncoding) {
 	//
 	// convert_ansi_to_unicode_string
 	//
-	wstring unicode = L"";
-	string ansi = data;
-	string textToInsert;
-	convert_ansi_to_unicode_string(unicode, ansi.c_str(), ansi.size());
+	/*
+	"None"
+	"ASCII"
+	"ANSI"
+	"UTF-8"
+	"UTF-16"
+	"UTF-16B";
+	*/
+//	Debug_class::log("El archivo esta codificado como :"+ fileEncoding);
+	//cout << " ------------> "+fileEncoding << endl;
+	if (fileEncoding == "ANSI") {
+		Debug_class::log("    Converting ANSI to UTF-8 "+ data);
+		wstring unicode = L"";		
+		string textToInsert;		
+		convert_ansi_to_unicode_string(unicode, data.c_str(), data.size());
+		convert_unicode_to_utf8_string(textToInsert, unicode.c_str(), unicode.size());
+		data = textToInsert;
+	}
 
-	//
-	// convert_unicode_to_utf8_string
-	//
+	if (fileEncoding == "UTF-16" || fileEncoding == "UTF-16B" ) {
+		Debug_class::log("    Converting UTF-16B to Unicode a UTF-8 " + data);
+		wstring unicode = L"";		
+		string textToInsert;
+		unicode = stringToWstring(data);
+		convert_unicode_to_utf8_string(textToInsert, unicode.c_str(), unicode.size());
+		data = textToInsert;
+	}
 
-	convert_unicode_to_utf8_string(textToInsert, unicode.c_str(), unicode.size());
-	return textToInsert;
+	return data;
 }
 
 string getFileCoding(string fileName)
 {
-
-	//FILE* file = _wfopen_s(stringToWstring(fileName), L"rb");
-	FILE* file = NULL;
-	wprintf(L"\n ---->.%ls \n", stringToWchar_t2(fileName));
-	//_wfopen_s(&file, L"Banner.flf", L"rb");
-	cout << "Analizing :" << fileName << endl;
-	cout << "llegue aca" << endl;
-	//BOOL err = _wfopen_s(&file,stringToWstring(fileName), L"rb");
-	BOOL err = _wfopen_s(&file, stringToWchar_t2(fileName), L"rb");
-	//BOOL err = _wfopen_s(&file, fileName, L"rb");
-	
-	cout << "llegue aca 2" << endl;
-	//FILE* file = _wfopen(L"D:\\pCpp\\ascciTextGen\\fonts\\3D Diagonal", L"rb");
-	//wprintf(L"Strings in field (2):\n%25S\n"L"%25.4hs\n   %s%25.3ls\n",	string, string, wstring, wstring);
-	if (err != 0) 
-	{
-		wprintf(L"\nCould not open file %ls .\n", stringToWchar_t2(fileName));
-		//cout << fileName << endl;
-		return "-1";
+	FILE* file = NULL;	
+	BOOL err = _wfopen_s(&file, stringToWchar_t(fileName), L"rb");	
+	if (err != 0) {
+		wprintf(L"\nCould not open file %ls .\n", stringToWchar_t(fileName));	
+		return "NULL";
 	}
-
-	// Get file size
+	
 	fseek(file, 0, SEEK_END);
 	long fsize = ftell(file);
 	fseek(file, 0, SEEK_SET);
 
-	// Read it all in
 	unsigned char* buffer = new unsigned char[fsize];
 	fread(buffer, fsize, 1, file);
 	fclose(file);
 
-	// Detect the encoding
 	TextEncodingDetect textDetect;
 	TextEncodingDetect::Encoding encoding = textDetect.DetectEncoding(buffer, fsize);
 
-	wprintf(L"\nEncoding: ");
-	if (encoding == TextEncodingDetect::None)
-		wprintf(L"Binary");
-	else if (encoding == TextEncodingDetect::ASCII)
-		wprintf(L"ASCII (chars in the 0-127 range)");
-	else if (encoding == TextEncodingDetect::ANSI)
-		wprintf(L"ANSI (chars in the range 0-255 range)");
-	else if (encoding == TextEncodingDetect::UTF8_BOM || encoding == TextEncodingDetect::UTF8_NOBOM)
-		wprintf(L"UTF-8");
-	else if (encoding == TextEncodingDetect::UTF16_LE_BOM || encoding == TextEncodingDetect::UTF16_LE_NOBOM)
-		wprintf(L"UTF-16 Little Endian");
-	else if (encoding == TextEncodingDetect::UTF16_BE_BOM || encoding == TextEncodingDetect::UTF16_BE_NOBOM)
-		wprintf(L"UTF-16 Big Endian");
-
-	// Free up
+	//wprintf(L"\nEncoding: ");
+	if (encoding == TextEncodingDetect::None) return "None"; //wprintf(L"Binary");
+	else if (encoding == TextEncodingDetect::ASCII) return "ASCII"; //wprintf(L"ASCII (chars in the 0-127 range)");
+	else if (encoding == TextEncodingDetect::ANSI) return "ANSI"; //wprintf(L"ANSI (chars in the range 0-255 range)");
+	else if (encoding == TextEncodingDetect::UTF8_BOM || encoding == TextEncodingDetect::UTF8_NOBOM) return "UTF-8"; //wprintf(L"UTF-8");
+	else if (encoding == TextEncodingDetect::UTF16_LE_BOM || encoding == TextEncodingDetect::UTF16_LE_NOBOM) return "UTF-16"; //wprintf(L"UTF-16 Little Endian");
+	else if (encoding == TextEncodingDetect::UTF16_BE_BOM || encoding == TextEncodingDetect::UTF16_BE_NOBOM) return "UTF-16B"; //wprintf(L"UTF-16 Big Endian");
 	delete[] buffer;
 
-	return "coding";
+	return "NULL";
 }
 
 
@@ -117,7 +110,7 @@ void writeFile(string filename, string textToInsert) {
 	fstream newfile;
 
 
-	Debug_class::log("Prepare for storage");
+	Debug_class::log("    Prepare for storage");
 
 	if (fileExist(filename)) {
 		newfile.open(filename, ios::out | ios::app);
@@ -126,9 +119,9 @@ void writeFile(string filename, string textToInsert) {
 
 			newfile << textToInsert;   //inserting text
 			newfile.close();    //close the file object
-			Debug_class::log("File storaged");
+			Debug_class::log("    File storaged");
 			//cout << "archivo existe" << endl;
-			Debug_class::log("The File : " + filename + " Exist");
+			Debug_class::log("    The File : " + filename + " Exist");
 		}
 	}
 	else {
@@ -140,7 +133,7 @@ void writeFile(string filename, string textToInsert) {
 			newfile << textToInsert;   //inserting text
 			newfile.close();    //close the file object	
 			//cout << "archivo NO existe" << endl;
-			Debug_class::log("The File : " + filename + " Not exist");
+			Debug_class::log("    The File : " + filename + " Not exist");
 		}
 	}
 
