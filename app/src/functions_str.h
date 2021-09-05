@@ -35,4 +35,15 @@
 	const wchar_t* stringToConstWchar_t(string data);
 	wchar_t* stringToWchar_t(string data);
 	wstring stringToWstring(const string& multi);
+
+	string createSpaces(int numSpaces);
+
+
+	string eraseRightChars(string data, int num);
+	string eraseLeftChars(string data, int num);
+	string eraseCentersChars(string data, int num);
+
+	string compWithRightSpaces(string source, int numSpaces);
+	string compWithLeftSpaces(string source, int numSpaces);
+	string compWithCenterSpaces(string source, int numSpaces);
 #endif

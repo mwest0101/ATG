@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "functions_str.h"
 
 #ifndef FONTS_H
 #define FONTS_H

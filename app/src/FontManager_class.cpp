@@ -16,8 +16,8 @@ string FontManager_class::load(string fontName,string stringToPrint) {
     cout << "entre a load " << endl;
     cout << fontName << endl;
     if (fontName == "names") {
-        fontName = "allNameFonts";
-        result = showfonts(fontName, -100, stringToPrint);
+        
+        showListOfFonts();
     }else if (fontName!="" && stringToPrint!=""){
         conf = showfonts(fontName, -100, "conf");        
         getConfig(conf);    
@@ -123,4 +123,72 @@ void FontManager_class::getConfig(string data)
     }
 
     
+}
+bool FontManager_class::addNumIfNotExisInArray(int num) {
+    static vector<int> vectorNumeros;
+    if (find(vectorNumeros.begin(), vectorNumeros.end(), num) != vectorNumeros.end()) {
+        return false;
+    }else {
+        vectorNumeros.push_back(num);
+        return true;
+    }
+    
+}
+void FontManager_class::showListOfFonts() {
+
+    string fontName = "allNameFonts";
+    string result = showfonts("allNameFonts", -100, " ");
+    vector<string> listOfChars;
+    vector<string> onechar;
+    string strToPrint;
+    string oneStrToPrint;
+    int sizeColNum = 3;
+    int sizeColName = 20;
+    int maxCountCols = 4;
+    int countFont = 0;
+    int countCols = 1;
+
+    //cout << "estoy en showListofFonts";
+    cout << endl;
+    listOfChars = splitStr(result, ';');
+    
+    oneStrToPrint = "";
+    //onechar = "";
+    countCols = 0;
+    int maxElements = (listOfChars.size()-1);
+    int columElements = (int)( ( ((float)maxElements / (float)maxCountCols) ) );
+    columElements = columElements+1;
+    
+    //float columElements2 = ((float)maxElements/ (float)maxCountCols)+(float)maxCountCols;
+    int element = 0;
+ 
+   
+    //int maxValue = 0;
+
+    for (int i = 0; i < columElements; i++) {
+        //cout << i << endl;
+        for (int j = 0; j < maxCountCols; j++) {          
+
+            element = (columElements * j) + i;
+            
+            //if (maxValue < element) { maxValue = element; }
+            
+            if ((element < maxElements) && addNumIfNotExisInArray(element)) {
+                onechar = splitStr(listOfChars[element], ':');
+
+                oneStrToPrint += "[ " + compWithLeftSpaces(onechar[0], sizeColNum) + " : " + compWithRightSpaces(onechar[1], sizeColName) + " ] ";
+            } else {
+                oneStrToPrint += "[ " + compWithLeftSpaces("", sizeColNum) + " : " + compWithRightSpaces("", sizeColName) + " ] ";
+            }
+
+            
+        }
+
+        cout << oneStrToPrint << endl;
+        //strToPrint += oneStrToPrint + "\n";
+        oneStrToPrint = "";
+
+    }
+    //cout << strToPrint << endl;
+
 }

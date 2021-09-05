@@ -194,3 +194,51 @@ wstring stringToWstring(const string& multi) {
 	}
 	return wide;
 }
+
+string createSpaces(int numSpaces) {
+	string strRet = "";
+	for (int i = 0; i < numSpaces; i++) {
+		strRet += " ";
+	}
+	return strRet;
+}
+string eraseRightChars(string data,int num) {
+	string result;
+	result = data.substr(0, (data.size()-num));
+	return result;
+}
+
+string eraseLeftChars(string data, int num) {
+	string result;
+	result = data.substr(num, data.size());
+	return result;
+}
+
+string eraseCentersChars(string data, int num) {
+	string result;
+	result = data.substr((int)(num/2), data.size());
+	result = result.substr(0, (result.size()- (int)(num / 2)));
+	return result;
+}
+
+string compWithRightSpaces(string source,int numSpaces) {
+	string spacesToAdd = "";
+	string resultStrl = "";
+	spacesToAdd = createSpaces(numSpaces - (source.size()));
+	resultStrl = source + spacesToAdd;
+	return resultStrl;
+}
+string compWithLeftSpaces(string source, int numSpaces) {
+	string spacesToAdd = "";
+	string resultStrl = "";
+	spacesToAdd = createSpaces(numSpaces - (source.size()));
+	resultStrl = spacesToAdd+source;
+	return resultStrl;
+}
+string compWithCenterSpaces(string source, int numSpaces) {
+	string spacesToAdd = "";
+	string resultStrl = "";
+	spacesToAdd = createSpaces(((int)(numSpaces/2)) - (source.size()));
+	resultStrl = spacesToAdd+source + spacesToAdd;
+	return resultStrl;
+}

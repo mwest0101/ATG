@@ -17607,21 +17607,17 @@ string showfonts(string font, int cn, string cs) {
     }
 
 
-
-
     if (font == "allNameFonts") {
-        string listFonts = "";
         int countFont = 0;
-
-        // cout << "entre a allNameFonts" << endl;
+        string listFonts = "";
         for (string oneFont : vectorFonts) {
+            listFonts += to_string(countFont) + ":" + oneFont + ";";
             countFont++;
-            listFonts += " [ " + oneFont + " : " + to_string(countFont) + " ] \n";
         }
-        cout << listFonts << endl;
+
         sr = listFonts;
     }
-    //cout << "pase por aca 2" << endl;
+   
 
     return sr;
 

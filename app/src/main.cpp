@@ -32,24 +32,25 @@ int main(int argc, char* argv[], char* envp[])
         }       
     }
     cout << endl;
-    cout << "llegue aca " << endl;
+   // cout << "llegue aca " << endl;
     if (argc > 0) {
         
         param1=argv[1];        
-        cout << "llegue aca 2 " << param1 << endl;
+        //cout << "llegue aca 2 " << param1 << endl;
      
     }
     else { param1 = "NULL";}
+
     if (argc > 1) {
         
         param2 = argv[2];
-        cout << "llegue aca 3 " << param2 << endl;
+        //cout << "llegue aca 3 " << param2 << endl;
      
     }
     else { param2 = "NULL"; }
 
-    cout << param1 << endl;
-    cout << param2 << endl;
+   // cout << param1 << endl;
+   // cout << param2 << endl;
 
     strResult = fontsLoder.load(param1, param2);
     cout << strResult << endl;
