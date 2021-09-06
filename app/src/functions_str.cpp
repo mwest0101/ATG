@@ -202,43 +202,70 @@ string createSpaces(int numSpaces) {
 	}
 	return strRet;
 }
-string eraseRightChars(string data,int num) {
+
+string cutRightStr(string data,int num) {
 	string result;
-	result = data.substr(0, (data.size()-num));
+	//cout << "entre data=" << data <<" num="<<num << " data size "<< data.size() << endl;
+	result = data.substr(0, num);
+	//cout << "sali " << result << endl;
 	return result;
 }
 
-string eraseLeftChars(string data, int num) {
+string cutLeftStr(string data, int num) {
 	string result;
 	result = data.substr(num, data.size());
 	return result;
 }
 
-string eraseCentersChars(string data, int num) {
+string cutCentStr(string data, int num) {
 	string result;
-	result = data.substr((int)(num/2), data.size());
-	result = result.substr(0, (result.size()- (int)(num / 2)));
+	result = cutRightStr(data,(int)((float)num/2));
+	result = cutLeftStr(data, (int)((float)num/2));
 	return result;
 }
 
 string compWithRightSpaces(string source,int numSpaces) {
 	string spacesToAdd = "";
 	string resultStrl = "";
-	spacesToAdd = createSpaces(numSpaces - (source.size()));
-	resultStrl = source + spacesToAdd;
+
+	if(source.size()<= numSpaces){
+		spacesToAdd = createSpaces(numSpaces - (source.size()));
+		resultStrl = source + spacesToAdd;
+	}
+	else {
+		resultStrl = cutRightStr(source,numSpaces);
+		//cout << "pase por aca [" << source << "] " << source.size() << endl;
+	}
+	
 	return resultStrl;
 }
+
 string compWithLeftSpaces(string source, int numSpaces) {
 	string spacesToAdd = "";
 	string resultStrl = "";
-	spacesToAdd = createSpaces(numSpaces - (source.size()));
-	resultStrl = spacesToAdd+source;
+
+	if (source.size() <= numSpaces) {
+		spacesToAdd = createSpaces(numSpaces - (source.size()));
+		resultStrl = spacesToAdd + source;
+	}
+	else {
+		resultStrl = cutRightStr(source, numSpaces);
+	}
+	
 	return resultStrl;
 }
+
 string compWithCenterSpaces(string source, int numSpaces) {
 	string spacesToAdd = "";
 	string resultStrl = "";
-	spacesToAdd = createSpaces(((int)(numSpaces/2)) - (source.size()));
-	resultStrl = spacesToAdd+source + spacesToAdd;
+
+	if (source.size() <= numSpaces) {
+		spacesToAdd = createSpaces(((int)(numSpaces / 2)) - (source.size()));
+		resultStrl = spacesToAdd + source + spacesToAdd;
+	}
+	else {
+		resultStrl = cutRightStr(source, numSpaces);
+	}
+
 	return resultStrl;
 }

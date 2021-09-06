@@ -21,38 +21,45 @@ int main(int argc, char* argv[], char* envp[])
     string param1;
     string param2;
 
-    FontManager_class fontsLoder;
-    
+    FontManager_class fontsLoader;
+    fontsLoader.setFonts();
+
+    vector<string> params;
     for (int i = 0; i < argc; i++) {
         cout << " P" << i << "=" << argv[i];
-        string param = argv[i];
+        params.push_back(argv[i]);
+        
+
+    }
+    int countParam = 0;
+    for (string param : params) {
 
         if (param == "-s") {
-            fontsLoder.setSmush(true);
-        }       
-    }
-    cout << endl;
-   // cout << "llegue aca " << endl;
-    if (argc > 0) {
-        
-        param1=argv[1];        
-        //cout << "llegue aca 2 " << param1 << endl;
-     
-    }
-    else { param1 = "NULL";}
+            
+            fontsLoader.setSmush(true);
+        } else if (param == "-l") {
+            
+            param1 = "listAllFontNames";
+        } else if (param == "-d") {
 
-    if (argc > 1) {
-        
-        param2 = argv[2];
-        //cout << "llegue aca 3 " << param2 << endl;
-     
+            param1 = "listAllFontsdemo";
+        }else {
+            if (countParam == 1) {
+                param1 = param;
+            } else if (countParam >= 2) {
+                if (param2 != "") param2 += " "+param;
+                else param2 += param;                                
+            }
+        }
+        countParam++;
     }
-    else { param2 = "NULL"; }
+   
+
 
    // cout << param1 << endl;
    // cout << param2 << endl;
 
-    strResult = fontsLoder.load(param1, param2);
+    strResult = fontsLoader.load(param1, param2);
     cout << strResult << endl;
 
     return 0;

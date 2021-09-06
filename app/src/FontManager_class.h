@@ -41,6 +41,7 @@ public:
     vector<string> c_allContent;
     vector<vector<string>> c_caractersArray;
     vector<string> c_vecOfAllChars;
+    vector<string> c_allNameFonts;
 
     FontManager_class();
     string load(string fontName, string stringToPrint);
@@ -54,6 +55,7 @@ public:
     void getConfig(string data);
     bool addNumIfNotExisInArray(int num);
     void showListOfFonts();
- 
+    void showDemoOfAllFonts();
+    void setFonts();
 };
 #endif

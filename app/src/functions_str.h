@@ -38,10 +38,9 @@
 
 	string createSpaces(int numSpaces);
 
-
-	string eraseRightChars(string data, int num);
-	string eraseLeftChars(string data, int num);
-	string eraseCentersChars(string data, int num);
+	string cutRightStr(string data, int num);
+	string cutLeftStr(string data, int num);
+	string cutCentStr(string data, int num);
 
 	string compWithRightSpaces(string source, int numSpaces);
 	string compWithLeftSpaces(string source, int numSpaces);

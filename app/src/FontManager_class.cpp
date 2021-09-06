@@ -15,11 +15,14 @@ string FontManager_class::load(string fontName,string stringToPrint) {
     string conf = "";
     cout << "entre a load " << endl;
     cout << fontName << endl;
-    if (fontName == "names") {
-        
+    if (fontName == "listAllFontNames") {
+
         showListOfFonts();
+    }else if (fontName == "listAllFontsdemo") {
+
+        showDemoOfAllFonts();
     }else if (fontName!="" && stringToPrint!=""){
-        conf = showfonts(fontName, -100, "conf");        
+        conf = showfonts(fontName, -1000, "conf");
         getConfig(conf);    
 
         generateVectorOfStrings(fontName, stringToPrint);
@@ -133,6 +136,7 @@ bool FontManager_class::addNumIfNotExisInArray(int num) {
         return true;
     }
     
+
 }
 void FontManager_class::showListOfFonts() {
 
@@ -143,27 +147,23 @@ void FontManager_class::showListOfFonts() {
     string strToPrint;
     string oneStrToPrint;
     int sizeColNum = 3;
-    int sizeColName = 20;
+    int sizeColName = 15;
     int maxCountCols = 4;
     int countFont = 0;
     int countCols = 1;
 
-    //cout << "estoy en showListofFonts";
-    cout << endl;
+
+    //cout << endl;
     listOfChars = splitStr(result, ';');
     
     oneStrToPrint = "";
-    //onechar = "";
+
     countCols = 0;
     int maxElements = (listOfChars.size()-1);
     int columElements = (int)( ( ((float)maxElements / (float)maxCountCols) ) );
     columElements = columElements+1;
     
-    //float columElements2 = ((float)maxElements/ (float)maxCountCols)+(float)maxCountCols;
     int element = 0;
- 
-   
-    //int maxValue = 0;
 
     for (int i = 0; i < columElements; i++) {
         //cout << i << endl;
@@ -171,24 +171,70 @@ void FontManager_class::showListOfFonts() {
 
             element = (columElements * j) + i;
             
-            //if (maxValue < element) { maxValue = element; }
-            
             if ((element < maxElements) && addNumIfNotExisInArray(element)) {
                 onechar = splitStr(listOfChars[element], ':');
 
                 oneStrToPrint += "[ " + compWithLeftSpaces(onechar[0], sizeColNum) + " : " + compWithRightSpaces(onechar[1], sizeColName) + " ] ";
-            } else {
-                oneStrToPrint += "[ " + compWithLeftSpaces("", sizeColNum) + " : " + compWithRightSpaces("", sizeColName) + " ] ";
-            }
-
+            } 
             
         }
 
         cout << oneStrToPrint << endl;
-        //strToPrint += oneStrToPrint + "\n";
         oneStrToPrint = "";
 
     }
     //cout << strToPrint << endl;
 
+}
+
+
+void FontManager_class::showDemoOfAllFonts() {
+
+    string fontName = "allNameFonts";
+    string result = showfonts(fontName, -100, " ");
+    vector<string> listOfChars;
+    vector<string> onechar;
+    string strToPrint;
+    string oneStrToPrint;
+    int maxCountCols = 4;
+
+    
+
+   
+
+    
+    int element = 0;
+    listOfChars = splitStr(result, ';');
+    string conf = "";
+    for (string font : listOfChars) {
+
+        onechar = splitStr(font, ':');
+        cout << onechar[1] << endl;
+        /*
+        conf = showfonts(onechar[1], -1000, "conf");
+        getConfig(conf);*/
+
+      
+        generateVectorOfStrings(onechar[1], "Example");
+        generateStringResult();
+        result = getStringResult();
+        cout << result << endl << endl;
+        
+
+    }
+    //cout << strToPrint << endl;
+
+}
+
+void FontManager_class::setFonts() {
+    vector<string> listOfChars;
+    vector<string> onechar;
+
+    string fontName = "allNameFonts";
+    string result = showfonts(fontName, -100, " ");
+ 
+    for (string font : listOfChars) {
+        onechar = splitStr(font, ':');
+        c_allNameFonts.push_back(onechar[1]);
+    }
 }
