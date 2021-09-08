@@ -12,7 +12,7 @@ FontManager_class::FontManager_class()
 
 string FontManager_class::load(string fontName,string stringToPrint) {
     string result = "";
-    string conf = "";
+   
     //cout << "entre a load " << endl;
     
     setFonts();
@@ -21,19 +21,17 @@ string FontManager_class::load(string fontName,string stringToPrint) {
     if (fontName == "listAllFontNames") {
                      
         showListOfFonts();
-    }else if (fontName == "listAllFontsdemo") {
+    }else if (fontName == "listAllFontsExampleWithName" ||
+              fontName == "listAllFontsExampleWithCustom" ||
+              fontName == "listAllFontsExampleWithDemo") {
+    
 
-        showDemoOfAllFonts();
+        showDemoOfAllFonts(fontName, stringToPrint);
     }else if (fontName!="" && stringToPrint!=""){
-        fontName = getFontName(fontName);
-        cout << fontName << endl;
-        conf = showfonts(fontName, -1000, "conf");
-        getConfig(conf);    
-        cleanArrayAndString();
-        generateVectorOfStrings(fontName, stringToPrint);
-        generateStringResult();
+       
+        cout << "Interpretar fuente " << fontName << endl;
 
-        result = getStringResult();
+        result = mainGeneratorOfStr(fontName, stringToPrint);
     }
 
     
@@ -131,6 +129,20 @@ void FontManager_class::generateStringResult() {
     }
 }
 
+string FontManager_class::mainGeneratorOfStr(string fontName, string stringToPrint) {
+    string conf = "";
+    fontName = getFontName(fontName);
+
+    conf = showfonts(fontName, -1000, "conf");
+    getConfig(conf);
+    cleanArrayAndString();
+    generateVectorOfStrings(fontName, stringToPrint);
+    generateStringResult();
+
+    return getStringResult();
+}
+
+
 void FontManager_class::setSmush(bool value) {
     c_smush = value;
 }
@@ -195,6 +207,8 @@ bool FontManager_class::addNumIfNotExisInArray(int num) {
     
 
 }
+
+
 void FontManager_class::showListOfFonts() {
 
     //string fontName = "allNameFonts";
@@ -245,10 +259,10 @@ void FontManager_class::showListOfFonts() {
 }
 
 
-void FontManager_class::showDemoOfAllFonts() {
+void FontManager_class::showDemoOfAllFonts(string style,string testString) {
 
-    string fontName = "allNameFonts";
-    string result = showfonts(fontName, -100, " ");
+    
+    string result = showfonts("allNameFonts", -100, " ");
     vector<string> listOfChars;
     vector<string> onechar;
     string strToPrint;
@@ -262,15 +276,21 @@ void FontManager_class::showDemoOfAllFonts() {
     for (string font : listOfChars) {
 
         onechar = splitStr(font, ':');
-        cout << onechar[1] << endl;
-        /*
-        conf = showfonts(onechar[1], -1000, "conf");
-        getConfig(conf);*/
 
-        cleanArrayAndString();
-        generateVectorOfStrings(onechar[1], "Example");
-        generateStringResult();
-        result = getStringResult();
+        cout << onechar[1] << endl;
+
+
+        if (style == "listAllFontsExampleWithName") {
+
+            result = mainGeneratorOfStr(onechar[1], onechar[1]);
+
+        }else if (style == "listAllFontsExampleWithCustom") {
+
+            result = mainGeneratorOfStr(onechar[1], testString);
+
+        } else {
+           result = mainGeneratorOfStr(onechar[1], "Demo");
+        }
         cout << result << endl << endl;
         
 

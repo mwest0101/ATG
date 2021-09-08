@@ -13677,7 +13677,7 @@ string showfonts(string font, int cn, string cs) {
     vectorFonts.push_back("Small Isometric1");
     if (font == "Small Isometric1") {
         if ((cn == (-1)) || (cs == "conf")) { sr = "nl=@,found=4,p1=a,p2=$,p3_Height=7,p4_Height_nd=7,p5_maxLinLen=18,p6_defSmuMod=-1,p7_numComm=18"; }
-        if ((cn == 0) || (cs == " ")) { sr = u8"                                  stock@fwi.uva.nl --------         $   $@$   $@$   $@$   $@$   $@$   $@$   $"; }
+        if ((cn == 0) || (cs == " ")) { sr = u8"$   $@$   $@$   $@$   $@$   $@$   $@$   $"; }
         if ((cn == 1) || (cs == "!")) { sr = u8"@@@@@@"; }
         if ((cn == 2) || (cs == "\"")) { sr = u8"@@@@@@"; }
         if ((cn == 3) || (cs == "#")) { sr = u8"@@@@@@"; }

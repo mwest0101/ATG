@@ -25,8 +25,8 @@ int main(int argc, char* argv[], char* envp[])
    
 
     vector<string> params;
-    for (int i = 0; i < argc; i++) {
-        cout << " P" << i << "=" << argv[i];
+    for (int i = 1; i < argc; i++) {
+        cout << " P (" << i << ")=" << argv[i] << endl;
         params.push_back(argv[i]);
         
 
@@ -40,17 +40,29 @@ int main(int argc, char* argv[], char* envp[])
         } else if (param == "-l") {
             
             param1 = "listAllFontNames";
+            countParam++;
+        } else if (param == "-dn") {
+
+            param1 = "listAllFontsExampleWithName";
+            countParam++;
+        } else if (param == "-dc") {
+
+            param1 = "listAllFontsExampleWithCustom";
+            countParam++;
         } else if (param == "-d") {
 
-            param1 = "listAllFontsdemo";
-        }else {
-            if (countParam == 1) {
-                param1 = param;
-            } else if (countParam >= 2) {
-                if (param2 != "") param2 += " "+param;
-                else param2 += param;                                
-            }
+            param1 = "listAllFontsExampleWithDemo";
             countParam++;
+        }else {
+            if (countParam == 0) {
+                param1 = param;
+                countParam++;
+            } else if (countParam >= 1 && param2 == "") {
+                if (param2 != "") param2 += " "+param;
+                else param2 += param;     
+                countParam++;
+            }
+            
         }
         
     }

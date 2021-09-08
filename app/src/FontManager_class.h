@@ -53,13 +53,14 @@ public:
     void cleanArrayAndString();
     void generateVectorOfStrings(string fontName, string sourceString);
     void generateStringResult();
+    string mainGeneratorOfStr(string fontName, string stringToPrint);
     void setSmush(bool value);
     string reformatString(string data);
     string getStringResult();
     void getConfig(string data);
     bool addNumIfNotExisInArray(int num);
     void showListOfFonts();
-    void showDemoOfAllFonts();
+    void showDemoOfAllFonts(string style, string testString);
   
 };
 #endif
