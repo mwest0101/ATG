@@ -24,20 +24,20 @@ public:
     int configFound = (-1);
 
     string c_pathToFile;
-    string doubleChar;
-    string singleChar;
+    string c_doubleChar;
+    string c_singleChar;
     string c_fileEncoding;
-    string fileNameToStorageResult;
-    string resultAsciiArtString;
+    string c_fileNameToStorageResult;
+    string c_resultAsciiArtString;
 
     ifstream c_myFile_Handler;
     
     char c_charType = ' ';    
-    char finalChar = '\n';
+    char c_finalChar = '\n';
 
     bool c_smush = false;
     
-    vector<string> resultAsciiArtVector;
+    vector<string> c_resultAsciiArtVector;
     vector<string> c_allContent;
     vector<vector<string>> c_caractersArray;
     vector<string> c_vecOfAllChars;
@@ -45,8 +45,12 @@ public:
 
     FontManager_class();
     string load(string fontName, string stringToPrint);
+    void setFonts();
+    string getFontNameByNum(int num);
+    string getFontName(string font);
     vector<string> getVectorfromOnechar(string data);
     void concatenateChar(vector<string> oneChar);
+    void cleanArrayAndString();
     void generateVectorOfStrings(string fontName, string sourceString);
     void generateStringResult();
     void setSmush(bool value);
@@ -56,6 +60,6 @@ public:
     bool addNumIfNotExisInArray(int num);
     void showListOfFonts();
     void showDemoOfAllFonts();
-    void setFonts();
+  
 };
 #endif

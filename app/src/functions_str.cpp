@@ -228,7 +228,7 @@ string compWithRightSpaces(string source,int numSpaces) {
 	string spacesToAdd = "";
 	string resultStrl = "";
 
-	if(source.size()<= numSpaces){
+	if((int)source.size()<= numSpaces){
 		spacesToAdd = createSpaces(numSpaces - (source.size()));
 		resultStrl = source + spacesToAdd;
 	}
@@ -244,7 +244,7 @@ string compWithLeftSpaces(string source, int numSpaces) {
 	string spacesToAdd = "";
 	string resultStrl = "";
 
-	if (source.size() <= numSpaces) {
+	if ((int)source.size() <= numSpaces) {
 		spacesToAdd = createSpaces(numSpaces - (source.size()));
 		resultStrl = spacesToAdd + source;
 	}
@@ -259,7 +259,7 @@ string compWithCenterSpaces(string source, int numSpaces) {
 	string spacesToAdd = "";
 	string resultStrl = "";
 
-	if (source.size() <= numSpaces) {
+	if ((int)source.size() <= numSpaces) {
 		spacesToAdd = createSpaces(((int)(numSpaces / 2)) - (source.size()));
 		resultStrl = spacesToAdd + source + spacesToAdd;
 	}
@@ -269,3 +269,16 @@ string compWithCenterSpaces(string source, int numSpaces) {
 
 	return resultStrl;
 }
+string convStrToUpper(string data) {
+
+
+	for (int i = 0; i < data.length(); i++)
+	{
+		data[i] = toupper(data[i]);
+	}
+
+	
+
+	return data;
+}
+

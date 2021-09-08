@@ -14,9 +14,9 @@
 		
 	string charToStr(string vChar);
 
-	char intToChar(string vInt);
-	int charToInt(string vChar);
-	string intToStr(string vInt);
+	char intToChar(int vInt);
+	int charToInt(char vChar);
+	string intToStr(int vInt);
 	int strToInt(string vStr);
 
 	string leftTrim(string str, string chars);
@@ -45,4 +45,5 @@
 	string compWithRightSpaces(string source, int numSpaces);
 	string compWithLeftSpaces(string source, int numSpaces);
 	string compWithCenterSpaces(string source, int numSpaces);
+	string convStrToUpper(string data);
 #endif
