@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include "ctc.h"
 
 
 //#include "config_inc.h"

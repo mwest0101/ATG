@@ -17,24 +17,27 @@ string FontManager_class::load(string fontName,string stringToPrint) {
     
     setFonts();
     
-    cout << fontName << endl;
+    //cout << fontName << endl;
     if (fontName == "listAllFontNames") {
-                     
+        SetColor(0, 4);
         showListOfFonts();
+        SetColor(0, 7);
+
     }else if (fontName == "listAllFontsExampleWithName" ||
               fontName == "listAllFontsExampleWithCustom" ||
               fontName == "listAllFontsExampleWithDemo") {
     
-
+       // SetColor(0, 2);
         showDemoOfAllFonts(fontName, stringToPrint);
+       // SetColor(0, 7);
     }else if (fontName!="" && stringToPrint!=""){
        
-        cout << "Interpretar fuente " << fontName << endl;
-
+     //   cout << "Interpretar fuente " << fontName << endl;
+        
         result = mainGeneratorOfStr(fontName, stringToPrint);
     }
 
-    
+    SetColor(0, 7);
     return result;
 }
 
@@ -242,7 +245,7 @@ void FontManager_class::showListOfFonts() {
 
             element = (columElements * j) + i;
             
-            if ((element < maxElements) && addNumIfNotExisInArray(element)) {
+            if ((element <= maxElements) && addNumIfNotExisInArray(element)) {
                 onechar = c_allNameFonts[element];
 
                 oneStrToPrint += "[ " + compWithLeftSpaces(to_string(element), sizeColNum) + " : " + compWithRightSpaces(onechar, sizeColName) + " ] ";
@@ -273,12 +276,17 @@ void FontManager_class::showDemoOfAllFonts(string style,string testString) {
     int element = 0;
     listOfChars = splitStr(result, ';');
     string conf = "";
+    char tecla;
+    int contFont = 0;
+    int color = 1;
+
     for (string font : listOfChars) {
-
+        SetColor(0, color);
+        color++;
         onechar = splitStr(font, ':');
-
-        cout << onechar[1] << endl;
-
+        cout << "----------------------------------------------------" << endl;
+        cout << "[ "+ to_string(contFont)+" ] "+onechar[1] << endl;
+        cout << "----------------------------------------------------"<< endl;
 
         if (style == "listAllFontsExampleWithName") {
 
@@ -292,8 +300,12 @@ void FontManager_class::showDemoOfAllFonts(string style,string testString) {
            result = mainGeneratorOfStr(onechar[1], "Demo");
         }
         cout << result << endl << endl;
-        
-
+        cout << "Press any key to continue..." << endl;
+        tecla = getchar();
+        putchar(tecla);
+        if (tecla == 'q' || tecla == 'Q') { return; }
+        contFont++;
+        if (color == 15) { color = 1; }
     }
     //cout << strToPrint << endl;
 

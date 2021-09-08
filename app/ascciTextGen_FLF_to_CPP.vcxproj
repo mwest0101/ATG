@@ -143,23 +143,27 @@
     <ClCompile Include="src\ConfigFont_class.cpp" />
     <ClCompile Include="src\config_inc.cpp" />
     <ClCompile Include="src\convert_string.cpp" />
+    <ClCompile Include="src\ctc.cpp" />
     <ClCompile Include="src\Debug_class.cpp" />
     <ClCompile Include="src\FontManager_class.cpp" />
     <ClCompile Include="src\fonts.cpp" />
     <ClCompile Include="src\functions.cpp" />
     <ClCompile Include="src\functions_str.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\StdAfx.cpp" />
     <ClCompile Include="src\text_encoding_detect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ConfigFont_class.h" />
     <ClInclude Include="src\config_inc.h" />
     <ClInclude Include="src\convert_string.h" />
+    <ClInclude Include="src\ctc.h" />
     <ClInclude Include="src\Debug_class.h" />
     <ClInclude Include="src\FontManager_class.h" />
     <ClInclude Include="src\fonts.h" />
     <ClInclude Include="src\functions.h" />
     <ClInclude Include="src\functions_str.h" />
+    <ClInclude Include="src\StdAfx.h" />
     <ClInclude Include="src\text_encoding_detect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

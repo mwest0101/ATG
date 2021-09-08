@@ -8,6 +8,7 @@
 #include "Debug_class.h"
 #include <io.h>
 #include <fcntl.h>
+#include "ctc.h"
 
 using namespace std;
 
@@ -25,8 +26,9 @@ int main(int argc, char* argv[], char* envp[])
    
 
     vector<string> params;
+    cout << endl;
     for (int i = 1; i < argc; i++) {
-        cout << " P (" << i << ")=" << argv[i] << endl;
+      //  cout << " P (" << i << ")=" << argv[i] << endl;
         params.push_back(argv[i]);
         
 
@@ -40,6 +42,7 @@ int main(int argc, char* argv[], char* envp[])
         } else if (param == "-l") {
             
             param1 = "listAllFontNames";
+            
             countParam++;
         } else if (param == "-dn") {
 
