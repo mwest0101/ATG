@@ -227,7 +227,7 @@ string FontManager_class::applyHorizontalRainbow(string data) {
     
 
     if (c_hRainbow) {
-        data += "[("+to_string(bcolor)+","+ to_string(c_hColor) +")]";
+        data = "[("+to_string(bcolor)+","+ to_string(c_hColor) +")]"+data;
         
     }
 

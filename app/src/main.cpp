@@ -57,27 +57,32 @@ int main(int argc, char* argv[], char* envp[])
             
             param1 = "listAllFontNames";
             
-            countParam++;
+            countParam=2;
         } else if (param == "-dn") {
 
             param1 = "listAllFontsExampleWithName";
-            countParam++;
+            countParam = 2;
         } else if (param == "-dc") {
 
             param1 = "listAllFontsExampleWithCustom";
-            countParam++;
+            countParam = 1;
         } else if (param == "-d") {
 
             param1 = "listAllFontsExampleWithDemo";
-            countParam++;
+            countParam=2;
         }else {
+            
             if (countParam == 0) {
+                
                 param1 = param;
-                countParam++;
-            } else if (countParam >= 1 && param2 == "") {
+                countParam = 1;
+                cout << "pase 1" << param1 << endl;
+            } else if (countParam == 1) {
+                
                 if (param2 != "") param2 += " "+param;
                 else param2 += param;     
-                countParam++;
+                cout << "pase 2" << param2 << endl;
+                
             }
             
         }
