@@ -272,7 +272,7 @@ string compWithCenterSpaces(string source, int numSpaces) {
 string convStrToUpper(string data) {
 
 
-	for (int i = 0; i < data.length(); i++)
+	for (unsigned int i = 0; i < data.length(); i++)
 	{
 		data[i] = toupper(data[i]);
 	}
@@ -280,5 +280,17 @@ string convStrToUpper(string data) {
 	
 
 	return data;
+}
+
+string getLeftString(string data, string find) {
+	int pos = 0;
+	string result;
+	if ((pos = findStr(data, find)) != (-1)) {
+		result = cutLeftStr(data, findStr(data, find));
+	}
+	else {
+		result = "";
+	}
+	return result;
 }
 

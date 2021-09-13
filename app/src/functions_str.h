@@ -22,6 +22,7 @@
 	string leftTrim(string str, string chars);
 	string rightTrim(string str, string chars);
 	string trimString(string str, string chars);
+
 	vector<string> splitStr(string str, char sep);
 	void printStrVector(vector<string> strVec);
 	int findStr(string stringFile, string stringToSearh);
@@ -46,4 +47,5 @@
 	string compWithLeftSpaces(string source, int numSpaces);
 	string compWithCenterSpaces(string source, int numSpaces);
 	string convStrToUpper(string data);
+	string getLeftString(string data, string find);
 #endif

@@ -30,13 +30,17 @@ public:
     string c_fileEncoding;
     string c_fileNameToStorageResult;
     string c_resultAsciiArtString;
-
-    ifstream c_myFile_Handler;
+    int c_hColor=1;
     
+    bool c_vRainbow=false;
+    bool c_hRainbow = false;
+    bool c_vRainbowTotalColors=false;
+    bool c_vDemoColor = false;
+    ifstream c_myFile_Handler;    
     char c_charType = ' ';    
     char c_finalChar = '\n';
-
     bool c_smush = false;
+    
     
     vector<string> c_resultAsciiArtVector;
     vector<string> c_allContent;
@@ -45,22 +49,36 @@ public:
     vector<string> c_allNameFonts;
 
     FontManager_class();
-    string load(string fontName, string stringToPrint);
+
+    void setSmush(bool value);
+    void setRainbowColor(int numLine);
+    void setRainbowTotalColors(bool value);
+    void setDemoColor(bool value);    
+    void setVerticalRainbow(bool value);
+    void setHorizontRainbow(bool value);
     void setFonts();
+
+    void getConfig(string data);
     string getFontNameByNum(int num);
     string getFontName(string font);
+    string getStringResult();
     vector<string> getVectorfromOnechar(string data);
+    
+    string load(string fontName, string stringToPrint);
+    void showListOfFonts();
+
     void concatenateChar(vector<string> oneChar);
+    string applyHorizontalRainbow(string data);
+    void printStringWithColorsCode(string data);
     void cleanArrayAndString();
     void generateVectorOfStrings(string fontName, string sourceString);
-    void generateStringResult();
+    void generateStringResult();   
+
+    void printStringResult();
     string mainGeneratorOfStr(string fontName, string stringToPrint);
-    void setSmush(bool value);
     string reformatString(string data);
-    string getStringResult();
-    void getConfig(string data);
+
     bool addNumIfNotExisInArray(int num);
-    void showListOfFonts();
     void showDemoOfAllFonts(string style, string testString);
   
 };

@@ -37,9 +37,23 @@ int main(int argc, char* argv[], char* envp[])
     for (string param : params) {
         //cout << "Param= " << param << endl;
         if (param == "-s") {
-            
+
             fontsLoader.setSmush(true);
-        } else if (param == "-l") {
+        }else if (param == "-ra"){
+            fontsLoader.setDemoColor(true);
+        }else if (param == "-rv") {
+
+            fontsLoader.setVerticalRainbow(true);
+        }
+        else if (param == "-rvt") {
+
+            fontsLoader.setVerticalRainbow(true);
+            fontsLoader.setRainbowTotalColors(true);
+        }
+        else if (param == "-rh") {
+            fontsLoader.setHorizontRainbow(true);
+
+        }else if (param == "-l") {
             
             param1 = "listAllFontNames";
             
