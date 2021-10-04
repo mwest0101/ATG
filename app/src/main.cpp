@@ -2,13 +2,16 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "boxs.h"
 #include "functions_str.h"
 #include "FontManager_class.h"
 #include "ConfigFont_class.h"
 #include "Debug_class.h"
 #include <io.h>
-#include <fcntl.h>
+#include "fonts.h"
 #include "ctc.h"
+
+#include "BoxDrive_class.h"
 
 using namespace std;
 
@@ -22,8 +25,12 @@ int main(int argc, char* argv[], char* envp[])
     string param1="";
     string param2="";
     setlocale(LC_ALL, "en_US.UTF-8");
+
+    
     FontManager_class fontsLoader;
-   
+    BoxDrive_class boxDrive;
+
+   /*
 
     vector<string> params;
     cout << endl;
@@ -97,9 +104,21 @@ int main(int argc, char* argv[], char* envp[])
 
     strResult = fontsLoader.load(param1, param2);
     //_setmode(_fileno(stdout), _O_U8TEXT);
-    
+    */
+
+   // strResult= showRectangle("allRectangles", 0, "-100");
     cout << strResult << endl;
     
+   // strResult = showRectangle("Reactangle asterix", 0, "lnTop0");
+   // strResult += showRectangle("Reactangle asterix", 0, "lnCen");
+    //strResult += showRectangle("Reactangle asterix", 0, "lnBot0");
+   
+
+   boxDrive.setBoxDecorator(true);
+   boxDrive.setBoxWidth(50);
+   boxDrive.setBoxStyle("Reactangle X");
+
+    cout << strResult << endl;
 
     //cout << convStrToUpper("prueba de texto _ para convertiRRRasdAA") << endl;
 

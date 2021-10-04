@@ -13,6 +13,7 @@
 #include "ConfigFont_class.h"
 #include "convert_string.h"
 #include "fonts.h"
+#include "boxs.h"
 #ifndef FONT_MANAGER_CLASS_H
 #define FONT_MANAGER_CLASS_H
 using namespace std;
@@ -30,6 +31,7 @@ public:
     string c_fileEncoding;
     string c_fileNameToStorageResult;
     string c_resultAsciiArtString;
+    string c_lineBox;
     int c_hColor=1;
     
     bool c_vRainbow=false;
@@ -40,7 +42,7 @@ public:
     char c_charType = ' ';    
     char c_finalChar = '\n';
     bool c_smush = false;
-    
+
     
     vector<string> c_resultAsciiArtVector;
     vector<string> c_allContent;
@@ -56,6 +58,7 @@ public:
     void setDemoColor(bool value);    
     void setVerticalRainbow(bool value);
     void setHorizontRainbow(bool value);
+    void setBoxDecorator(bool value);
     void setFonts();
 
     void getConfig(string data);
@@ -72,7 +75,10 @@ public:
     void printStringWithColorsCode(string data);
     void cleanArrayAndString();
     void generateVectorOfStrings(string fontName, string sourceString);
+
     void generateStringResult();   
+   // void printHeadBox(string boxStyle, int spaces);
+
 
     void printStringResult();
     string mainGeneratorOfStr(string fontName, string stringToPrint);

@@ -44,6 +44,8 @@ void FontManager_class::setHorizontRainbow(bool value) {
     c_hRainbow = value;
 }
 
+
+
 void FontManager_class::setFonts() {
     vector<string> listOfChars;
     vector<string> onechar;
@@ -60,6 +62,7 @@ void FontManager_class::setFonts() {
 
     }
 }
+
 
 
 void FontManager_class::getConfig(string data)
@@ -125,30 +128,32 @@ vector<string> FontManager_class::getVectorfromOnechar(string data) {
 }
 
 
-string FontManager_class::load(string fontName,string stringToPrint) {
+string FontManager_class::load(string fontName, string stringToPrint) {
     string result = "";
-   
+
     //cout << "entre a load " << endl;
-    
+
     setFonts();
-    
+
     //cout << fontName << endl;
     if (fontName == "listAllFontNames") {
-      
+
         showListOfFonts();
         SetColor(0, 7);
 
-    }else if (fontName == "listAllFontsExampleWithName" ||
-              fontName == "listAllFontsExampleWithCustom" ||
-              fontName == "listAllFontsExampleWithDemo") {
-    
-       // SetColor(0, 2);
+    }
+    else if (fontName == "listAllFontsExampleWithName" ||
+        fontName == "listAllFontsExampleWithCustom" ||
+        fontName == "listAllFontsExampleWithDemo") {
+
+        // SetColor(0, 2);
         showDemoOfAllFonts(fontName, stringToPrint);
-       // SetColor(0, 7);
-    }else if (fontName!="" && stringToPrint!=""){
-       
-     //   cout << "Interpretar fuente " << fontName << endl;
-        
+        // SetColor(0, 7);
+    }
+    else if (fontName != "" && stringToPrint != "") {
+
+        //   cout << "Interpretar fuente " << fontName << endl;
+
         result = mainGeneratorOfStr(fontName, stringToPrint);
     }
 
@@ -208,10 +213,11 @@ void FontManager_class::showListOfFonts() {
 void FontManager_class::concatenateChar(vector<string> oneChar) {
 
     for (unsigned int i = 0; i < oneChar.size(); i++) {
-      
+
         if (c_resultAsciiArtVector.size() < oneChar.size()) {
             c_resultAsciiArtVector.push_back(applyHorizontalRainbow(oneChar[i]));
-        } else {
+        }
+        else {
             c_resultAsciiArtVector[i] += applyHorizontalRainbow(oneChar[i]);
 
         }
@@ -224,11 +230,11 @@ void FontManager_class::concatenateChar(vector<string> oneChar) {
 }
 string FontManager_class::applyHorizontalRainbow(string data) {
     int bcolor = 0;
-    
+
 
     if (c_hRainbow) {
-        data = "[("+to_string(bcolor)+","+ to_string(c_hColor) +")]"+data;
-        
+        data = "[(" + to_string(bcolor) + "," + to_string(c_hColor) + ")]" + data;
+
     }
 
     if (c_hColor == 15) { c_hColor = 1; }
@@ -237,16 +243,16 @@ string FontManager_class::applyHorizontalRainbow(string data) {
 
 void FontManager_class::printStringWithColorsCode(string data) {
     int pos1 = 0;
-    int pos2 = 0;    
+    int pos2 = 0;
     bool found = true;
     vector<string> colors;
     while (found) {
         if ((pos1 = findStr(data, "[(")) != (-1)) {
-            if ((pos2 = findStr(data, ")]")) != (-1)) {                                            
+            if ((pos2 = findStr(data, ")]")) != (-1)) {
                 cout << data.substr(0, pos1);
                 colors = splitStr(data.substr(pos1 + 2, pos2), ',');
-                SetColor(strToInt(colors[0]), strToInt(colors[1]));                
-                data= data.substr(pos2+2, data.size());
+                SetColor(strToInt(colors[0]), strToInt(colors[1]));
+                data = data.substr(pos2 + 2, data.size());
                 found = true;
             }
 
@@ -264,14 +270,15 @@ void FontManager_class::cleanArrayAndString() {
     c_resultAsciiArtString = "";
 
 }
-void FontManager_class::generateVectorOfStrings(string fontName,string sourceString) {
+void FontManager_class::generateVectorOfStrings(string fontName, string sourceString) {
     string strOfChar;
     for (unsigned int i = 0; i < sourceString.length(); i++) {
         string charToSeek(1, sourceString[i]);
-        strOfChar=showfonts(fontName, -100, charToSeek);
+        strOfChar = showfonts(fontName, -100, charToSeek);
         concatenateChar(getVectorfromOnechar(strOfChar));
     }
 }
+
 void FontManager_class::generateStringResult() {
     string strOfChar;
     c_resultAsciiArtString = "";
@@ -286,7 +293,7 @@ void FontManager_class::printStringResult() {
     string fontSmush = ConfigFont_class::p2;
     int lengVec = c_resultAsciiArtVector.size();
     for (string data : c_resultAsciiArtVector) {
-        
+
         if (c_vRainbow) {
             if (c_vRainbowTotalColors) {
                 setRainbowColor(lengVec);
@@ -298,10 +305,11 @@ void FontManager_class::printStringResult() {
 
         if (!c_smush) {
             data = strReplace(data, fontSmush, " ");
-        } else {
+        }
+        else {
             data = strReplace(data, fontSmush, "");
         }
-            
+        //getOneLineBox(string boxStyle, int spaces);    
         if (c_hRainbow) {
             printStringWithColorsCode(data);
             cout << endl;
@@ -327,7 +335,7 @@ string FontManager_class::reformatString(string data) {
     string fontSmush = ConfigFont_class::p2;
     if (fontSmush != "") {
         if (!c_smush) {
-           data = strReplace(data, fontSmush, " ");
+            data = strReplace(data, fontSmush, " ");
             //cout << "pase 1 " << endl;
         }
         else {
@@ -342,16 +350,17 @@ bool FontManager_class::addNumIfNotExisInArray(int num) {
     static vector<int> vectorNumeros;
     if (find(vectorNumeros.begin(), vectorNumeros.end(), num) != vectorNumeros.end()) {
         return false;
-    }else {
+    }
+    else {
         vectorNumeros.push_back(num);
         return true;
     }
-    
+
 
 }
-void FontManager_class::showDemoOfAllFonts(string style,string testString) {
+void FontManager_class::showDemoOfAllFonts(string style, string testString) {
 
-    
+
     string result = showfonts("allNameFonts", -100, " ");
     vector<string> listOfChars;
     vector<string> onechar;
@@ -359,7 +368,7 @@ void FontManager_class::showDemoOfAllFonts(string style,string testString) {
     string oneStrToPrint;
     int maxCountCols = 4;
 
-        
+
     int element = 0;
     listOfChars = splitStr(result, ';');
     string conf = "";
@@ -374,19 +383,21 @@ void FontManager_class::showDemoOfAllFonts(string style,string testString) {
         }
         onechar = splitStr(font, ':');
         cout << "----------------------------------------------------" << endl;
-        cout << "[ "+ to_string(contFont)+" ] "+onechar[1] << endl;
-        cout << "----------------------------------------------------"<< endl;
+        cout << "[ " + to_string(contFont) + " ] " + onechar[1] << endl;
+        cout << "----------------------------------------------------" << endl;
 
         if (style == "listAllFontsExampleWithName") {
 
             result = mainGeneratorOfStr(onechar[1], onechar[1]);
 
-        }else if (style == "listAllFontsExampleWithCustom") {
+        }
+        else if (style == "listAllFontsExampleWithCustom") {
 
             result = mainGeneratorOfStr(onechar[1], testString);
 
-        } else {
-           result = mainGeneratorOfStr(onechar[1], "Demo");
+        }
+        else {
+            result = mainGeneratorOfStr(onechar[1], "Demo");
         }
         cout << result << endl << endl;
         cout << "Press any key to continue..." << endl;
@@ -396,7 +407,9 @@ void FontManager_class::showDemoOfAllFonts(string style,string testString) {
         contFont++;
         if (color == 15) { color = 1; }
     }
-   
+
 
 }
+
+
 

@@ -140,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\BoxDrive_class.cpp" />
+    <ClCompile Include="src\boxs.cpp" />
     <ClCompile Include="src\ConfigFont_class.cpp" />
     <ClCompile Include="src\config_inc.cpp" />
     <ClCompile Include="src\convert_string.cpp" />
@@ -154,6 +156,8 @@
     <ClCompile Include="src\text_encoding_detect.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\BoxDrive_class.h" />
+    <ClInclude Include="src\boxs.h" />
     <ClInclude Include="src\ConfigFont_class.h" />
     <ClInclude Include="src\config_inc.h" />
     <ClInclude Include="src\convert_string.h" />
