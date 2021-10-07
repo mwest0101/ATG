@@ -30,6 +30,36 @@ void FontManager_class::setRainbowColor(int numLine) {
 
 
 }
+
+string FontManager_class::getStrRainbowColor(int numLine) {
+    static int color = 0;
+    static int count = 0;
+    int col1 = 0;
+    int col2 = 0;
+    string strReturn = 0;
+
+    if (numLine != 0) {
+        count++;
+        color = (int)((float)(15.0f / (float)numLine) * (float)count);
+        if (count >= numLine) count = 0;
+    }
+    else {
+        color++;
+        if (color >= 15)  color = 1;
+    }
+    col1 = 0;
+    col2 = color;
+    strReturn = "[(" + to_string(col1) + "," + to_string(col2) + ")]";
+
+    
+
+    return strReturn;
+}
+
+
+
+
+
 void FontManager_class::setRainbowTotalColors(bool value) {
     c_vRainbowTotalColors = value;
 }
@@ -300,24 +330,30 @@ void FontManager_class::printStringResult() {
     string fontSmush = ConfigFont_class::p2;
     int lengVec = c_resultAsciiArtVector.size();
     for (string data : c_resultAsciiArtVector) {
-
+        
         if (c_vRainbow) {
             if (c_vRainbowTotalColors) {
-                setRainbowColor(lengVec);
+                //setRainbowColor(lengVec);
+
+                data = getStrRainbowColor(lengVec);
             }
             else {
-                setRainbowColor(0);
+                //setRainbowColor(0);
+                data = getStrRainbowColor(lengVec);
             }
         }
 
         if (!c_smush) {
-            data = strReplace(data, fontSmush, " ");
+            data += strReplace(data, fontSmush, " ");
         }
         else {
-            data = strReplace(data, fontSmush, "");
+            data += strReplace(data, fontSmush, "");
         }
-        //getOneLineBox(string boxStyle, int spaces);    
-        if (c_hRainbow) {
+
+        //getOneLineBox(string boxStyle, int spaces);  
+
+        
+        if (c_hRainbow || c_vRainbow) {
             printStringWithColorsCode(data);
             cout << endl;
         }

@@ -58,6 +58,7 @@ public:
     void setDemoColor(bool value);    
     void setVerticalRainbow(bool value);
     void setHorizontRainbow(bool value);
+    string getStrRainbowColor(int numLine);
     void setBoxDecorator(bool value);
     void setFonts();
 
