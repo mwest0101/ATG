@@ -11,6 +11,9 @@ BoxDrive_class::BoxDrive_class()
 void BoxDrive_class::setBoxDecorator(bool value) {
     c_BoxDecorator = value;
 }
+bool BoxDrive_class::getBoxDecorator() {
+    return c_BoxDecorator;
+}
 
 void BoxDrive_class::setBoxStyle(string style) {
     c_BoxDecoratorStyle = style;

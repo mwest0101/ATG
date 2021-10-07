@@ -45,6 +45,8 @@ public:
     
     vector<vector<string>> getBodyElements();
     void setBoxDecorator(bool value);
+    bool getBoxDecorator();
+
     void setBoxStyle(string style);
     void setBoxWidth(int width);
     void setBoxHigh(int height);

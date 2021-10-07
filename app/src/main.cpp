@@ -32,9 +32,9 @@ int main(int argc, char* argv[], char* envp[])
 
 
    // cout << "entre boxDrive" << endl;
-    BoxDrive_class boxDrive;
+    //BoxDrive_class boxDrive;
     //cout << "pase boxDrive" << endl;
-   /*
+   
 
     vector<string> params;
     cout << endl;
@@ -108,10 +108,10 @@ int main(int argc, char* argv[], char* envp[])
 
     strResult = fontsLoader.load(param1, param2);
     //_setmode(_fileno(stdout), _O_U8TEXT);
-    */
+    
 
    // strResult= showRectangle("allRectangles", 0, "-100");
-   // cout << strResult << endl;
+    cout << strResult << endl;
     
    // strResult = showRectangle("Reactangle asterix", 0, "lnTop0");
    // strResult += showRectangle("Reactangle asterix", 0, "lnCen");
@@ -119,6 +119,7 @@ int main(int argc, char* argv[], char* envp[])
    
 
   // cout << "setBoxDecorator" << endl;
+    /*
    boxDrive.setBoxDecorator(true);
 
    //cout << "setBoxWidth" << endl;
@@ -132,7 +133,6 @@ int main(int argc, char* argv[], char* envp[])
    boxDrive.getParts();
 
    cout << boxDrive.getHeadBox();
-
    cout << boxDrive.addBorderBodyBox("-----------------")<<endl;
    cout << boxDrive.addBorderBodyBox("-----------------") << endl;
    cout << boxDrive.addBorderBodyBox("-----------------") << endl;
@@ -145,7 +145,7 @@ int main(int argc, char* argv[], char* envp[])
     //cout << strResult << endl;
 
     //cout << convStrToUpper("prueba de texto _ para convertiRRRasdAA") << endl;
-
+    */
     return 0;
 }
 

@@ -14,6 +14,8 @@
 #include "convert_string.h"
 #include "fonts.h"
 #include "boxs.h"
+#include "BoxDrive_class.h"
+
 #ifndef FONT_MANAGER_CLASS_H
 #define FONT_MANAGER_CLASS_H
 using namespace std;
@@ -76,7 +78,8 @@ public:
     void printStringWithColorsCode(string data);
     void cleanArrayAndString();
     void generateVectorOfStrings(string fontName, string sourceString);
-
+    int  getMaxWidthLine();
+    void InsertTextInBox();
     void generateStringResult();   
    // void printHeadBox(string boxStyle, int spaces);
 

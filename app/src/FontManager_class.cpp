@@ -36,7 +36,7 @@ string FontManager_class::getStrRainbowColor(int numLine) {
     static int count = 0;
     int col1 = 0;
     int col2 = 0;
-    string strReturn = 0;
+    string strReturn = "";
 
     if (numLine != 0) {
         count++;
@@ -315,7 +315,19 @@ void FontManager_class::generateVectorOfStrings(string fontName, string sourceSt
         concatenateChar(getVectorfromOnechar(strOfChar));
     }
 }
+int FontManager_class::getMaxWidthLine() {
+    string strOfChar;
+    unsigned int max = 0;
+    for (string data : c_resultAsciiArtVector) {
+        if (data.size() > max) {
+            max = data.size();
+        }
+    
+    }
+    return max;
+}
 
+/*
 void FontManager_class::generateStringResult() {
     string strOfChar;
     c_resultAsciiArtString = "";
@@ -323,45 +335,126 @@ void FontManager_class::generateStringResult() {
         c_resultAsciiArtString += data + "\n";
     }
 }
+*/
 
-void FontManager_class::printStringResult() {
+/*
+  // cout << "setBoxDecorator" << endl;
+   boxDrive.setBoxDecorator(true);
+
+   //cout << "setBoxWidth" << endl;
+   boxDrive.setBoxWidth(50);
+   boxDrive.setBoxHigh(6);
+
+  // cout << "setBoxStyle" << endl;
+   boxDrive.setBoxStyle("Rounded Reactangle Full Thin");
+
+   //cout << "getParts" << endl;
+   boxDrive.getParts();
+
+   cout << boxDrive.getHeadBox();
+   cout << boxDrive.addBorderBodyBox("-----------------")<<endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
+   cout << boxDrive.getFootBox();
+
+*/
+
+void FontManager_class::InsertTextInBox() {
+    /*----box-------------------------------*/
+
+    BoxDrive_class boxDrive;
+
+    boxDrive.setBoxDecorator(true);
+    /*------------------------------------*/
+    /*
+    if (boxDrive.getBoxDecorator()) {
+        boxDrive.setBoxWidth(maxWidth);
+        boxDrive.setBoxHigh(lengVec);
+        boxDrive.setBoxStyle("Reactangle X");
+        boxDrive.getParts();
+
+        c_resultAsciiArtVector.insert(c_resultAsciiArtVector.begin(), boxDrive.getHeadBox());
+        c_resultAsciiArtVector.push_back(boxDrive.getFootBox());
+    }
+
+
+    if (boxDrive.getBoxDecorator()) {
+        strLine += boxDrive.addBorderBodyBox(strLine);
+    }*/
+
+
+}
+
+
+void FontManager_class::generateStringResult() {
+
+
+
     string strOfChar;
     c_resultAsciiArtString = "";
     string fontSmush = ConfigFont_class::p2;
+    string strLine = "";
+
     int lengVec = c_resultAsciiArtVector.size();
+
+    int maxWidth = getMaxWidthLine();
+
+  
+    strLine = "";
     for (string data : c_resultAsciiArtVector) {
+        
         
         if (c_vRainbow) {
             if (c_vRainbowTotalColors) {
                 //setRainbowColor(lengVec);
 
-                data = getStrRainbowColor(lengVec);
+                strLine += getStrRainbowColor(lengVec);
             }
             else {
                 //setRainbowColor(0);
-                data = getStrRainbowColor(lengVec);
+                strLine += getStrRainbowColor(0);
             }
         }
 
         if (!c_smush) {
-            data += strReplace(data, fontSmush, " ");
+            strLine += strReplace(data, fontSmush, " ");
         }
         else {
-            data += strReplace(data, fontSmush, "");
+            strLine += strReplace(data, fontSmush, "");
         }
 
+    
         //getOneLineBox(string boxStyle, int spaces);  
 
-        
+        /*
         if (c_hRainbow || c_vRainbow) {
-            printStringWithColorsCode(data);
+            printStringWithColorsCode(strLine);
             cout << endl;
         }
         else {
-            cout << data << endl;
+            cout << strLine << endl;
         }
+        */
+        strLine += "\n";
     }
+
+    if (c_hRainbow || c_vRainbow) {
+        cout << strLine << endl;
+        //printStringWithColorsCode(strLine);
+        //cout << endl;
+    }
+    else {
+        cout << strLine << endl;
+    }
+
+
+    cout << endl;
+
 }
+
 string FontManager_class::mainGeneratorOfStr(string fontName, string stringToPrint) {
     string conf = "";
     fontName = getFontName(fontName);
@@ -370,7 +463,7 @@ string FontManager_class::mainGeneratorOfStr(string fontName, string stringToPri
     getConfig(conf);
     cleanArrayAndString();
     generateVectorOfStrings(fontName, stringToPrint);
-    printStringResult();
+    generateStringResult();
 
     return "";
 }
