@@ -47,5 +47,7 @@
 	string compWithLeftSpaces(string source, int numSpaces);
 	string compWithCenterSpaces(string source, int numSpaces);
 	string convStrToUpper(string data);
+	int strLenght(string data);
+
 	string getLeftString(string data, string find);
 #endif

@@ -1,25 +1,12 @@
 #pragma once
-
-#include <iostream>
-#include <fstream>
 #include <string>
 #include <vector>
-#include <algorithm>
-#include "ctc.h"
-
-
-//#include "config_inc.h"
-#include "Debug_class.h"
-#include "functions.h"
-#include "functions_str.h"
-#include "ConfigFont_class.h"
-#include "convert_string.h"
-#include "fonts.h"
 #include "boxs.h"
 
 #ifndef BOX_DRIVE_CLASS_H
 #define BOX_DRIVE_CLASS_H
 using namespace std;
+
 class BoxDrive_class
 {
 public:
@@ -27,51 +14,45 @@ public:
     //string c_BoxDecoratorStyle = "Reactangle X";
 
     
-    string c_lineBox = "";
-    int c_part_head = 0;
-    int c_part_c_head = 0;
-    int c_part_content = 0;
-    int c_part_c_Foot = 0;
-    int c_part_foot = 0;
+    string c_lineBox ;
+    int c_part_head ;
+    int c_part_c_head ;
+    int c_part_content;
+    int c_part_c_Foot;
+    int c_part_foot;
 
-    string c_str_part_head = 0;
-    string c_str_part_foot = 0;
-
-    int c_part_counter = 0;
+    string c_str_part_head;
+    string c_str_part_foot;
+    //int c_part_counter_body;
+    int c_part_counter_body_main;
+    int c_part_counter_body_sub;
+    int c_part_counter;
 
     string c_box_style;
-    string c_box_head="";
-    string c_box_foot="";
-    bool c_BoxDecorator = true;
-    string c_BoxDecoratorStyle = "Reactangle X";
-
+    string c_box_head;
+    string c_box_foot;
+    
+    bool c_BoxDecorator;
+    string c_BoxDecoratorStyle;
 
     vector <vector<string>> c_box_body;
 
-    int c_box_width=0;
-    
- 
-    vector<vector<string>> getBodyElements();
+    int c_box_width;
+    //-----------functions----------------------
+    BoxDrive_class();
 
+    
+    vector<vector<string>> getBodyElements();
     void setBoxDecorator(bool value);
     void setBoxStyle(string style);
     void setBoxWidth(int width);
-
     void printBorderBox(string boxStyle);
-
     string getOneLineBox(string boxStyle);
-
     vector<string> getPartsFromBox(string text);
-
     void getParts();
-
+    string addBorderBodyBox(string text, int textLines);
     string getHeadBox();
     string getFootBox();
-    
-
-    string addHeadBoxToText(string text);
-    string addBoxToText(string text);
-    
 
     
 };

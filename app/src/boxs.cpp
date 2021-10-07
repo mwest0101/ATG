@@ -75,11 +75,11 @@ string showRectangle(string font, int cn, string cs) {
 
     vectorRectangles.push_back("Rounded Reactangle Full Thin");
     if (font == "Rounded Reactangle Full Thin") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"  ▄▀[(▀)]▀▄"; }
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"  ▄▀[(▀)]▀▄  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"▄▀  [(c)]  ▀▄"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"█   [(C)]   █"; }
         if ((cn == 4) || (cs == "boxText4")) { sr = u8"▀▄  [(c)]  ▄▀"; }
-        if ((cn == 5) || (cs == "boxText5")) { sr = u8"  ▀▄[(▄)]▄▀"; }
+        if ((cn == 5) || (cs == "boxText5")) { sr = u8"  ▀▄[(▄)]▄▀  "; }
     }
 
     vectorRectangles.push_back("Reactangle Full With Shadow Soft");

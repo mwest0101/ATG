@@ -26,10 +26,14 @@ int main(int argc, char* argv[], char* envp[])
     string param2="";
     setlocale(LC_ALL, "en_US.UTF-8");
 
-    
+   // cout << "entre a main" << endl;
+   // cout << "entre fontsLoader" << endl;
     FontManager_class fontsLoader;
-    BoxDrive_class boxDrive;
 
+
+   // cout << "entre boxDrive" << endl;
+    BoxDrive_class boxDrive;
+    //cout << "pase boxDrive" << endl;
    /*
 
     vector<string> params;
@@ -107,18 +111,37 @@ int main(int argc, char* argv[], char* envp[])
     */
 
    // strResult= showRectangle("allRectangles", 0, "-100");
-    cout << strResult << endl;
+   // cout << strResult << endl;
     
    // strResult = showRectangle("Reactangle asterix", 0, "lnTop0");
    // strResult += showRectangle("Reactangle asterix", 0, "lnCen");
-    //strResult += showRectangle("Reactangle asterix", 0, "lnBot0");
+   //strResult += showRectangle("Reactangle asterix", 0, "lnBot0");
    
 
+  // cout << "setBoxDecorator" << endl;
    boxDrive.setBoxDecorator(true);
-   boxDrive.setBoxWidth(50);
-   boxDrive.setBoxStyle("Reactangle X");
 
-    cout << strResult << endl;
+   //cout << "setBoxWidth" << endl;
+   boxDrive.setBoxWidth(50);
+
+  // cout << "setBoxStyle" << endl;
+   boxDrive.setBoxStyle("Rounded Reactangle Full Thin");
+
+   //cout << "getParts" << endl;
+   boxDrive.getParts();
+
+   cout << boxDrive.getHeadBox();
+
+   cout << boxDrive.addBorderBodyBox("-----------------", 6)<<endl;
+   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
+   cout << boxDrive.getFootBox();
+
+
+    //cout << strResult << endl;
 
     //cout << convStrToUpper("prueba de texto _ para convertiRRRasdAA") << endl;
 

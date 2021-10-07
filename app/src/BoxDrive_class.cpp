@@ -2,6 +2,11 @@
 
 
 
+BoxDrive_class::BoxDrive_class()
+{
+
+
+}
 
 void BoxDrive_class::setBoxDecorator(bool value) {
     c_BoxDecorator = value;
@@ -34,7 +39,7 @@ string BoxDrive_class::getOneLineBox(string boxStyle) {
 
     if ((strResult = showRectangle(boxStyle, contLine, "")) != "") {
         c_lineBox = strResult;
-        cout << strResult << endl;
+       // cout << strResult << endl;
         contLine++;
     }
     else {
@@ -51,8 +56,9 @@ vector<string> BoxDrive_class::getPartsFromBox(string text) {
     if (((strBox = getOneLineBox(c_BoxDecoratorStyle)) != "") &&
        ((pos1 = findStr(strBox, "[(")) != (-1)) &&
        ((pos2 = findStr(strBox, ")]")) != (-1))) {
-        strFill.push_back(strBox.substr(0, pos1));
-        strFill.push_back(strBox.substr(pos1 + 2, pos2));
+
+        strFill.push_back(strBox.substr(0, pos1)); 
+        strFill.push_back(strBox.substr(pos1 + 2, (pos2-(pos1 + 2)))); 
         strFill.push_back(strBox.substr(pos2 + 2, strBox.size()));
     }
     else {
@@ -81,35 +87,69 @@ void  BoxDrive_class::getParts() {
     bool execWhile = true;
     string strTemp;
     string strReturn;
-
+    size_t numSpaces = 0;
     strBoxTemp = getPartsFromBox(c_box_style);
-    while (strBoxTemp[0] != "" || strBoxTemp[1] != "" || strBoxTemp[2] != "") {
 
+
+    while (strBoxTemp[0] != "" || strBoxTemp[1] != "" || strBoxTemp[2] != "") {
+    
             if ((strBoxTemp[1] != "c" && strBoxTemp[1] != "C") && partCounter <= 1) {
-                c_str_part_head += strBoxTemp[0];                
-                for (int i = 0; i < c_box_width; i++) {
+
+                c_str_part_head += strBoxTemp[0];
+                /*
+                numSpaces= c_box_width-(strLenght(strBoxTemp[0]) + strLenght(strBoxTemp[2]));
+                cout << strBoxTemp[0] << "- " << strBoxTemp[0].size() << endl;
+                cout << strBoxTemp[1] << "- " << strBoxTemp[1].size() << endl;
+                cout << strBoxTemp[2] << "- " << strBoxTemp[2].size() << endl;
+
+                cout << numSpaces << endl;
+                */
+                numSpaces = c_box_width;
+                //cout << numSpaces << endl;
+                for (unsigned int i = 0; i < numSpaces; i++) {
                     c_str_part_head += strBoxTemp[1];
+                   // cout << i << endl;
                 }
 
                 c_str_part_head += strBoxTemp[2]+"\n";
+
                 c_part_head++;
+                c_part_counter++;
                 partCounter = 1;
+                
 
             }else if  ((strBoxTemp[1] == "c" || strBoxTemp[1] == "C") && partCounter <= 2) {
                 
                 c_box_body.push_back(strBoxTemp);
-                partContent++;
+                
+                if (strBoxTemp[1] == "c") {
+                    c_part_counter_body_sub++;
+                }else {
+                    c_part_counter_body_main++;
+                }
+
+                c_part_counter++;
                 partCounter = 2;
 
             }else if ((strBoxTemp[1] != "c" && strBoxTemp[1] != "C") && partCounter >= 2) {
 
                 c_str_part_foot += strBoxTemp[0];
-                for (int i = 0; i < c_box_width; i++) {
+                /*
+                numSpaces = c_box_width - (strLenght(strBoxTemp[0]) + strLenght(strBoxTemp[2]));                
+                cout << strBoxTemp[0] << "- " << strBoxTemp[0].size() << endl;
+                cout << strBoxTemp[1] << "- " << strBoxTemp[1].size() << endl;
+                cout << strBoxTemp[2] << "- " << strBoxTemp[2].size() << endl;
+                cout << numSpaces << endl;
+                */
+                numSpaces = c_box_width;
+                for (unsigned int i = 0; i < numSpaces; i++) {
                     c_str_part_foot += strBoxTemp[1];
+                    //c_str_part_foot += "/";
                 }
+
                 c_str_part_foot += strBoxTemp[2] + "\n";
                 c_part_foot++;                
-                partContent++;
+                c_part_counter++;
                 partCounter = 3;
             }
 
@@ -117,6 +157,41 @@ void  BoxDrive_class::getParts() {
         
 
     }
+
+}
+
+string BoxDrive_class::addBorderBodyBox(string text,int aLineSource) {
+    static int countLines = 0;
+    static int countPass = 0;
+    vector<string> tempStr;
+    string strReturn = "";
+    size_t numSpaces = 0;
+    int countBodyMain = aLineSource - c_part_counter_body_sub; // 8
+    int countBodySub= c_part_counter_body_sub; //2
+
+    if (countLines <= c_box_body.size()) {
+
+        tempStr = c_box_body[countLines];
+        numSpaces = c_box_width - (strLenght(tempStr[0]) + strLenght(tempStr[2]));
+        numSpaces = c_box_width;
+        if (tempStr[1] == "c") {
+            strReturn = tempStr[0] + compWithCenterSpaces(text, numSpaces) + tempStr[2];
+            countLines++;
+        }
+
+        if (tempStr[1] == "C") {
+            strReturn = tempStr[0] + compWithCenterSpaces(text, numSpaces) + tempStr[2];
+            countPass++;                    
+            if (countPass < c_part_counter_body_main) countLines++;
+        }
+        
+
+        if (countPass==countBodyMain){
+            countLines++;
+        }
+ 
+    }
+    return strReturn;
 }
 
 string BoxDrive_class::getHeadBox() {
@@ -132,65 +207,3 @@ vector<vector<string>> BoxDrive_class::getBodyElements() {
 }
 
 
-string  BoxDrive_class::addHeadBoxToText(string text) {
-    string strFill = "";
-    string resulStr = "";
-    int numSpaces = 100;
-    int sizeBox = 40;
-    vector<string> strBox;
-    strBox = getPartsFromBox(text);
-
-    while (strBox[1] != "c" || strBox[1] != "C") {
-        resulStr += strBox[0];
-        for (int i = 0; i < sizeBox; i++) {
-            resulStr += strFill;
-        }
-        resulStr += strBox[2];
-    }
-
-    return resulStr;
-}
-
-
-string  BoxDrive_class::addBoxToText(string text) {
-
-    string strOfChar;
-
-
-    string strFill = "";
-    string resulStr = "";
-    int numSpaces = 100;
-    int sizeBox = 40;
-    vector<string> strBox;
-    strBox = getPartsFromBox(text);
-
-
-    while (strBox[1] != "c" || strBox[1] != "C") {
-        resulStr += strBox[0];
-        for (int i = 0; i < sizeBox; i++) {
-            resulStr += strFill;
-        }
-        resulStr += strBox[2];
-    }
-
-    if (c_BoxDecorator) {
-        strBox = getPartsFromBox(text);
-        if (strBox[1] != "c" && strBox[1] != "C") {
-            resulStr += strBox[0];
-            resulStr += compWithCenterSpaces(text, numSpaces);
-            resulStr += strBox[2];
-        }
-        else {
-            resulStr += strBox[0];
-            for (int i = 0; i < sizeBox; i++) {
-                resulStr += strFill;
-            }
-            resulStr += strBox[2];
-        }
-
-
-        //(findStr(strBox, "[(") != (-1))) {
-
-    }
-    return resulStr;
-}

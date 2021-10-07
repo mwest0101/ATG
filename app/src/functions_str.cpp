@@ -143,20 +143,15 @@ string normalizeStr(string result) {
 	result = strReplace(result, "\\", "\\\\");
 
 	result = strReplace(result, "\"", "\\\"");
-	
-	//result = strReplace(result, "\'", "\\\'");
-	
-	//result = strReplace(result, "\\", "\\\\");
+
 	return result;
 }
 
 string normalizeChar(string result) {
 	result = strReplace(result, "\\", "\\\\");
-	// //result = strReplace(result, "\'", "\\\'");
+
 	result = strReplace(result, "\"", "\\\"");
 	result = strReplace(result, "\'", "\\\'");
-
-	
 
 	return result;
 }
@@ -256,12 +251,25 @@ string compWithLeftSpaces(string source, int numSpaces) {
 }
 
 string compWithCenterSpaces(string source, int numSpaces) {
-	string spacesToAdd = "";
+	string spacesToAdd1 = "";
+	string spacesToAdd2 = "";
 	string resultStrl = "";
-
+	float spaces = 0.0f;
+	int totalSpacesToFill = 0;
+	int spaces1 = 0;
+	int spaces2 = 0;
 	if ((int)source.size() <= numSpaces) {
-		spacesToAdd = createSpaces(((int)(numSpaces / 2)) - (source.size()));
-		resultStrl = spacesToAdd + source + spacesToAdd;
+		totalSpacesToFill = numSpaces - source.size();
+		spaces = (float)totalSpacesToFill/2;
+				
+		spaces1 = (int)spaces;
+		spaces2 = totalSpacesToFill - (int)spaces;
+
+		//cout << numSpaces << " - " << spaces1 << " - " << to_string(source.size()) << endl;
+		//cout << numSpaces << " - " << spaces2 << " - " << to_string(source.size()) << endl;
+		spacesToAdd1 = createSpaces(spaces1);
+		spacesToAdd2 = createSpaces(spaces2);
+		resultStrl = spacesToAdd1 + source + spacesToAdd2;
 	}
 	else {
 		resultStrl = cutRightStr(source, numSpaces);
@@ -280,6 +288,24 @@ string convStrToUpper(string data) {
 	
 
 	return data;
+}
+
+int strLenght(string data) {
+
+	int count = 0;
+	int i = 0;
+	/*
+	char *dataChar=strTochars(data);
+	int i = 0;
+	//for (unsigned int i = 0; i < data.length(); i++)
+	while (dataChar[i]!=NULL) {
+	
+	
+		i++;
+
+	}*/
+	i = 2;
+	return i;
 }
 
 string getLeftString(string data, string find) {
