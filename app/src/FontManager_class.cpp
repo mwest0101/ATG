@@ -241,6 +241,8 @@ string FontManager_class::applyHorizontalRainbow(string data) {
     return data;
 }
 
+// TO DO: Pasar despues a archivo aparte
+
 void FontManager_class::printStringWithColorsCode(string data) {
     int pos1 = 0;
     int pos2 = 0;
@@ -249,10 +251,15 @@ void FontManager_class::printStringWithColorsCode(string data) {
     while (found) {
         if ((pos1 = findStr(data, "[(")) != (-1)) {
             if ((pos2 = findStr(data, ")]")) != (-1)) {
+                
                 cout << data.substr(0, pos1);
+                
                 colors = splitStr(data.substr(pos1 + 2, pos2), ',');
+
                 SetColor(strToInt(colors[0]), strToInt(colors[1]));
+
                 data = data.substr(pos2 + 2, data.size());
+
                 found = true;
             }
 

@@ -123,6 +123,7 @@ int main(int argc, char* argv[], char* envp[])
 
    //cout << "setBoxWidth" << endl;
    boxDrive.setBoxWidth(50);
+   boxDrive.setBoxHigh(6);
 
   // cout << "setBoxStyle" << endl;
    boxDrive.setBoxStyle("Rounded Reactangle Full Thin");
@@ -132,12 +133,12 @@ int main(int argc, char* argv[], char* envp[])
 
    cout << boxDrive.getHeadBox();
 
-   cout << boxDrive.addBorderBodyBox("-----------------", 6)<<endl;
-   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
-   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
-   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
-   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
-   cout << boxDrive.addBorderBodyBox("-----------------", 6) << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------")<<endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
+   cout << boxDrive.addBorderBodyBox("-----------------") << endl;
    cout << boxDrive.getFootBox();
 
 

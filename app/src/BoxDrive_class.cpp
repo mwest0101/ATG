@@ -19,6 +19,9 @@ void BoxDrive_class::setBoxStyle(string style) {
 void BoxDrive_class::setBoxWidth(int width) {
     c_box_width = width;
 }
+void BoxDrive_class::setBoxHigh(int height) {
+    c_box_height = height;
+}
 
 void BoxDrive_class::printBorderBox(string boxStyle) {
     string strResult = " ";
@@ -160,13 +163,13 @@ void  BoxDrive_class::getParts() {
 
 }
 
-string BoxDrive_class::addBorderBodyBox(string text,int aLineSource) {
+string BoxDrive_class::addBorderBodyBox(string text) {
     static int countLines = 0;
     static int countPass = 0;
     vector<string> tempStr;
     string strReturn = "";
     size_t numSpaces = 0;
-    int countBodyMain = aLineSource - c_part_counter_body_sub; // 8
+    int countBodyMain = c_box_height - c_part_counter_body_sub; // 8
     int countBodySub= c_part_counter_body_sub; //2
 
     if (countLines <= c_box_body.size()) {

@@ -20,6 +20,7 @@ public:
     int c_part_content;
     int c_part_c_Foot;
     int c_part_foot;
+    int c_box_height;
 
     string c_str_part_head;
     string c_str_part_foot;
@@ -46,11 +47,13 @@ public:
     void setBoxDecorator(bool value);
     void setBoxStyle(string style);
     void setBoxWidth(int width);
+    void setBoxHigh(int height);
+
     void printBorderBox(string boxStyle);
     string getOneLineBox(string boxStyle);
     vector<string> getPartsFromBox(string text);
     void getParts();
-    string addBorderBodyBox(string text, int textLines);
+    string addBorderBodyBox(string text);
     string getHeadBox();
     string getFootBox();
 
