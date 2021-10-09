@@ -80,7 +80,6 @@ vector<string> BoxDrive_class::getPartsFromBox(string text) {
 void  BoxDrive_class::getParts() {
     vector<string>strBoxTemp;
     vector<string>strBox;
-
     
     int partCounter = 0;
     int partHead = 0;
@@ -88,38 +87,32 @@ void  BoxDrive_class::getParts() {
     int partContent = 0;
     int partcFoot = 0;
     int partFoot = 0;
-
-
     bool execWhile = true;
     string strTemp;
     string strReturn;
     size_t numSpaces = 0;
+
+
     strBoxTemp = getPartsFromBox(c_box_style);
-
-
     while (strBoxTemp[0] != "" || strBoxTemp[1] != "" || strBoxTemp[2] != "") {
-    
+        strTemp="";
             if ((strBoxTemp[1] != "c" && strBoxTemp[1] != "C") && partCounter <= 1) {
 
-                c_str_part_head += strBoxTemp[0];
-                /*
-                numSpaces= c_box_width-(strLenght(strBoxTemp[0]) + strLenght(strBoxTemp[2]));
-                cout << strBoxTemp[0] << "- " << strBoxTemp[0].size() << endl;
-                cout << strBoxTemp[1] << "- " << strBoxTemp[1].size() << endl;
-                cout << strBoxTemp[2] << "- " << strBoxTemp[2].size() << endl;
+                strTemp += strBoxTemp[0];
 
-                cout << numSpaces << endl;
-                */
                 numSpaces = c_box_width;
                 //cout << numSpaces << endl;
                 for (unsigned int i = 0; i < numSpaces; i++) {
-                    c_str_part_head += strBoxTemp[1];
+                    strTemp += strBoxTemp[1];
                    // cout << i << endl;
                 }
 
-                c_str_part_head += strBoxTemp[2]+"\n";
+                strTemp += strBoxTemp[2];
+
+                c_box_head.push_back(strTemp);;
 
                 c_part_head++;
+
                 c_part_counter++;
                 partCounter = 1;
                 
@@ -139,21 +132,17 @@ void  BoxDrive_class::getParts() {
 
             }else if ((strBoxTemp[1] != "c" && strBoxTemp[1] != "C") && partCounter >= 2) {
 
-                c_str_part_foot += strBoxTemp[0];
-                /*
-                numSpaces = c_box_width - (strLenght(strBoxTemp[0]) + strLenght(strBoxTemp[2]));                
-                cout << strBoxTemp[0] << "- " << strBoxTemp[0].size() << endl;
-                cout << strBoxTemp[1] << "- " << strBoxTemp[1].size() << endl;
-                cout << strBoxTemp[2] << "- " << strBoxTemp[2].size() << endl;
-                cout << numSpaces << endl;
-                */
+                strTemp += strBoxTemp[0];
+ 
                 numSpaces = c_box_width;
                 for (unsigned int i = 0; i < numSpaces; i++) {
-                    c_str_part_foot += strBoxTemp[1];
+                    strTemp += strBoxTemp[1];
                     //c_str_part_foot += "/";
                 }
 
-                c_str_part_foot += strBoxTemp[2] + "\n";
+                strTemp += strBoxTemp[2];
+                c_box_foot.push_back(strTemp);
+
                 c_part_foot++;                
                 c_part_counter++;
                 partCounter = 3;
@@ -167,7 +156,7 @@ void  BoxDrive_class::getParts() {
 }
 
 string BoxDrive_class::addBorderBodyBox(string text) {
-    static int countLines = 0;
+    static unsigned int countLines = 0;
     static int countPass = 0;
     vector<string> tempStr;
     string strReturn = "";
@@ -190,7 +179,6 @@ string BoxDrive_class::addBorderBodyBox(string text) {
             countPass++;                    
             if (countPass < c_part_counter_body_main) countLines++;
         }
-        
 
         if (countPass==countBodyMain){
             countLines++;
@@ -200,12 +188,12 @@ string BoxDrive_class::addBorderBodyBox(string text) {
     return strReturn;
 }
 
-string BoxDrive_class::getHeadBox() {
-    return c_str_part_head;
+vector<string> BoxDrive_class::getHeadBox() {
+    return c_box_head;
 }
 
-string BoxDrive_class::getFootBox() {
-    return c_str_part_foot;
+vector<string> BoxDrive_class::getFootBox() {
+    return c_box_foot;
 }
 
 vector<vector<string>> BoxDrive_class::getBodyElements() {

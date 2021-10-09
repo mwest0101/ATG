@@ -10,9 +10,6 @@ using namespace std;
 class BoxDrive_class
 {
 public:
-    //bool c_BoxDecorator = false;
-    //string c_BoxDecoratorStyle = "Reactangle X";
-
     
     string c_lineBox ;
     int c_part_head ;
@@ -30,8 +27,8 @@ public:
     int c_part_counter;
 
     string c_box_style;
-    string c_box_head;
-    string c_box_foot;
+    vector<string> c_box_head;
+    vector<string> c_box_foot;
     
     bool c_BoxDecorator;
     string c_BoxDecoratorStyle;
@@ -56,9 +53,10 @@ public:
     vector<string> getPartsFromBox(string text);
     void getParts();
     string addBorderBodyBox(string text);
-    string getHeadBox();
-    string getFootBox();
+   
+    vector<string> getHeadBox();
 
+    vector<string> getFootBox();
     
 };
 #endif;

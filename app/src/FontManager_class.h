@@ -34,6 +34,7 @@ public:
     string c_fileNameToStorageResult;
     string c_resultAsciiArtString;
     string c_lineBox;
+    
     int c_hColor=1;
     
     bool c_vRainbow=false;
@@ -80,7 +81,11 @@ public:
     void generateVectorOfStrings(string fontName, string sourceString);
     int  getMaxWidthLine();
     void InsertTextInBox();
-    void generateStringResult();   
+    void applyParameters();
+    void generateStringResult();
+    void genStringAndResult();
+    void printString();
+
    // void printHeadBox(string boxStyle, int spaces);
 
 
