@@ -358,7 +358,7 @@ void FontManager_class::InsertTextInBox() {
     boxDrive.setBoxDecorator(true);
     boxDrive.setBoxWidth(getMaxWidthLine());
     boxDrive.setBoxHigh(c_resultAsciiArtVector.size());
-    boxDrive.setBoxStyle("Reactangle Double Line");
+    boxDrive.setBoxStyle("Rounded Reactangle Full Thin");
     boxDrive.getParts();
 
     for (string data : boxDrive.getHeadBox()) {
