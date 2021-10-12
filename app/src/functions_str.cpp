@@ -240,7 +240,7 @@ string compWithLeftSpaces(string source, int numSpaces) {
 	string resultStrl = "";
 
 	if ((int)source.size() <= numSpaces) {
-		spacesToAdd = createSpaces(numSpaces - (source.size()));
+		spacesToAdd = createSpaces(numSpaces - source.size());
 		resultStrl = spacesToAdd + source;
 	}
 	else {

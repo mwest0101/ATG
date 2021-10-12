@@ -145,6 +145,52 @@ void writeFile(string filename, string textToInsert) {
 
 }
 
+string strRemoveParamsEnveded(string data) {
+	int pos1 = 0;
+	int pos2 = 0;
+	bool found = true;
+	string strResult = "";
+
+	while (found) {
+		if ((pos1 = findStr(data, "[(")) != (-1)) {
+			if ((pos2 = findStr(data, ")]")) != (-1)) {
+				strResult += data.substr(0, pos1);
+				data = data.substr(pos2 + 2, data.size());
+				found = true;
+			}
+
+		}
+		else {
+
+			strResult += data + "\n";
+			found = false;
+		}
+	}
+
+	return strResult;
+}
+
+
+int getMaxWidthLine(vector<string> vectStr) {
+	string strOfChar;
+	unsigned int max = 0;
+	string strTemp = "";
+
+	for (string data : vectStr) {
+
+		string strTemp = strRemoveParamsEnveded(data);
+	
+		if (strTemp.size() > max) {
+			max = strTemp.size();
+		}
+
+	}
+	
+	return max;
+}
+
+
+
 
 
 

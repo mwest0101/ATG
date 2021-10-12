@@ -28,7 +28,6 @@ int main(int argc, char* argv[], char* envp[])
 
     FontManager_class fontsLoader;
 
-
     vector<string> params;
     cout << endl;
     for (int i = 1; i < argc; i++) {
@@ -72,6 +71,11 @@ int main(int argc, char* argv[], char* envp[])
 
             param1 = "listAllFontsExampleWithDemo";
             countParam=2;
+        }else if (param == "-b:") {
+            fontsLoader.setInsertBox(true);    
+            vector<string> paramBox = splitStr(param, ':');
+            fontsLoader.set(true);
+            countParam = 2;
         }else {
             
             if (countParam == 0) {

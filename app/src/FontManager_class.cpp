@@ -74,6 +74,10 @@ void FontManager_class::setHorizontRainbow(bool value) {
     c_hRainbow = value;
 }
 
+void FontManager_class::setInsertBox(bool value) {
+    c_insBox = value;
+}
+
 
 
 void FontManager_class::setFonts() {
@@ -240,6 +244,7 @@ void FontManager_class::showListOfFonts() {
 
 }
 
+
 void FontManager_class::concatenateChar(vector<string> oneChar) {
 
     for (unsigned int i = 0; i < oneChar.size(); i++) {
@@ -303,6 +308,7 @@ void FontManager_class::printStringWithColorsCode(string data) {
 
 }
 
+
 void FontManager_class::cleanArrayAndString() {
     c_resultAsciiArtVector.clear();
     c_resultAsciiArtString = "";
@@ -316,18 +322,7 @@ void FontManager_class::generateVectorOfStrings(string fontName, string sourceSt
         concatenateChar(getVectorfromOnechar(strOfChar));
     }
 }
-int FontManager_class::getMaxWidthLine() {
-    string strOfChar;
-    unsigned int max = 0;
-    for (string data : c_resultAsciiArtVector) {
-        if (data.size() > max) {
-            max = data.size();
-        }
-    
-    }
-    //cout << " - > "<< max << endl;
-    return max;
-}
+
 
 
 void FontManager_class::genStringAndResult() {
@@ -356,7 +351,7 @@ void FontManager_class::InsertTextInBox() {
     BoxDrive_class boxDrive;
 
     boxDrive.setBoxDecorator(true);
-    boxDrive.setBoxWidth(getMaxWidthLine());
+    boxDrive.setBoxWidth(getMaxWidthLine(c_resultAsciiArtVector));
     boxDrive.setBoxHigh(c_resultAsciiArtVector.size());
     boxDrive.setBoxStyle("Rounded Reactangle Full Thin");
     boxDrive.getParts();
@@ -364,15 +359,19 @@ void FontManager_class::InsertTextInBox() {
     for (string data : boxDrive.getHeadBox()) {
         tempVector.push_back(data);
     }
-
+    
     for (string data : c_resultAsciiArtVector) {
         tempVector.push_back(boxDrive.addBorderBodyBox(data));
     }
-
+    
     for (string data : boxDrive.getFootBox()) {
         tempVector.push_back(data);
     }
+    cout << "<< - InsertTextInBox " << endl;
 
+    for (string data : tempVector) {
+        cout << data << endl;
+    }
     c_resultAsciiArtVector = tempVector;
 
 }
@@ -386,7 +385,7 @@ void FontManager_class::applyParameters() {
     string strLine = "";
 
     int lengVec = c_resultAsciiArtVector.size();
-    int maxWidth = getMaxWidthLine();
+    int maxWidth = getMaxWidthLine(c_resultAsciiArtVector);
 
     vector<string> tempVector;    
     for (string data : c_resultAsciiArtVector) {
@@ -427,7 +426,9 @@ string FontManager_class::mainGeneratorOfStr(string fontName, string stringToPri
     cleanArrayAndString();
     generateVectorOfStrings(fontName, stringToPrint);
     applyParameters();
-    InsertTextInBox();
+    if (c_insBox) {
+        InsertTextInBox();
+    }
     genStringAndResult();
     printString();
 

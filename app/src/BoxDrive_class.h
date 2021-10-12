@@ -29,6 +29,9 @@ public:
     string c_box_style;
     vector<string> c_box_head;
     vector<string> c_box_foot;
+  
+
+    vector<string> c_allNameBox;
     
     bool c_BoxDecorator;
     string c_BoxDecoratorStyle;
@@ -39,7 +42,7 @@ public:
     //-----------functions----------------------
     BoxDrive_class();
 
-    
+    void setBoxs();
     vector<vector<string>> getBodyElements();
     void setBoxDecorator(bool value);
     bool getBoxDecorator();
@@ -57,7 +60,8 @@ public:
     vector<string> getHeadBox();
 
     vector<string> getFootBox();
-    
-};
-#endif;
 
+    bool addNumIfNotExisInArray(int num);
+    void showListOfBox();
+
+#endif

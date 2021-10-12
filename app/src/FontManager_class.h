@@ -45,7 +45,7 @@ public:
     char c_charType = ' ';    
     char c_finalChar = '\n';
     bool c_smush = false;
-
+    bool c_insBox = false;
     
     vector<string> c_resultAsciiArtVector;
     vector<string> c_allContent;
@@ -61,6 +61,8 @@ public:
     void setDemoColor(bool value);    
     void setVerticalRainbow(bool value);
     void setHorizontRainbow(bool value);
+
+    void setInsertBox(bool value);
     string getStrRainbowColor(int numLine);
     void setBoxDecorator(bool value);
     void setFonts();
@@ -77,9 +79,10 @@ public:
     void concatenateChar(vector<string> oneChar);
     string applyHorizontalRainbow(string data);
     void printStringWithColorsCode(string data);
+    //string strRemoveParamsEnveded(string data);
     void cleanArrayAndString();
     void generateVectorOfStrings(string fontName, string sourceString);
-    int  getMaxWidthLine();
+    //int  getMaxWidthLine();
     void InsertTextInBox();
     void applyParameters();
     void generateStringResult();

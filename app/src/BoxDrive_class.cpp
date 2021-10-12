@@ -2,11 +2,28 @@
 
 
 
-BoxDrive_class::BoxDrive_class()
-{
-
-
+BoxDrive_class::BoxDrive_class(){
+    //setBoxs();
 }
+
+void BoxDrive_class::setBoxs() {
+    vector<string> listOfChars;
+    vector<string> onechar;
+
+    string fontName = "allRectangles";
+    string result = showRectangle(fontName, -100, " ");
+    listOfChars = splitStr(result, ';');
+
+    for (string font : listOfChars) {
+        if (font.size() > 0) {
+            onechar = splitStr(font, ':');
+            c_allNameBox.push_back(onechar[1]);
+            cout << onechar[1] << endl;
+        }
+
+    }
+}
+
 
 void BoxDrive_class::setBoxDecorator(bool value) {
     c_BoxDecorator = value;
@@ -101,7 +118,7 @@ void  BoxDrive_class::getParts() {
                 strTemp += strBoxTemp[0];
 
                 numSpaces = c_box_width;
-                //cout << numSpaces << endl;
+                cout << "head--->"<<numSpaces << endl;
                 for (unsigned int i = 0; i < numSpaces; i++) {
                     strTemp += strBoxTemp[1];
                    // cout << i << endl;
@@ -135,6 +152,7 @@ void  BoxDrive_class::getParts() {
                 strTemp += strBoxTemp[0];
  
                 numSpaces = c_box_width;
+                cout << "foot--->" << numSpaces << endl;
                 for (unsigned int i = 0; i < numSpaces; i++) {
                     strTemp += strBoxTemp[1];
                     //c_str_part_foot += "/";
@@ -167,15 +185,18 @@ string BoxDrive_class::addBorderBodyBox(string text) {
     if (countLines <= c_box_body.size()) {
 
         tempStr = c_box_body[countLines];
-        numSpaces = c_box_width - (strLenght(tempStr[0]) + strLenght(tempStr[2]));
+        //numSpaces = c_box_width - (strLenght(tempStr[0]) + strLenght(tempStr[2]));
         numSpaces = c_box_width;
+        cout << "----->" << numSpaces << " < -----" << endl;
         if (tempStr[1] == "c") {
-            strReturn = tempStr[0] + compWithCenterSpaces(text, numSpaces) + tempStr[2];
+            //strReturn = tempStr[0] + compWithCenterSpaces(text, numSpaces) + tempStr[2];
+            strReturn = tempStr[0] + text + tempStr[2];
             countLines++;
         }
 
         if (tempStr[1] == "C") {
-            strReturn = tempStr[0] + compWithCenterSpaces(text, numSpaces) + tempStr[2];
+            //strReturn = tempStr[0] + compWithCenterSpaces(text, numSpaces) + tempStr[2];
+            strReturn = tempStr[0] + text + tempStr[2];
             countPass++;                    
             if (countPass < c_part_counter_body_main) countLines++;
         }
@@ -198,6 +219,70 @@ vector<string> BoxDrive_class::getFootBox() {
 
 vector<vector<string>> BoxDrive_class::getBodyElements() {
     return c_box_body;
+}
+
+bool BoxDrive_class::addNumIfNotExisInArray(int num) {
+    static vector<int> vectorNumeros;
+    if (find(vectorNumeros.begin(), vectorNumeros.end(), num) != vectorNumeros.end()) {
+        return false;
+    }
+    else {
+        vectorNumeros.push_back(num);
+        return true;
+    }
+
+
+}
+
+
+void BoxDrive_class::showListOfBox() {
+
+    vector<string> listOfChars;
+    string onechar;
+    string strToPrint;
+    string oneStrToPrint;
+    int sizeColNum = 3;
+    int sizeColName = 15;
+    int maxCountCols = 4;
+    int countFont = 0;
+    int countCols = 1;
+
+    oneStrToPrint = "";
+
+    countCols = 0;
+    int maxElements = (c_allNameBox.size() - 1);
+    int columElements = (int)((((float)maxElements / (float)maxCountCols)));
+    columElements = columElements + 1;
+
+    int element = 0;
+
+    for (int i = 0; i < columElements; i++) {
+        //  cout << i << endl;
+        for (int j = 0; j < maxCountCols; j++) {
+
+            element = (columElements * j) + i;
+
+            if ((element <= maxElements) && addNumIfNotExisInArray(element)) {
+                onechar = c_allNameFonts[element];
+                SetColor(0, 15);
+                cout << "[ ";
+                SetColor(0, 6);
+                cout << compWithLeftSpaces(to_string(element), sizeColNum);
+                SetColor(0, 4);
+                cout << " : ";
+                SetColor(0, 2);
+                cout << compWithRightSpaces(onechar, sizeColName);
+                SetColor(0, 15);
+                cout << " ] ";
+            }
+
+        }
+
+        cout << endl;
+        oneStrToPrint = "";
+
+    }
+
 }
 
 
