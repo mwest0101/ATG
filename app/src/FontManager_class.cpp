@@ -267,7 +267,7 @@ void FontManager_class::concatenateChar(vector<string> oneChar) {
 void FontManager_class::eraseEmptyStrLinesInVector() {
     vector<string> temp;
     for(string data : c_resultAsciiArtVector) {
-        cout << data << endl;
+        //cout << data << endl;
         if (trimString(data, " ") != "") {
             temp.push_back(data);
         }

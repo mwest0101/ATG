@@ -101,7 +101,8 @@ int main(int argc, char* argv[], char* envp[])
                 fontsLoader.setStyleBox((int)i);
                 //cout << to_string(i) << endl;
                 if (param1 == "") { param1 = "114"; }
-                fontsLoader.load(param1, "Test");
+                if (param2 == "") { param1 = "Test"; }
+                fontsLoader.load(param1, param2);
                 cout <<endl<<endl;
              
             }
