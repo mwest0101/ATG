@@ -34,6 +34,7 @@ public:
     string c_fileNameToStorageResult;
     string c_resultAsciiArtString;
     string c_lineBox;
+    int c_fontNumberStyle;
     
     int c_hColor=1;
     
@@ -63,6 +64,8 @@ public:
     void setHorizontRainbow(bool value);
 
     void setInsertBox(bool value);
+    void setStyleBox(int fontNumber);
+
     string getStrRainbowColor(int numLine);
     void setBoxDecorator(bool value);
     void setFonts();
@@ -83,7 +86,7 @@ public:
     void cleanArrayAndString();
     void generateVectorOfStrings(string fontName, string sourceString);
     //int  getMaxWidthLine();
-    void InsertTextInBox();
+    void InsertTextInBox(int styleBox);
     void applyParameters();
     void generateStringResult();
     void genStringAndResult();
@@ -98,6 +101,7 @@ public:
 
     bool addNumIfNotExisInArray(int num);
     void showDemoOfAllFonts(string style, string testString);
+    void eraseEmptyStrLinesInVector();
   
 };
 #endif

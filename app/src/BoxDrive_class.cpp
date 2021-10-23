@@ -3,7 +3,13 @@
 
 
 BoxDrive_class::BoxDrive_class(){
-    //setBoxs();
+    resetVars();
+    setBoxs();
+
+}
+void BoxDrive_class::resetVars() {
+    unsigned int countLines = 0;
+    int countPass = 0;
 }
 
 void BoxDrive_class::setBoxs() {
@@ -18,7 +24,7 @@ void BoxDrive_class::setBoxs() {
         if (font.size() > 0) {
             onechar = splitStr(font, ':');
             c_allNameBox.push_back(onechar[1]);
-            cout << onechar[1] << endl;
+            //cout << onechar[1] << endl;
         }
 
     }
@@ -117,8 +123,8 @@ void  BoxDrive_class::getParts() {
 
                 strTemp += strBoxTemp[0];
 
-                numSpaces = c_box_width;
-                cout << "head--->"<<numSpaces << endl;
+                numSpaces = c_box_width-1;
+                //cout << "head--->"<<numSpaces << endl;
                 for (unsigned int i = 0; i < numSpaces; i++) {
                     strTemp += strBoxTemp[1];
                    // cout << i << endl;
@@ -151,8 +157,8 @@ void  BoxDrive_class::getParts() {
 
                 strTemp += strBoxTemp[0];
  
-                numSpaces = c_box_width;
-                cout << "foot--->" << numSpaces << endl;
+                numSpaces = c_box_width-1;
+                //cout << "foot--->" << numSpaces << endl;
                 for (unsigned int i = 0; i < numSpaces; i++) {
                     strTemp += strBoxTemp[1];
                     //c_str_part_foot += "/";
@@ -174,20 +180,27 @@ void  BoxDrive_class::getParts() {
 }
 
 string BoxDrive_class::addBorderBodyBox(string text) {
-    static unsigned int countLines = 0;
-    static int countPass = 0;
+
     vector<string> tempStr;
     string strReturn = "";
     size_t numSpaces = 0;
     int countBodyMain = c_box_height - c_part_counter_body_sub; // 8
-    int countBodySub= c_part_counter_body_sub; //2
+    int countBodySub= c_part_counter_body_sub; //2  
 
-    if (countLines <= c_box_body.size()) {
+    //cout << to_string(countLines) << endl;
+    //cout << to_string(countPass) << endl;
+    
+    //cout << "--> body size --> "<< to_string(c_box_body.size()) << endl;
+    //cout << "c_part_counter_body_sub " << to_string(c_part_counter_body_sub) << endl;
+    //cout << "c_part_counter_body_main " << to_string(c_part_counter_body_main) << endl;
+    
+    if (countLines < c_box_body.size()) {
 
         tempStr = c_box_body[countLines];
+        //cout << " countLines -> " << countLines << endl;
         //numSpaces = c_box_width - (strLenght(tempStr[0]) + strLenght(tempStr[2]));
         numSpaces = c_box_width;
-        cout << "----->" << numSpaces << " < -----" << endl;
+        //cout << "----->" << numSpaces << " < -----" << endl;
         if (tempStr[1] == "c") {
             //strReturn = tempStr[0] + compWithCenterSpaces(text, numSpaces) + tempStr[2];
             strReturn = tempStr[0] + text + tempStr[2];
@@ -197,7 +210,8 @@ string BoxDrive_class::addBorderBodyBox(string text) {
         if (tempStr[1] == "C") {
             //strReturn = tempStr[0] + compWithCenterSpaces(text, numSpaces) + tempStr[2];
             strReturn = tempStr[0] + text + tempStr[2];
-            countPass++;                    
+            countPass++;   
+           // cout << " countPass -> " << countPass << endl;
             if (countPass < c_part_counter_body_main) countLines++;
         }
 
@@ -205,7 +219,8 @@ string BoxDrive_class::addBorderBodyBox(string text) {
             countLines++;
         }
  
-    }
+    } 
+    
     return strReturn;
 }
 
@@ -242,8 +257,8 @@ void BoxDrive_class::showListOfBox() {
     string strToPrint;
     string oneStrToPrint;
     int sizeColNum = 3;
-    int sizeColName = 15;
-    int maxCountCols = 4;
+    int sizeColName = 35;
+    int maxCountCols = 2;
     int countFont = 0;
     int countCols = 1;
 
@@ -257,20 +272,20 @@ void BoxDrive_class::showListOfBox() {
     int element = 0;
 
     for (int i = 0; i < columElements; i++) {
-        //  cout << i << endl;
+         //cout << i << endl;
         for (int j = 0; j < maxCountCols; j++) {
 
             element = (columElements * j) + i;
 
             if ((element <= maxElements) && addNumIfNotExisInArray(element)) {
-                onechar = c_allNameFonts[element];
+                onechar = c_allNameBox[element];
                 SetColor(0, 15);
                 cout << "[ ";
-                SetColor(0, 6);
+                SetColor(0, 9);
                 cout << compWithLeftSpaces(to_string(element), sizeColNum);
                 SetColor(0, 4);
                 cout << " : ";
-                SetColor(0, 2);
+                SetColor(0, 11);
                 cout << compWithRightSpaces(onechar, sizeColName);
                 SetColor(0, 15);
                 cout << " ] ";
@@ -281,6 +296,77 @@ void BoxDrive_class::showListOfBox() {
         cout << endl;
         oneStrToPrint = "";
 
+    }
+
+}
+
+vector<string> BoxDrive_class::getAllNameBox() {
+    return c_allNameBox;
+}
+
+
+/*
+void BoxDrive_class::showListOfBox() {
+
+    vector<string> listOfChars;
+    string onechar;
+    string strToPrint;
+    string oneStrToPrint;
+    int sizeColNum = 3;
+    int sizeColName = 35;
+    int maxCountCols = 2;
+    int countFont = 0;
+    int countCols = 1;
+
+    oneStrToPrint = "";
+
+    countCols = 0;
+    int maxElements = (c_allNameBox.size() - 1);
+    int columElements = (int)((((float)maxElements / (float)maxCountCols)));
+    columElements = columElements + 1;
+
+    int element = 0;
+
+
+    for (string strBox : c_allNameBox) {
+
+    }
+
+    for (int i = 0; i < columElements; i++) {
+        //cout << i << endl;
+        for (int j = 0; j < maxCountCols; j++) {
+
+            element = (columElements * j) + i;
+
+            if ((element <= maxElements) && addNumIfNotExisInArray(element)) {
+                onechar = c_allNameBox[element];
+                SetColor(0, 15);
+                cout << "[ ";
+                SetColor(0, 9);
+                cout << compWithLeftSpaces(to_string(element), sizeColNum);
+                SetColor(0, 4);
+                cout << " : ";
+                SetColor(0, 11);
+                cout << compWithRightSpaces(onechar, sizeColName);
+                SetColor(0, 15);
+                cout << " ] ";
+            }
+
+        }
+
+        cout << endl;
+        oneStrToPrint = "";
+
+    }
+
+}
+*/
+string BoxDrive_class::getStyleNameFromNumber(int num){
+    if (num > 0 && ((unsigned)num < c_allNameBox.size())) {
+        return c_allNameBox[num];
+    }
+    else {
+        return "";
     }
 
 }

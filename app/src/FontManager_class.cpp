@@ -6,7 +6,7 @@ const string HEAD_FILE = "flf2";
 
 FontManager_class::FontManager_class()
 {
-
+    setFonts();
 
 }
 
@@ -78,7 +78,9 @@ void FontManager_class::setInsertBox(bool value) {
     c_insBox = value;
 }
 
-
+void FontManager_class::setStyleBox(int styleBox) {
+    c_fontNumberStyle = styleBox;
+}
 
 void FontManager_class::setFonts() {
     vector<string> listOfChars;
@@ -167,7 +169,7 @@ string FontManager_class::load(string fontName, string stringToPrint) {
 
     //cout << "entre a load " << endl;
 
-    setFonts();
+    
 
     //cout << fontName << endl;
     if (fontName == "listAllFontNames") {
@@ -186,7 +188,7 @@ string FontManager_class::load(string fontName, string stringToPrint) {
     }
     else if (fontName != "" && stringToPrint != "") {
 
-        //   cout << "Interpretar fuente " << fontName << endl;
+           //cout << "Interpretar fuente " << fontName << endl;
 
         result = mainGeneratorOfStr(fontName, stringToPrint);
     }
@@ -254,7 +256,6 @@ void FontManager_class::concatenateChar(vector<string> oneChar) {
         }
         else {
             c_resultAsciiArtVector[i] += applyHorizontalRainbow(oneChar[i]);
-
         }
 
 
@@ -262,6 +263,17 @@ void FontManager_class::concatenateChar(vector<string> oneChar) {
     c_hColor++;
 
 
+}
+void FontManager_class::eraseEmptyStrLinesInVector() {
+    vector<string> temp;
+    for(string data : c_resultAsciiArtVector) {
+        cout << data << endl;
+        if (trimString(data, " ") != "") {
+            temp.push_back(data);
+        }
+    }
+    c_resultAsciiArtVector = temp;
+   
 }
 string FontManager_class::applyHorizontalRainbow(string data) {
     int bcolor = 0;
@@ -287,7 +299,7 @@ void FontManager_class::printStringWithColorsCode(string data) {
         if ((pos1 = findStr(data, "[(")) != (-1)) {
             if ((pos2 = findStr(data, ")]")) != (-1)) {
                 
-                cout << data.substr(0, pos1);
+                //cout << data.substr(0, pos1);
                 
                 colors = splitStr(data.substr(pos1 + 2, pos2), ',');
 
@@ -346,32 +358,46 @@ void FontManager_class::printString() {
 }
 
 
-void FontManager_class::InsertTextInBox() {
+void FontManager_class::InsertTextInBox(int styleBox) {
     vector<string> tempVector;
     BoxDrive_class boxDrive;
-
+    boxDrive.resetVars();
+    //cout << "entre Insert In box " << endl;
     boxDrive.setBoxDecorator(true);
+    //cout << "setBoxWidth " << endl;
     boxDrive.setBoxWidth(getMaxWidthLine(c_resultAsciiArtVector));
+    //cout << "setBoxHigh "<<endl;
     boxDrive.setBoxHigh(c_resultAsciiArtVector.size());
-    boxDrive.setBoxStyle("Rounded Reactangle Full Thin");
+
+    //cout << "setBoxStyle " << endl;
+    boxDrive.setBoxStyle(boxDrive.getStyleNameFromNumber(styleBox));
+
+    //cout << "getParts " << endl;
     boxDrive.getParts();
 
+    //cout << "getHeadBox " << endl;
     for (string data : boxDrive.getHeadBox()) {
         tempVector.push_back(data);
     }
-    
+
+    //cout << "addBorderBodyBox " << endl;
     for (string data : c_resultAsciiArtVector) {
+       // cout << boxDrive.addBorderBodyBox(data) << endl;
         tempVector.push_back(boxDrive.addBorderBodyBox(data));
     }
-    
+
+    //cout << "getFootBox " << endl;
     for (string data : boxDrive.getFootBox()) {
         tempVector.push_back(data);
     }
-    cout << "<< - InsertTextInBox " << endl;
+    //cout << "<< - InsertTextInBox " << endl;
 
+    /*
     for (string data : tempVector) {
         cout << data << endl;
     }
+    */
+    //cout << "c_resultAsciiArtVector " << endl;
     c_resultAsciiArtVector = tempVector;
 
 }
@@ -420,18 +446,29 @@ void FontManager_class::applyParameters() {
 string FontManager_class::mainGeneratorOfStr(string fontName, string stringToPrint) {
     string conf = "";
     fontName = getFontName(fontName);
+    //cout << "Entre a mainGeneratorOfStr" << endl;
 
     conf = showfonts(fontName, -1000, "conf");
     getConfig(conf);
-    cleanArrayAndString();
-    generateVectorOfStrings(fontName, stringToPrint);
-    applyParameters();
-    if (c_insBox) {
-        InsertTextInBox();
-    }
-    genStringAndResult();
-    printString();
 
+    //cout << "Entre a mainGeneratorOfStr - cleanArrayAndString" << endl;
+    cleanArrayAndString();
+    //cout << "Entre a mainGeneratorOfStr - generateVectorOfStrings" << endl;
+    generateVectorOfStrings(fontName, stringToPrint);
+    //cout << "Entre a mainGeneratorOfStr - applyParameters" << endl;
+    eraseEmptyStrLinesInVector();
+    applyParameters();
+    //InsertTextInBox(c_fontNumberStyle);
+    //cout << "Entre a mainGeneratorOfStr - InsertTextInBox" << endl;
+    if (c_insBox) {
+       // cout << "Entre a mainGeneratorOfStr - InsertTextInBox2" << endl;
+        InsertTextInBox(c_fontNumberStyle);
+    }
+    //cout << "Entre a mainGeneratorOfStr - genStringAndResult" << endl;
+    genStringAndResult();
+    //cout << "Entre a mainGeneratorOfStr - printString" << endl;
+    printString();
+    //cout << "Entre a mainGeneratorOfStr - end" << endl;
     return "";
 }
 string FontManager_class::reformatString(string data) {

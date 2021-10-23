@@ -7,74 +7,95 @@ string showRectangle(string font, int cn, string cs) {
     vector<string> vectorRectangles;
 
     //if ((cn == 0) || (cs == "boxText")) { sr = u8"█▄▄█▀██░▒▓╚╗═╔╝║ │└┐─┌┘"; }
+    string boxName = "";
 
-    vectorRectangles.push_back("Reactangle asterix");
-    if (font == "Reactangle asterix") {
+    boxName = "Rec Asterix";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"*[(*)]*"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"*[(C)]*"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"*[(*)]*"; }
     }
 
-    vectorRectangles.push_back("Reactangle X");
-    if (font == "Reactangle X") {
+    boxName = "Rec X";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"X[(X)]X"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"X[(C)]X"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"X[(X)]X"; }
     }
 
-    vectorRectangles.push_back("Reactangle Parenthesis");
-    if (font == "Reactangle Parenthesis") {
+    boxName = "Rec Parenthesis";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"_[(_)]_"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"([(C)])"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"~[(~)]~"; }
     }
 
-    vectorRectangles.push_back("Reactangle Simbols");
-    if (font == "Reactangle Simbols") {
+    boxName = "Rec Simbols";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"+[(-)]+"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"|[(C)]|"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"+[(-)]+"; }
     }
 
-    vectorRectangles.push_back("Rombo Simbols Ascci");
-    if (font == "Rombo Simbols Ascci") {
+    boxName = "Rombo Simbols Ascci";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"/[(-)]\\"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"|[(C)]|"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"\\[(-)]//"; }
     }
 
-    vectorRectangles.push_back("Reactangle Full Thick");
-    if (font == "Reactangle Full Thick") {
+    boxName = "Rec Full Thick";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"██[(C)]██"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"██[(█)]██"; }
     }
 
-    vectorRectangles.push_back("Reactangle Full Thin");
-    if (font == "Reactangle Full Thin") {
+    boxName = "Rec Full Thin";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"▄[(▄)]▄"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"█[(C)]█"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"▀[(▀)]▀"; }
     }
 
-    vectorRectangles.push_back("Reactangle Double Line");
-    if (font == "Reactangle Double Line") {
+    boxName = "Rec Double Line";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"╔[(═)]╗"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"║[(C)]║"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"╚[(═)]╝"; }
 
     }
 
-    vectorRectangles.push_back("Reactangle Single Line");
-    if (font == "Reactangle Single Line") {
+    boxName = "Rec Single Line";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"┌[(─)]┐"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"│[(C)]│"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"└[(─)]┘"; }
 
     }
 
-    vectorRectangles.push_back("Rounded Reactangle Full Thin");
-    if (font == "Rounded Reactangle Full Thin") {
+    boxName = "Rounded Rectangle Full Thin";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"  ▄▀[(▀)]▀▄  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"▄▀  [(c)]  ▀▄"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"█   [(C)]   █"; }
@@ -82,91 +103,106 @@ string showRectangle(string font, int cn, string cs) {
         if ((cn == 5) || (cs == "boxText5")) { sr = u8"  ▀▄[(▄)]▄▀  "; }
     }
 
-    vectorRectangles.push_back("Reactangle Full With Shadow Soft");
-    if (font == "Reactangle Full With Shadow Soft") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██░░"; }
+    boxName = "Rec Full Shadow Soft";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"██[(C)]██░░"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"██[(█)]██░░"; }
         if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(░)]░░░░"; }
     }
 
-    vectorRectangles.push_back("Reactangle Full With Shadow Medium");
-    if (font == "Reactangle Full With Shadow Medium") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██▒▒"; }
+    boxName = "Rec Full Shadow Medium";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"██[(C)]██▒▒"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"██[(█)]██▒▒"; }
         if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(▒)]▒▒▒▒"; }
     }
 
-    vectorRectangles.push_back("Reactangle Full With Shadow Dark");
-    if (font == "Reactangle Full With Shadow Dark") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██▓▓"; }
+    boxName = "Rec Full Shadow Dark";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"██[(C)]██▓▓"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"██[(█)]██▓▓"; }
         if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(▓)]▓▓▓▓"; }
     }
 
-
-    vectorRectangles.push_back("Reactangle Full With Shadow Soft Inverted");
-    if (font == "Reactangle Full With Shadow Soft Inverted") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"░░[(░)]░░██"; }
-        if ((cn == 2) || (cs == "boxText2")) { sr = u8"░░[( )]░░██"; }
+    boxName = "Rec Full Shadow Soft Inverted";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"░░[(░)]░░  "; }
+        if ((cn == 2) || (cs == "boxText2")) { sr = u8"░░[(C)]░░██"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"░░[(░)]░░██"; }
-        if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(█)]████"""; }
+        if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(█)]████"; }
     }
 
-    vectorRectangles.push_back("Reactangle Full With Shadow Medium Inverted");
-    if (font == "Reactangle Full With Shadow Medium Inverted") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"▒▒[(▒)]▒▒██"; }
+    boxName = "Rec Full Shadow Medium Inverted";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"▒▒[(▒)]▒▒  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"▒▒[(C)]▒▒██"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"▒▒[(▒)]▒▒██"; }
-        if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(▒)]████"""; }
+        if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(█)]████"; }
     }
 
-    vectorRectangles.push_back("Reactangle Full With Dark Inverted");
-    if (font == "Reactangle Full With Dark Inverted") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"▓▓[(▓)]▓▓██"; }
+    boxName = "Rec Full Dark Inverted";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"▓▓[(▓)]▓▓  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"▓▓[(C)]▓▓██"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"▓▓[(▓)]▓▓██"; }
-        if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(█)]████"""; }
+        if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(█)]████"; }
     }
 
-
-    vectorRectangles.push_back("Reactangle Light With Shadow Soft");
-    if (font == "Reactangle Light With Shadow Soft") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"█[(█)]█░"; }
+    boxName = "Rec Light Shadow Soft";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"█[(█)]█ "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"█[(C)]█░"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"█[(█)]█░"; }
-        if ((cn == 4) || (cs == "boxText4")) { sr = u8" [(░)]░"; }
+        if ((cn == 4) || (cs == "boxText4")) { sr = u8" [(░)]░░"; }
     }
 
-    vectorRectangles.push_back("Reactangle Light With Shadow Medium");
-    if (font == "Reactangle Light With Shadow Medium") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"█[(█)]█▒"; }
+
+    boxName = "Rec Light Shadow Medium";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"█[(█)]█ "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"█[(C)]█▒"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"█[(█)]█▒"; }
         if ((cn == 4) || (cs == "boxText4")) { sr = u8" [(▒)]▒▒"; }
     }
 
-    vectorRectangles.push_back("Reactangle Light With Shadow Dark");
-    if (font == "Reactangle Light With Shadow Dark") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"█[(█)]█▓"; }
+
+    boxName = "Rec Light Shadow Dark";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"█[(█)]█ "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"█[(C)]█▓"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"█[(█)]█▓"; }
-        if ((cn == 4) || (cs == "boxText4")) { sr = u8" [(▓)]▓▓"""; }
+        if ((cn == 4) || (cs == "boxText4")) { sr = u8" [(▓)]▓▓"; }
     }
 
-
-    vectorRectangles.push_back("Reactangle Full With Rounded Soft");
-    if (font == "Reactangle Full With Rounded Soft") {
+    boxName = "Rec Full Rounded Soft";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"░░░░[(░)]░░░░"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"░░██[(█)]██░░"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"░░██[(C)]██░░"; }
         if ((cn == 4) || (cs == "boxText4")) { sr = u8"░░██[(█)]██░░"; }
         if ((cn == 5) || (cs == "boxText5")) { sr = u8"░░░░[(░)]░░░░"; }
     }
-    vectorRectangles.push_back("Reactangle Full With Rounded Medium");
-    if (font == "Reactangle Full With Rounded Medium") {
+
+    boxName = "Rec Full Rounded Medium";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"▒▒▒▒[(▒)]▒▒▒▒"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"▒▒██[(█)]██▒▒"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"▒▒██[(C)]██▒▒"; }
@@ -175,8 +211,10 @@ string showRectangle(string font, int cn, string cs) {
 
     }
 
-    vectorRectangles.push_back("Reactangle Full With Rounded Dark");
-    if (font == "Reactangle Full With Rounded Dark") {
+
+    boxName = "Rec Full Rounded Dark";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"▓▓▓▓[(▓)]▓▓▓▓"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"▓▓██[(█)]██▓▓"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"▓▓██[(C)]██▓▓"; }
@@ -184,8 +222,11 @@ string showRectangle(string font, int cn, string cs) {
         if ((cn == 5) || (cs == "boxText5")) { sr = u8"▓▓▓▓[(▓)]▓▓▓▓"; }
     }
 
-    vectorRectangles.push_back("Reactangle Thin With Rounded Soft");
-    if (font == "Reactangle Thin With Rounded Soft") {
+ 
+    boxName = "Rec Thin Rounded Soft";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"░░[(░)]░░"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"░█[(█)]█░"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"░█[(C)]█░"; }
@@ -193,8 +234,11 @@ string showRectangle(string font, int cn, string cs) {
         if ((cn == 5) || (cs == "boxText5")) { sr = u8"░░[(░)]░░"; }
     }
 
-    vectorRectangles.push_back("Reactangle Thin With Rounded Medium");
-    if (font == "Reactangle Thin With Rounded Medium") {
+
+    boxName = "Rec Thin Rounded Medium";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"▒▒[(▒)]▒▒"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"▒█[(█)]█▒"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"▒█[(C)]█▒"; }
@@ -203,8 +247,10 @@ string showRectangle(string font, int cn, string cs) {
 
     }
 
-    vectorRectangles.push_back("Reactangle Thin With Rounded Dark");
-    if (font == "Reactangle Full With Rounded Dark") {
+    boxName = "Rec Thin Rounded Dark";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"▓▓[(▓)]▓▓"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"▓█[(█)]█▓"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"▓█[(C)]█▓"; }
@@ -212,33 +258,41 @@ string showRectangle(string font, int cn, string cs) {
         if ((cn == 5) || (cs == "boxText5")) { sr = u8"▓▓[(▓)]▓▓"; }
     }
 
+  
+    boxName = "Rec Full With Shadow Soft";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
 
-    vectorRectangles.push_back("Reactangle Full With Shadow Soft");
-    if (font == "Reactangle Full With Shadow Soft") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██░░"; }
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"██[(C)]██░░"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"██[(█)]██░░"; }
         if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(░)]░░░░"; }
     }
 
-    vectorRectangles.push_back("Reactangle Full With Shadow Medium");
-    if (font == "Reactangle Full With Shadow Medium") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██▒▒"; }
+  
+    boxName = "Rec Full With Shadow Medium";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"██[(C)]██▒▒"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"██[(█)]██▒▒"; }
         if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(▒)]▒▒▒▒"; }
     }
 
-    vectorRectangles.push_back("Reactangle Full With Shadow Dark");
-    if (font == "Reactangle Full With Shadow Dark") {
-        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██▓▓"; }
+    boxName = "Rec Full With Shadow Dark";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
+
+        if ((cn == 1) || (cs == "boxText1")) { sr = u8"██[(█)]██  "; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"██[(C)]██▓▓"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"██[(█)]██▓▓"; }
-        if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(▓)]▓▓▓▓"""; }
+        if ((cn == 4) || (cs == "boxText4")) { sr = u8"  [(▓)]▓▓▓▓"; }
     }
 
-    vectorRectangles.push_back("Reactangle Full With Shadow Dark");
-    if (font == "Reactangle Full With Shadow Dark") {
+    boxName = "Rec Full With three shadow";
+    vectorRectangles.push_back(boxName);
+    if (font == boxName) {
         if ((cn == 1) || (cs == "boxText1")) { sr = u8"████[(█)]██"; }
         if ((cn == 2) || (cs == "boxText2")) { sr = u8"██  [(c)]██▒▒"; }
         if ((cn == 3) || (cs == "boxText3")) { sr = u8"██  [(C)]██▒▒░░"; }

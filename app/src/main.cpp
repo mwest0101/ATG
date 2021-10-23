@@ -27,8 +27,11 @@ int main(int argc, char* argv[], char* envp[])
     setlocale(LC_ALL, "en_US.UTF-8");
 
     FontManager_class fontsLoader;
-
+    BoxDrive_class boxDrive;
     vector<string> params;
+
+    vector<string> boxList = boxDrive.getAllNameBox();
+
     cout << endl;
     for (int i = 1; i < argc; i++) {
         params.push_back(argv[i]);
@@ -54,6 +57,11 @@ int main(int argc, char* argv[], char* envp[])
         else if (param == "-rh") {
             fontsLoader.setHorizontRainbow(true);
 
+        }else if (findStr(param,"-b:")!=(-1)) {
+            fontsLoader.setInsertBox(true);
+            vector<string> paramBox = splitStr(param, ':');
+            fontsLoader.setStyleBox(strToInt(paramBox[1]));
+
         }else if (param == "-l") {
             
             param1 = "listAllFontNames";
@@ -71,11 +79,36 @@ int main(int argc, char* argv[], char* envp[])
 
             param1 = "listAllFontsExampleWithDemo";
             countParam=2;
-        }else if (param == "-b:") {
-            fontsLoader.setInsertBox(true);    
-            vector<string> paramBox = splitStr(param, ':');
-            fontsLoader.set(true);
+        }
+        else if (param == "-bl") {            
+            
+            boxDrive.showListOfBox();
             countParam = 2;
+            param1 = "";
+            param2 = "";
+        }else if (param == "-db") {
+         
+            
+            fontsLoader.setInsertBox(true);
+            cout << to_string(boxList.size()) << endl;
+            for (unsigned int i = 1; i < boxList.size();i++) {      
+                
+                cout << "===============================================================" << endl;
+                BoxDrive_class boxDrive;
+                
+                cout << to_string((int)i) << " - " <<boxDrive.getStyleNameFromNumber((int)i) << endl;
+                cout << "===============================================================" << endl << endl;
+                fontsLoader.setStyleBox((int)i);
+                //cout << to_string(i) << endl;
+                if (param1 == "") { param1 = "114"; }
+                fontsLoader.load(param1, "Test");
+                cout <<endl<<endl;
+             
+            }
+
+            countParam = 2;
+            
+        
         }else {
             
             if (countParam == 0) {
@@ -96,9 +129,9 @@ int main(int argc, char* argv[], char* envp[])
     }
 
 
-    strResult = fontsLoader.load(param1, param2);
+    fontsLoader.load(param1, param2);
 
-    cout << strResult << endl;
+    //cout << strResult << endl;
   
     return 0;
 }

@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "boxs.h"
+#include "ctc.h"
 
 #ifndef BOX_DRIVE_CLASS_H
 #define BOX_DRIVE_CLASS_H
@@ -18,6 +19,10 @@ public:
     int c_part_c_Foot;
     int c_part_foot;
     int c_box_height;
+
+
+    unsigned int countLines = 0;
+    int countPass = 0;
 
     string c_str_part_head;
     string c_str_part_foot;
@@ -41,7 +46,7 @@ public:
     int c_box_width;
     //-----------functions----------------------
     BoxDrive_class();
-
+    void resetVars();
     void setBoxs();
     vector<vector<string>> getBodyElements();
     void setBoxDecorator(bool value);
@@ -63,5 +68,7 @@ public:
 
     bool addNumIfNotExisInArray(int num);
     void showListOfBox();
-
-#endif
+    string getStyleNameFromNumber(int number);
+    vector<string> getAllNameBox();
+};
+#endif;
