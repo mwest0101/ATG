@@ -10,6 +10,7 @@
 #include <io.h>
 #include "fonts.h"
 #include "ctc.h"
+#include "help.h"
 
 #include "BoxDrive_class.h"
 
@@ -90,7 +91,13 @@ int main(int argc, char* argv[], char* envp[])
          
             
             fontsLoader.setInsertBox(true);
-            cout << to_string(boxList.size()) << endl;
+            //cout << to_string(boxList.size()) << endl;
+            if (param1 == "") { param1 = "114"; cout << "pase param1" << endl; }
+            if (param2 == "") { param1 = "Test"; cout << "pase param2" << endl;}
+           
+            //cout << param1 << endl;
+            //cout << param2 << endl;
+
             for (unsigned int i = 1; i < boxList.size();i++) {      
                 
                 cout << "===============================================================" << endl;
@@ -100,8 +107,7 @@ int main(int argc, char* argv[], char* envp[])
                 cout << "===============================================================" << endl << endl;
                 fontsLoader.setStyleBox((int)i);
                 //cout << to_string(i) << endl;
-                if (param1 == "") { param1 = "114"; }
-                if (param2 == "") { param1 = "Test"; }
+
                 fontsLoader.load(param1, param2);
                 cout <<endl<<endl;
              
@@ -128,7 +134,9 @@ int main(int argc, char* argv[], char* envp[])
         }
         
     }
-
+    if (countParam==0) {
+        help();
+    }
 
     fontsLoader.load(param1, param2);
 
