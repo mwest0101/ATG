@@ -177,8 +177,8 @@ int getMaxWidthLine(vector<string> vectStr) {
 	string strTemp = "";
 
 	for (string data : vectStr) {
-
-		string strTemp = strRemoveParamsEnveded(data);
+		strTemp = "";
+		strTemp = strRemoveParamsEnveded(data);
 	
 		if (strTemp.size() > max) {
 			max = strTemp.size();

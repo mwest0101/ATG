@@ -43,7 +43,7 @@ public:
 
     vector <vector<string>> c_box_body;
 
-    int c_box_width;
+    unsigned int c_box_width;
     //-----------functions----------------------
     BoxDrive_class();
     void resetVars();

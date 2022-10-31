@@ -79,7 +79,7 @@ string BoxDrive_class::getOneLineBox(string boxStyle) {
 
 vector<string> BoxDrive_class::getPartsFromBox(string text) {
     vector<string> strFill;
-    int pos1, pos2;
+    size_t pos1, pos2;
     string strBox = "";
 
     if (((strBox = getOneLineBox(c_BoxDecoratorStyle)) != "") &&
@@ -265,7 +265,7 @@ void BoxDrive_class::showListOfBox() {
     oneStrToPrint = "";
 
     countCols = 0;
-    int maxElements = (c_allNameBox.size() - 1);
+    size_t maxElements = (c_allNameBox.size() - 1);
     int columElements = (int)((((float)maxElements / (float)maxCountCols)));
     columElements = columElements + 1;
 

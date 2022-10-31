@@ -86,8 +86,8 @@ void printStrVector(vector<string> strVec) {
 	
 }
 
- int findStr(string stringFile, string stringToSearh) {
-	int result = stringFile.find(stringToSearh);
+size_t findStr(string stringFile, string stringToSearh) {
+	size_t result = stringFile.find(stringToSearh);
 	return result;
 }
 
