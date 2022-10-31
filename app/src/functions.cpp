@@ -172,7 +172,7 @@ string strRemoveParamsEnveded(string data) {
 
 int getMaxWidthLine(vector<string> vectStr) {
 	string strOfChar;
-	unsigned int max = 0;
+	int max = 0;
 	string strTemp = "";
 
 	for (string data : vectStr) {
@@ -180,7 +180,7 @@ int getMaxWidthLine(vector<string> vectStr) {
 		string strTemp = strRemoveParamsEnveded(data);
 		
 		//cout << "vectStr |" + strTemp +"|" << endl;
-		int strLen = (int)utf8_length(strTemp);
+		int strLen = utf8_length(strTemp);
 		//cout << " strLen= " + intToStr((int)strLen) << endl;
 
 		if (strLen > max) {
@@ -195,7 +195,7 @@ int getMaxWidthLine(vector<string> vectStr) {
 
 int utf8_length(const string& str) {
 	int c, i, ix, q;
-	for (q = 0, i = 0, ix = str.length(); i < ix; i++, q++) {
+	for (q = 0, i = 0, ix = (unsigned int)str.length(); i < ix; i++, q++) {
 		c = (unsigned char)str[i];
 		if (c >= 0 && c <= 127) i += 0;
 		else if ((c & 0xE0) == 0xC0) i += 1;
