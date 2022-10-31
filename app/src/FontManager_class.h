@@ -101,7 +101,6 @@ public:
 
     bool addNumIfNotExisInArray(int num);
     void showDemoOfAllFonts(string style, string testString);
-    void eraseEmptyStrLinesInVector();
   
 };
 #endif

@@ -25,7 +25,7 @@
 
 	vector<string> splitStr(string str, char sep);
 	void printStrVector(vector<string> strVec);
-	size_t findStr(string stringFile, string stringToSearh);
+	int findStr(string stringFile, string stringToSearh);
 	int findStrLastChar(string stringFile, string stringToSearh);
 	int findEndOfStr(string stringFile, string stringToSearh);
 	string strReplace(string strOrig, string strToFind, string strToPut);

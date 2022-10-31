@@ -2,8 +2,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
-//#include <AtlBase.h>
-//#include <atlconv.h>
+#include <AtlBase.h>
+#include <atlconv.h>
 #include "text_encoding_detect.h"
 
 #include "Debug_class.h"

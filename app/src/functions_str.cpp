@@ -86,15 +86,15 @@ void printStrVector(vector<string> strVec) {
 	
 }
 
-size_t findStr(string stringFile, string stringToSearh) {
-	size_t result = stringFile.find(stringToSearh);
+ int findStr(string stringFile, string stringToSearh) {
+	int result = (int)stringFile.find(stringToSearh);
 	return result;
 }
 
 int findStrLastChar(string stringFile, string stringToSearh) {	
 	string lastChars = "";
 	lastChars=stringFile.substr((stringFile.size()- stringToSearh.size()),stringToSearh.size());
-	int resToReturn = lastChars.find(stringToSearh);
+	int resToReturn = (int)lastChars.find(stringToSearh);
 	//cout << stringFile<<"|" << lastChars << "-" << stringToSearh << "|"<< resToReturn <<endl;
 
 
@@ -103,8 +103,8 @@ int findStrLastChar(string stringFile, string stringToSearh) {
 
 
 int findEndOfStr(string stringFile, string stringToSearh) {
-	int result = stringFile.find(stringToSearh);
-	if (result != (-1)) result += stringToSearh.size();
+	int result = (int)stringFile.find(stringToSearh);
+	if (result != (-1)) result += (int)stringToSearh.size();
 	return result;
 }
 
@@ -224,7 +224,7 @@ string compWithRightSpaces(string source,int numSpaces) {
 	string resultStrl = "";
 
 	if((int)source.size()<= numSpaces){
-		spacesToAdd = createSpaces(numSpaces - (source.size()));
+		spacesToAdd = createSpaces(numSpaces - ((int)source.size()));
 		resultStrl = source + spacesToAdd;
 	}
 	else {
@@ -240,7 +240,7 @@ string compWithLeftSpaces(string source, int numSpaces) {
 	string resultStrl = "";
 
 	if ((int)source.size() <= numSpaces) {
-		spacesToAdd = createSpaces(numSpaces - source.size());
+		spacesToAdd = createSpaces(numSpaces - (int)source.size());
 		resultStrl = spacesToAdd + source;
 	}
 	else {
@@ -259,7 +259,7 @@ string compWithCenterSpaces(string source, int numSpaces) {
 	int spaces1 = 0;
 	int spaces2 = 0;
 	if ((int)source.size() <= numSpaces) {
-		totalSpacesToFill = numSpaces - source.size();
+		totalSpacesToFill = numSpaces - (int)source.size();
 		spaces = (float)totalSpacesToFill/2;
 				
 		spaces1 = (int)spaces;

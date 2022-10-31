@@ -211,11 +211,11 @@ void FontManager_class::showListOfFonts() {
     oneStrToPrint = "";
 
     countCols = 0;
-    int maxElements = ((int)c_allNameFonts.size() - 1);
+    int maxElements = (int)(c_allNameFonts.size() - 1);
     int columElements = (int)((((float)maxElements / (float)maxCountCols)));
     columElements = columElements + 1;
 
-    int element = 0;
+    size_t element = 0;
 
     for (int i = 0; i < columElements; i++) {
         //  cout << i << endl;
@@ -223,7 +223,7 @@ void FontManager_class::showListOfFonts() {
 
             element = (columElements * j) + i;
 
-            if ((element <= maxElements) && addNumIfNotExisInArray(element)) {
+            if ((element <= maxElements) && addNumIfNotExisInArray((int)element)) {
                 onechar = c_allNameFonts[element];
                 SetColor(0, 15);
                 cout << "[ ";
@@ -264,6 +264,17 @@ void FontManager_class::concatenateChar(vector<string> oneChar) {
 
 
 }
+void FontManager_class::eraseEmptyStrLinesInVector() {
+    vector<string> temp;
+    for(string data : c_resultAsciiArtVector) {
+        //cout << data << endl;
+        if (trimString(data, " ") != "") {
+            temp.push_back(data);
+        }
+    }
+    c_resultAsciiArtVector = temp;
+   
+}
 string FontManager_class::applyHorizontalRainbow(string data) {
     int bcolor = 0;
 
@@ -280,8 +291,8 @@ string FontManager_class::applyHorizontalRainbow(string data) {
 // TO DO: Pasar despues a archivo aparte
 
 void FontManager_class::printStringWithColorsCode(string data) {
-    int pos1 = 0;
-    int pos2 = 0;
+    size_t pos1 = 0;
+    size_t pos2 = 0;
     bool found = true;
     vector<string> colors;
     while (found) {
@@ -353,14 +364,14 @@ void FontManager_class::InsertTextInBox(int styleBox) {
     boxDrive.resetVars();
     //cout << "entre Insert In box " << endl;
     boxDrive.setBoxDecorator(true);
+   
+
+    //cout << "setBoxStyle " << endl;
+    boxDrive.setBoxStyle(boxDrive.getStyleNameFromNumber(styleBox));
     //cout << "setBoxWidth " << endl;
     boxDrive.setBoxWidth(getMaxWidthLine(c_resultAsciiArtVector));
     //cout << "setBoxHigh "<<endl;
     boxDrive.setBoxHigh((int)c_resultAsciiArtVector.size());
-
-    //cout << "setBoxStyle " << endl;
-    boxDrive.setBoxStyle(boxDrive.getStyleNameFromNumber(styleBox));
-
     //cout << "getParts " << endl;
     boxDrive.getParts();
 
@@ -399,7 +410,7 @@ void FontManager_class::applyParameters() {
     string fontSmush = ConfigFont_class::p2;
     string strLine = "";
 
-    int lengVec = (int)c_resultAsciiArtVector.size();
+    int lengVec = c_resultAsciiArtVector.size();
     int maxWidth = getMaxWidthLine(c_resultAsciiArtVector);
 
     vector<string> tempVector;    
@@ -445,6 +456,7 @@ string FontManager_class::mainGeneratorOfStr(string fontName, string stringToPri
     //cout << "Entre a mainGeneratorOfStr - generateVectorOfStrings" << endl;
     generateVectorOfStrings(fontName, stringToPrint);
     //cout << "Entre a mainGeneratorOfStr - applyParameters" << endl;
+    eraseEmptyStrLinesInVector();
     applyParameters();
     //InsertTextInBox(c_fontNumberStyle);
     //cout << "Entre a mainGeneratorOfStr - InsertTextInBox" << endl;
