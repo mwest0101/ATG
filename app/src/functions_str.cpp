@@ -199,6 +199,7 @@ string createSpaces(int numSpaces) {
 }
 
 
+
 string cutRightStr(string data,int num) {
 	string result;
 	//cout << "entre data=" << data <<" num="<<num << " data size "<< data.size() << endl;
