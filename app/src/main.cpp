@@ -10,6 +10,7 @@
 #include <io.h>
 #include "fonts.h"
 #include "ctc.h"
+#include "help.h"
 
 #include "BoxDrive_class.h"
 
@@ -19,11 +20,10 @@ using namespace std;
 
 
 
-int main(int argc, char* argv[], char* envp[])
-{
+int main(int argc, char* argv[], char* envp[]) {
     string strResult;
-    string param1="";
-    string param2="";
+    string param1 = "";
+    string param2 = "";
     setlocale(LC_ALL, "en_US.UTF-8");
 
     FontManager_class fontsLoader;
@@ -43,30 +43,28 @@ int main(int argc, char* argv[], char* envp[])
         if (param == "-s") {
 
             fontsLoader.setSmush(true);
-        }else if (param == "-ra"){
+        } else if (param == "-ra") {
             fontsLoader.setDemoColor(true);
-        }else if (param == "-rv") {
+        } else if (param == "-rv") {
 
             fontsLoader.setVerticalRainbow(true);
-        }
-        else if (param == "-rvt") {
+        } else if (param == "-rvt") {
 
             fontsLoader.setVerticalRainbow(true);
             fontsLoader.setRainbowTotalColors(true);
-        }
-        else if (param == "-rh") {
+        } else if (param == "-rh") {
             fontsLoader.setHorizontRainbow(true);
 
-        }else if (findStr(param,"-b:")!=(-1)) {
+        } else if (findStr(param, "-b:") != (-1)) {
             fontsLoader.setInsertBox(true);
             vector<string> paramBox = splitStr(param, ':');
             fontsLoader.setStyleBox(strToInt(paramBox[1]));
 
-        }else if (param == "-l") {
-            
+        } else if (param == "-l") {
+
             param1 = "listAllFontNames";
-            
-            countParam=2;
+
+            countParam = 2;
         } else if (param == "-dn") {
 
             param1 = "listAllFontsExampleWithName";
@@ -78,62 +76,67 @@ int main(int argc, char* argv[], char* envp[])
         } else if (param == "-d") {
 
             param1 = "listAllFontsExampleWithDemo";
-            countParam=2;
-        }
-        else if (param == "-bl") {            
-            
+            countParam = 2;
+        } else if (param == "-bl") {
+
             boxDrive.showListOfBox();
             countParam = 2;
             param1 = "";
             param2 = "";
-        }else if (param == "-db") {
-         
-            
+        } else if (param == "-db") {
+
+
             fontsLoader.setInsertBox(true);
-            cout << to_string(boxList.size()) << endl;
-            for (unsigned int i = 1; i < boxList.size();i++) {      
-                
+            //cout << to_string(boxList.size()) << endl;
+            if (param1 == "") { param1 = "114"; cout << "pase param1" << endl; }
+            if (param2 == "") { param1 = "Test"; cout << "pase param2" << endl; }
+
+            //cout << param1 << endl;
+            //cout << param2 << endl;
+
+            for (unsigned int i = 1; i < boxList.size(); i++) {
+
                 cout << "===============================================================" << endl;
                 BoxDrive_class boxDrive;
-                
-                cout << to_string((int)i) << " - " <<boxDrive.getStyleNameFromNumber((int)i) << endl;
+
+                cout << to_string((int)i) << " - " << boxDrive.getStyleNameFromNumber((int)i) << endl;
                 cout << "===============================================================" << endl << endl;
                 fontsLoader.setStyleBox((int)i);
                 //cout << to_string(i) << endl;
-                fontsLoader.load("114", "Test");
-                cout <<endl<<endl;
-             
+
+                fontsLoader.load(param1, param2);
+                cout << endl << endl;
+
             }
 
             countParam = 2;
-            
-            param1 = "";
-            param2 = "";
-        }else {
-            
+
+
+        } else {
+
             if (countParam == 0) {
-                
+
                 param1 = param;
                 countParam = 1;
                 //cout << "pase 1" << param1 << endl;
             } else if (countParam == 1) {
-                
-                if (param2 != "") param2 += " "+param;
-                else param2 += param;     
-              // cout << "pase 2" << param2 << endl;
-                
-            }
-            
-        }
-        
-    }
 
+                if (param2 != "") param2 += " " + param;
+                else param2 += param;
+                // cout << "pase 2" << param2 << endl;
+
+            }
+
+        }
+
+    }
+    if (countParam == 0) {
+        help();
+    }
 
     fontsLoader.load(param1, param2);
 
     //cout << strResult << endl;
-  
+
     return 0;
 }
-
-

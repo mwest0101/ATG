@@ -104,8 +104,7 @@ void help() {
 	cout << "+----------------------------------------------------+" << endl;
 	cout << "|Examples:                                           |" << endl;
 	cout << "| atg 12 Test text                                   |" << endl;
-	cout << "| atg 12 Test text -b:3                              |" << endl;
-	cout << "|                                                   |" << endl;
+	cout << "| atg 12 Test text -b:3                              |" << endl;	
 	cout << "+----------------------------------------------------+" << endl;
 
 
@@ -115,10 +114,11 @@ void help() {
 	cout << "+------------------------------------------------------------+" << endl;
 	cout << "|Developed by: Maurcio West                                  |" << endl;
 	cout << "|                                                            |" << endl;
-	cout << "|e-mail:mauriciowest+wtdev@gmail.com                         |" << endl;
+	cout << "|e-mail:mauriciowest@gmail.com                               |" << endl;
 	cout << "|https://github.com/mwest0101/                               |" << endl;
 	cout << "|https://www.linkedin.com/in/mauricio-pablo-west-12bb734/    |" << endl;
-	cout << "|https://www.facebook.com/groups/322699759016752             |" << endl;
+	cout << "|https://www.facebook.com/profile.php?id=100067001203910     |" << endl;
+	cout << "|https://www.instagram.com/wttechdevelopments/               |" << endl;
 	cout << "+------------------------------------------------------------+" << endl;
 	SetColor(0, 7);
 }
