@@ -322,3 +322,4 @@ string getLeftString(string data, string find) {
 	return result;
 }
 
+

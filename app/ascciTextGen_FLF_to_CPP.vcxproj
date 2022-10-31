@@ -172,6 +172,7 @@
     <ClInclude Include="src\Help.h" />
     <ClInclude Include="src\StdAfx.h" />
     <ClInclude Include="src\text_encoding_detect.h" />
+    <ClInclude Include="src\utf8\unchecked.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

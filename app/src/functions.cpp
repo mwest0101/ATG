@@ -19,7 +19,6 @@ using namespace std;
 
 
 
-
 bool fileExist(const std::string& name) {
 	ifstream f(name.c_str());
 	return f.good();
@@ -179,16 +178,37 @@ int getMaxWidthLine(vector<string> vectStr) {
 	for (string data : vectStr) {
 
 		string strTemp = strRemoveParamsEnveded(data);
-	
-		if (strTemp.size() > max) {
-			max = (int)strTemp.size();
+		
+		//cout << "vectStr |" + strTemp +"|" << endl;
+		int strLen = (int)utf8_length(strTemp);
+		//cout << " strLen= " + intToStr((int)strLen) << endl;
+
+		if (strLen > max) {
+			max = strLen;
 		}
 
 	}
-	
+	//cout << "max "+max << endl;
+
 	return max;
 }
 
+int utf8_length(const string& str) {
+	int c, i, ix, q;
+	for (q = 0, i = 0, ix = str.length(); i < ix; i++, q++) {
+		c = (unsigned char)str[i];
+		if (c >= 0 && c <= 127) i += 0;
+		else if ((c & 0xE0) == 0xC0) i += 1;
+		else if ((c & 0xF0) == 0xE0) i += 2;
+		else if ((c & 0xF8) == 0xF0) i += 3;
+		//else if (($c & 0xFC) == 0xF8) i+=4; // 111110bb //byte 5, unnecessary in 4 byte UTF-8
+		//else if (($c & 0xFE) == 0xFC) i+=5; // 1111110b //byte 6, unnecessary in 4 byte UTF-8
+		else return 0;//invalid utf8
+	}
+	//cout << " q= " + intToStr(q) << endl;
+	return q;
+
+}
 
 
 

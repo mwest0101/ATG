@@ -50,4 +50,5 @@
 	int strLenght(string data);
 
 	string getLeftString(string data, string find);
+	int LenghtOfUtf8String(const std::string& utf8_string);
 #endif

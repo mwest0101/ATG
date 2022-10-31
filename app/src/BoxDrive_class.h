@@ -58,7 +58,7 @@ public:
 
     void printBorderBox(string boxStyle);
     string getOneLineBox(string boxStyle);
-    vector<string> getPartsFromBox(string text);
+    vector<string> getPartsFromBox();
     void getParts();
     string addBorderBodyBox(string text);
    

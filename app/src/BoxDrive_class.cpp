@@ -77,7 +77,7 @@ string BoxDrive_class::getOneLineBox(string boxStyle) {
     return strResult;
 }
 
-vector<string> BoxDrive_class::getPartsFromBox(string text) {
+vector<string> BoxDrive_class::getPartsFromBox() {
     vector<string> strFill;
     int pos1, pos2;
     string strBox = "";
@@ -116,7 +116,7 @@ void  BoxDrive_class::getParts() {
     size_t numSpaces = 0;
 
 
-    strBoxTemp = getPartsFromBox(c_box_style);
+    strBoxTemp = getPartsFromBox();
     while (strBoxTemp[0] != "" || strBoxTemp[1] != "" || strBoxTemp[2] != "") {
         strTemp="";
             if ((strBoxTemp[1] != "c" && strBoxTemp[1] != "C") && partCounter <= 1) {
@@ -125,7 +125,7 @@ void  BoxDrive_class::getParts() {
 
                 numSpaces = c_box_width-1;
                 //cout << "head--->"<<numSpaces << endl;
-                for (unsigned int i = 0; i < numSpaces; i++) {
+                for (int i = 0; i < numSpaces; i++) {
                     strTemp += strBoxTemp[1];
                    // cout << i << endl;
                 }
@@ -159,7 +159,7 @@ void  BoxDrive_class::getParts() {
  
                 numSpaces = c_box_width-1;
                 //cout << "foot--->" << numSpaces << endl;
-                for (unsigned int i = 0; i < numSpaces; i++) {
+                for ( int i = 0; i < numSpaces; i++) {
                     strTemp += strBoxTemp[1];
                     //c_str_part_foot += "/";
                 }
@@ -172,7 +172,7 @@ void  BoxDrive_class::getParts() {
                 partCounter = 3;
             }
 
-            strBoxTemp = getPartsFromBox(c_box_style);
+            strBoxTemp = getPartsFromBox();
         
 
     }

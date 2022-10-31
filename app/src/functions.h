@@ -28,5 +28,5 @@ using namespace AutoIt::Common;
 	void writeFile(string filename, string text);
 	string strRemoveParamsEnveded(string data);
 	int getMaxWidthLine(vector<string> vectStr);
-
+	int utf8_length(const string& str);
 #endif
